@@ -71,6 +71,276 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Node" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/Node/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T09:49:58.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/21/Node/">Node</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>npm安装路径</p>
+<p>​	全局安装一般在c盘的<code>node_modules</code>下，输入<code>npm config get prefix</code>命令直接查看全局安装路径。</p>
+<p>​	本地安装始终位于当前项目的<code>node_modules</code>下。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/21/Node/" data-id="cmel81d660004qgvt08jc206v" data-title="Node" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MarkDown" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/MarkDown/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T09:46:44.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/21/MarkDown/">MarkDown</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Markdown链接语法</p>
+<p>​	效果：<a href="url">链接文本</a></p>
+<p>​	格式：<code>[链接文本](url)</code></p>
+<p>​	可以使用反引号&#96;&#96;包围创建成代码片段来解决显示。</p>
+<p>HTML指数标签<sup></p>
+<p>​	效果：2<sup>n</sup></p>
+<p>​	格式：<code>2&lt;sup&gt;n&lt;/sup&gt;</code></p>
+<p>Markdown列表语法</p>
+<p>​	效果：</p>
+<ul>
+<li><p>列表一</p>
+</li>
+<li><p>列表二</p>
+<p>格式：<code>- 列表一</code></p>
+</li>
+</ul>
+<p>Markdown斜体语法</p>
+<p>​	效果：<em>斜体</em></p>
+<p>​	格式：<code>*斜体*</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/21/MarkDown/" data-id="cmel81d660003qgvt0tn7hgty" data-title="MarkDown" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-DSA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/DSA/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T09:43:34.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/21/DSA/">DSA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>枚举算法</p>
+<p>​	描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。</p>
+<p>​	核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解。</p>
+<p>​	优点：简单基本，便于实现，容易调试，正确性容易证明。</p>
+<p>​	思路：</p>
+<ul>
+<li><p>确定枚举对象、枚举范围、判断条件。</p>
+</li>
+<li><p>枚举可能的情况并验证是否是问题的解。</p>
+</li>
+<li><p>考虑提高效率（缩小状态空间，限制枚举条件，找特殊性质避免重复求解）。</p>
+<p>题库：百钱买百鸡，LeetCode1504。</p>
+</li>
+</ul>
+<p>vector二维数组的构造</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">f</span>(m, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br></pre></td></tr></table></figure>
+
+<p>​	其中<code>vector&lt;int&gt;(n, 0)</code>运用了vector的构造函数，创造了一个一维长度为n的vector并全部初始化为0。</p>
+<p>动态规划Dynamic programming</p>
+<p>​	描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，常常适用于有重叠子问题和最优子结构性质的问题。</p>
+<p>​	一般的递归时间复杂度太高，<code>递归时间复杂度 = 解决一个子问题时间*子问题个数</code>，需要把子问题的结果进行存储，利用空间来降低时间复杂度，把二叉树变成了树干，子问题个数从O(2<sup>n</sup>)变成了O(n)。同理，转换递归时存储结果时是自顶向下的解法，而动态规划就是自底向上的解法。</p>
+<p>​	典型特征：最优子结构、状态转移方程、边界、重叠子问题。</p>
+<p>​	核心思想：拆分子问题、记住过往、减少重复计算。</p>
+<p>​	思路：</p>
+<ul>
+<li><p>穷举分析</p>
+</li>
+<li><p>确认边界</p>
+<ul>
+<li>找出规律，确定最优子结构<ul>
+<li>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</li>
+</ul>
+</li>
+<li>写出状态转移方程</li>
+</ul>
+</li>
+</ul>
+<p>​	题库：LeetCode1277，LeetCode1504</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/21/DSA/" data-id="cmel81d610000qgvtbw0q441t" data-title="DSA" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/Docker/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T09:38:44.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/21/Docker/">Docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>​	描述：Docker是一个开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>​	优点：跨平台一致性，资源高效，快速部署，隔离性。</p>
+<p>​	基本命令：</p>
+<p><em># 拉取镜像（如官方Nginx镜像)</em></p>
+<p><code>docker pull nginx</code></p>
+<p><em># 查看运行中的容器</em><br><code>docker  ps</code></p>
+<p><em># 运行容器（-d 后台运行，-p 映射端口）</em><br><code>docker run -d -p 80:80 nginx</code></p>
+<p><em># 构建镜像（基于当前目录的Dockerfile）</em><br><code>docker build -t my-app .</code></p>
+<p><em># 进入容器内部</em><br><code>docker exec -it &lt;容器ID&gt; /bin/bash</code></p>
+<p><em># 查看进程占用的端口号</em></p>
+<p><code>ps aux</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/21/Docker/" data-id="cmel81d660005qgvt9g4rdzhr" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Hexo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/Hexo/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T09:37:04.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/21/Hexo/">Hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>​	命令：</p>
+<p><em># 新建博客</em></p>
+<p><code>hexo new&#39;xxx&#39;</code></p>
+<p><em># 清除之前所有的公共文件</em></p>
+<p><code>hexo clean</code></p>
+<p><em># 重新生成html文件</em></p>
+<p><code>hexo g</code></p>
+<p><em># 上传到GitHub</em></p>
+<p><code>hexo d</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/21/Hexo/" data-id="cmel81d640001qgvtg21jaat2" data-title="Hexo" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Vue3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/21/Vue3/" class="article-date">
@@ -93,7 +363,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>​	描述：Vue.js是一套构建用户界面的渐进式框架，只关注视图层，采用自底向上增量开发的设计，尽可能通过简单的API实现响应的数据绑定和组合的视图组件。</p>
+        <p>1、Vue3</p>
+<p>​	描述：Vue.js是一套构建用户界面的渐进式框架，只关注视图层，采用自底向上增量开发的设计，尽可能通过简单的API实现响应的数据绑定和组合的视图组件。</p>
 <p>​	优点：响应式数据绑定，虚拟DOM，灵活性与渐进性，易于集成等。</p>
 <p>​	命令：</p>
 <p><em># 创建Vue项目</em><br><code>npm init vue@latest</code></p>
@@ -103,11 +374,21 @@
 <p><em># 打开图形化界面</em></p>
 <p><code>npm install @vue/cli</code></p>
 <p><code>vue ui</code></p>
+<p>2、Vite</p>
+<p>​	描述：是一个现代化的前端构建工具，通过利用现代浏览器的原生ES模块支持，提供快速的开发体验。</p>
+<p>​	组成：</p>
+<ul>
+<li><p>开发服务器：基于原生ES模块，提供超快的热更新。</p>
+</li>
+<li><p>构建命令：使用Rollup打包代码，生成适用于生产环境的优化静态资源。</p>
+<p>优点：急速启动，快速热更新，支持TS，JSX等，高度可扩展。</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/21/Vue3/" data-id="cmel7eyl80000ysvt0j8bciql" data-title="Vue3" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/08/21/Vue3/" data-id="cmel81d650002qgvtb3ei1j4s" data-title="Vue3" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -158,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/19/hello-world/" data-id="cmel7eylb0001ysvt3fnte1k1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/08/19/hello-world/" data-id="cmel81d680006qgvt2rwt8e25" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -201,11 +482,23 @@
       <ul>
         
           <li>
-            <a href="/2025/08/21/Vue3/">Vue3</a>
+            <a href="/2025/08/21/Node/">Node</a>
           </li>
         
           <li>
-            <a href="/2025/08/19/hello-world/">Hello World</a>
+            <a href="/2025/08/21/MarkDown/">MarkDown</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/21/DSA/">DSA</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/21/Docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/21/Hexo/">Hexo</a>
           </li>
         
       </ul>
