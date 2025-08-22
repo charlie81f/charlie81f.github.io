@@ -6,19 +6,17 @@
   
   <title>计算机网络 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="LocalStorage和SessionStorage的区别  ​	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。 WebSocket ​	在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。 ​	HTTP：无状态，单向请求-响应模式&#x3D;&#x3D;&#x3D;&gt;WebSocket：持久连接，">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435LocalStorage和SessionStorage的区别![LocalStorage.png](LocalStorage.png)	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。WebSocket	在单个TCP连接上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
 <meta property="og:url" content="http://example.com/2025/08/22/computerNetworks/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="LocalStorage和SessionStorage的区别  ​	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。 WebSocket ​	在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。 ​	HTTP：无状态，单向请求-响应模式&#x3D;&#x3D;&#x3D;&gt;WebSocket：持久连接，">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435LocalStorage和SessionStorage的区别![LocalStorage.png](LocalStorage.png)	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。WebSocket	在单个TCP连接上">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2025/08/22/computerNetworks/LocalStorage.png">
 <meta property="article:published_time" content="2025-08-22T00:54:11.000Z">
-<meta property="article:modified_time" content="2025-08-22T02:50:23.784Z">
+<meta property="article:modified_time" content="2025-08-22T03:02:19.448Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2025/08/22/computerNetworks/LocalStorage.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -97,26 +95,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>LocalStorage和SessionStorage的区别</p>
-<p><img src="/2025/08/22/computerNetworks/LocalStorage.png" alt="LocalStorage.png"></p>
-<p>​	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。</p>
-<p>WebSocket</p>
-<p>​	在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。</p>
-<p>​	HTTP：无状态，单向请求-响应模式&#x3D;&#x3D;&#x3D;&gt;WebSocket：持久连接，双向实时通信。还免去了重复的HTTP头开销。</p>
-<p>WebRTC</p>
-<p>​	虽然设计为P2P通信技术，媒体流是双向传输，但需要借助信令服务器和STUN&#x2F;TURN服务器。</p>
-<p>​	信令服务器：交换SDP会话、房间管理；STUN：获取公网地址；TURN：数据中继。</p>
-<p>TCP&#x2F;IP五层模型（下到上）</p>
-<p>​	1）物理层：通过物质介质（光纤、电缆等）传输原始比特流，数据单位是比特。</p>
-<p>​	2）链路层：在直接相连的节点间传输数据，处理物理寻址（MAC）和错误检测，数据单位是帧。</p>
-<p>​	3）网络层：负责逻辑寻址、路由选择和分组转发，数据单位是包。</p>
-<p>​	4）传输层：提供端到端的数据传输，流量控制和错误恢复，数据单位是段。</p>
-<p>​	5）应用层：为用户提供网络服务接口，处理应用程序逻辑，数据单位是数据。</p>
+        <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">LocalStorage和SessionStorage的区别</span><br><span class="line"></span><br><span class="line">![LocalStorage.png](LocalStorage.png)</span><br><span class="line"></span><br><span class="line">	LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">WebSocket</span><br><span class="line"></span><br><span class="line">	在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。</span><br><span class="line"></span><br><span class="line">	HTTP：无状态，单向请求-响应模式===&gt;WebSocket：持久连接，双向实时通信。还免去了重复的HTTP头开销。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">WebRTC</span><br><span class="line"></span><br><span class="line">	虽然设计为P2P通信技术，媒体流是双向传输，但需要借助信令服务器和STUN/TURN服务器。</span><br><span class="line"></span><br><span class="line">	信令服务器：交换SDP会话、房间管理；STUN：获取公网地址；TURN：数据中继。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TCP/IP五层模型（下到上）</span><br><span class="line"></span><br><span class="line">	1）物理层：通过物质介质（光纤、电缆等）传输原始比特流，数据单位是比特。</span><br><span class="line"></span><br><span class="line">	2）链路层：在直接相连的节点间传输数据，处理物理寻址（MAC）和错误检测，数据单位是帧。</span><br><span class="line"></span><br><span class="line">	3）网络层：负责逻辑寻址、路由选择和分组转发，数据单位是包。</span><br><span class="line"></span><br><span class="line">	4）传输层：提供端到端的数据传输，流量控制和错误恢复，数据单位是段。</span><br><span class="line"></span><br><span class="line">	5）应用层：为用户提供网络服务接口，处理应用程序逻辑，数据单位是数据。</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/22/computerNetworks/" data-id="cmem8hvp50001k4vtb3vg2s65" data-title="计算机网络" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/08/22/computerNetworks/" data-id="cmem8vwvw0000p8vt6vjs1mn3" data-title="计算机网络" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
