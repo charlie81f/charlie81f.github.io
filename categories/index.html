@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   
   
-  <title>HTML | Hexo</title>
-  <link rel="canonical" href="http://example.com/2025/08/22/html/">
+  <title>分类 | Hexo</title>
+  <link rel="canonical" href="http://example.com/categories/index.html">
   <meta name="author" content="John Doe" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,15 +17,11 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="HTML DOM ​	DOM (Document Object Model)提供了对文档的全面编程接口。 ​	主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。 DOM事件传播机制 ​	DOM事件传播分为三个阶段：捕获阶段；目标阶段；冒泡阶段。（win对象-&gt;目标-&gt;win对象） HTML标签 ​	可以绘制图形，文本，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HTML">
-<meta property="og:url" content="http://example.com/2025/08/22/html/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="http://example.com/categories/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HTML DOM ​	DOM (Document Object Model)提供了对文档的全面编程接口。 ​	主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。 DOM事件传播机制 ​	DOM事件传播分为三个阶段：捕获阶段；目标阶段；冒泡阶段。（win对象-&gt;目标-&gt;win对象） HTML标签 ​	可以绘制图形，文本，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-08-22T02:46:52.000Z">
-<meta property="article:modified_time" content="2025-08-22T02:49:40.965Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -133,82 +129,76 @@
 
         
 
-            <article itemscope itemtype="https://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/22/html/">
-    <div class="kratos-hentry kratos-page-inner clearfix">
-        <header class="kratos-page-header">
-            
-                <h1 class="kratos-page-title text-center" itemprop="name headline">HTML</h1>
-            
-            <ul class="kratos-page-meta text-center">
-                <li><time datetime="2025-08-22T02:46:52.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2025-08-22</time></li>
-                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <i class="fa fa-user"></i> 作者 <span itemprop="name">John Doe</span>
-                </li>
-                
-                    <li>
-                        <i class="fa fa-edit"></i> 
-                        
-                        
-                            218
-                        
-                        字
-                    </li>
-                
-                
-                
-            </ul>
-        </header>
-        <div class="kratos-page-content kr-post">
-            
-            
-            
-            <hr />
-            <div itemprop="articleBody"><p>HTML DOM</p>
-<p>​	DOM (Document Object Model)提供了对文档的全面编程接口。</p>
-<p>​	主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。</p>
-<p>DOM事件传播机制</p>
-<p>​	DOM事件传播分为三个阶段：捕获阶段；目标阶段；冒泡阶段。（win对象-&gt;目标-&gt;win对象）</p>
-<p>HTML标签<canvas></p>
-<p>​	可以绘制图形，文本，描绘颜色，变换图形，还能实现动画。</p>
-</div>
+            <style>
+  .categories ul {
+    list-style: none;
+  }
+
+  .categories .category-list-item {
+    position: relative;
+    padding-top: 20px;
+  }
+
+  .categories .category-list-item .category-list-link::before {
+    content: " ";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    margin-left: -4px;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    background: #bbb;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .categories .category-list-item .category-list-link:hover::before {
+    background: #222;
+  }
+
+  a {
+    color: #666;
+  }
+
+  .categories .category-list-item .category-list-link {
+    position: relative;
+    margin-left: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: inherit;
+  }
+
+  .categories .category-list-item .category-list-link::after {
+    opacity: 0;
+    font-family: fontawesome;
+    content: "\f138";
+    margin-left: 12px;
+    color: #00a7e0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .categories .category-list-item .category-list-link:hover::after {
+    opacity: 100%;
+  }
+</style>
+
+<article>
+  <div class="kratos-hentry kratos-page-inner clearfix">
+    <header class="kratos-page-header">
+      <h1 class="kratos-page-title text-center" itemprop="name headline">分类列表</h1>
+    </header>
+    <div class="kratos-page-content kr-categories">
+      <div style="margin-left: 2em;">
+        <h3 class="archive-page-counter">
+          当前共有 0 种分类 (゜-゜)つロ 干杯~
+        </h3>
+        <div class="categories">
+          
         </div>
-        
-        <footer class="kratos-entry-footer clearfix">
-            
-            
-            
-                <div class="post-actions text-center clearfix" id="post-actions">
-                
-                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
-                
-                
-                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
-                
-                </div>
-            
-            <div class="footer-tag clearfix">
-                <div class="pull-left">
-                <i class="fa fa-tags"></i>
-                    
-                </div>
-                <div class="pull-date">
-                    <time datetime="2025-08-22T02:49:40.965Z" itemprop="dateModified">最后编辑：2025-08-22</time>
-                </div>
-            </div>
-        </footer>
+      </div>
     </div>
-    
-        <nav class="navigation post-navigation clearfix" role="navigation">
-            
-            <div class="nav-previous clearfix">
-                <a title=" Web" href="/2025/08/22/web/"><i class="fa fa-angle-left"></i> 上一篇</a>
-            </div>
-            
-            
-        </nav>
-    
-    
+  </div>
 </article>
 
         

@@ -1,342 +1,807 @@
-
 <!DOCTYPE html>
-<html lang="en" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hexo</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <link rel="canonical" href="http://example.com/index.html">
+  <meta name="author" content="John Doe" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="" />
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
+  
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
+  
+  
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  
+  <!-- 自定义站点横幅和背景 -->
+  <style>
     
-    <meta name="author" content="John Doe"> 
-    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('');
+      }
     
     
-    
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Hexo"/>
-    
-    
-    
-    
-    
-    <meta property="og:site_name" content="Hexo"/>
-    <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Hexo"/>
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('');
+        }
+      }
     
     
-<link rel="stylesheet" href="/css/diaspora.css">
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
+  </style>
 
-    <script>window.searchDbPath = "/search.xml";</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <!-- 额外的追加注入项 -->
+  
 <meta name="generator" content="Hexo 7.3.0"></head>
 
-<body class="loading">
-    <span id="config-title" style="display:none">Hexo</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="/img/logo.png" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
-        
-            <a href="mailto:xxxx@gmail.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2025 John Doe.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-		<span> | </span><a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备xxxxxxx号</a>
-		
-    </p>
-</div>
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Hexo</a></div>
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Hexo</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-<div id="container">
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <!-- Breadcrumb for tag & category page -->
+
+
+
     
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
-        </div>
-    </div>
     
-    <div id="post0">
-        <p>八月 22, 2025</p>
-        <h2><a href="/2025/08/22/html/" title="HTML" class="posttitle">HTML</a></h2>
-        <p class="summary">HTML DOM
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/html/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/HTML">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/html/" itemprop="mainEntityOfPage"><span itemprop="name headline">HTML</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            HTML DOM
 ​	DOM (Document Object Model)提供了对文档的全面编程接口。
-​	主要...</p>
+​	主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。
+DO...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T02:46:52.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/html/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
     </div>
+</article>
     
-</div>
 
-    <div id="primary">
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
         
-<div class="post">
-    <a href="/2025/08/22/web/" title="Web">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/web/" title="Web" class="posttitle">Web</a></h3>
-        <p>Json对象和数组：
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/web/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Web">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/web/" itemprop="mainEntityOfPage"><span itemprop="name headline">Web</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            Json对象和数组：
 ​	对象是键值对集合，数组是值的有序列表；
 ​	Json对象的值可以包含数组，数组的元素也可以是一个对象，能够支持多层嵌套。
-前端渲...</p>
+前端渲染和后端渲染：
+
+​	前端渲染：React,Vue等；后端渲染：传统PHP,Ja...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T02:38:22.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/web/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
     </div>
-</div>
+</article>
+    
 
-
-<div class="post">
-    <a href="/2025/08/22/javascript/" title="Javascript">
-        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/javascript/" title="Javascript" class="posttitle">Javascript</a></h3>
-        <p>文件与拖拽API的底层原理
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/javascript/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Javascript">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/javascript/" itemprop="mainEntityOfPage"><span itemprop="name headline">Javascript</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            文件与拖拽API的底层原理
 ​	1）文件API：
-​	显示选择机制：只有通过input和拖拽等主动行为才能访问文件；无路径访问：JavaScript无法知...</p>
+​	显示选择机制：只有通过input和拖拽等主动行为才能访问文件；无路径访问：JavaScript无法知晓真正的文件路径；同源限制：读取的文件内容只能在当前页面上下文使用。
+​	2）拖...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T02:31:49.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/javascript/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
     </div>
-</div>
+</article>
+    
 
-
-<div class="post">
-    <a href="/2025/08/22/dsa/" title="数据结构和算法">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/dsa/" title="数据结构和算法" class="posttitle">数据结构和算法</a></h3>
-        <p>枚举算法
-​	描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。...</p>
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/dsa/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/dsa/" itemprop="mainEntityOfPage"><span itemprop="name headline">数据结构和算法</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            枚举算法
+​	描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。
+​	核心思想：...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:17:33.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/dsa/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
     </div>
-</div>
+</article>
+    
 
-
-<div class="post">
-    <a href="/2025/08/22/hexo/" title="Hexo">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/hexo/" title="Hexo" class="posttitle">Hexo</a></h3>
-        <p>​	命令：
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/hexo/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Hexo">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/hexo/" itemprop="mainEntityOfPage"><span itemprop="name headline">Hexo</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            ​	命令：
 # 新建博客
 hexo new&#39;xxx&#39;
 # 清除之前所有的公共文件
 hexo clean
 # 重新生成html文件
-hexo...</p>
+hexo g
+# 上传到GitHub
+hexo d
+
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:16:55.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/hexo/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
     </div>
-</div>
+</article>
+    
 
-
-<div class="post">
-    <a href="/2025/08/22/markdown/" title="Markdown">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/markdown/" title="Markdown" class="posttitle">Markdown</a></h3>
-        <p>Markdown链接语法
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/markdown/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Markdown">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/markdown/" itemprop="mainEntityOfPage"><span itemprop="name headline">Markdown</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            Markdown链接语法
 ​	效果：链接文本
 ​	格式：[链接文本](url)
 ​	可以使用反引号&#96;&#96;包围创建成代码片段来解决显示。
-HT...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/08/22/node/" title="Node">
-        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/node/" title="Node" class="posttitle">Node</a></h3>
-        <p>npm安装路径
-​	全局安装一般在c盘的node_modules下，输入npm config get prefix命令直接查看全局安装路径。
-​	本地安装...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/08/22/css/" title="CSS">
-        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/css/" title="CSS" class="posttitle">CSS</a></h3>
-        <p>TailwindCSS样式表
-​	描述：实用优先的CSS框架，没有预定义的组件，而是提供了原子化的预定义类。
-​	核心特点：实用类优先、响应式设计、快速开...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/08/22/vue/" title="Vue3">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/vue/" title="Vue3" class="posttitle">Vue3</a></h3>
-        <p>Vue3
-​	描述：Vue.js是一套构建用户界面的渐进式框架，只关注视图层，采用自底向上增量开发的设计，尽可能通过简单的API实现响应的数据绑定和组合的...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/08/22/docker/" title="Docker">
-        <img src="/img/welcome-cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>八月 22, 2025</p>
-        <h3><a href="/2025/08/22/docker/" title="Docker" class="posttitle">Docker</a></h3>
-        <p>​	描述：Docker是一个开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Li...</p>
-    </div>
-</div>
-
-
-    </div>
-    
-    <div id="pager"><a href="/page/2/" class="more">加载更多</a></div>
-    
-</div>
-<div id="preview"></div>
-
-
-
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
+HTML指数标签
+​	效果：2n
+​	格式：2&lt;sup&gt;n&lt;&#x2F;su...
+                        
+                    </p>
                 </div>
             </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:16:09.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/markdown/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/node/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Node">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/node/" itemprop="mainEntityOfPage"><span itemprop="name headline">Node</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            npm安装路径
+​	全局安装一般在c盘的node_modules下，输入npm config get prefix命令直接查看全局安装路径。
+​	本地安装始终位于当前项目的node_modules下。
+
+                        
+                    </p>
+                </div>
             </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:15:34.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/node/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/css/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/CSS">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/css/" itemprop="mainEntityOfPage"><span itemprop="name headline">CSS</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            TailwindCSS样式表
+​	描述：实用优先的CSS框架，没有预定义的组件，而是提供了原子化的预定义类。
+​	核心特点：实用类优先、响应式设计、快速开发、自定义框架等。
+TailwindCSS布局类Layout
+​	描述：设置元素...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:14:18.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/css/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/vue/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Vue3">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/vue/" itemprop="mainEntityOfPage"><span itemprop="name headline">Vue3</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            Vue3
+​	描述：Vue.js是一套构建用户界面的渐进式框架，只关注视图层，采用自底向上增量开发的设计，尽可能通过简单的API实现响应的数据绑定和组合的视图组件。
+​	优点：响应式数据绑定，虚拟DOM，灵活性与渐进性，易于集成等。
+...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:13:25.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/vue/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/2025/08/22/docker/">
+                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/Docker">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        
+                    <h2 class="kratos-entry-title"><a href="/2025/08/22/docker/" itemprop="mainEntityOfPage"><span itemprop="name headline">Docker</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            ​	描述：Docker是一个开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+​	优点：跨平台一致性，资源高效，快速部署，...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2025-08-22T01:08:08.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2025-08-22</a>
+                </time>
+                <a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/2025/08/22/docker/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+
+
+    <div class='text-center pagination'>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    </div>
+
+
+
+
+
+
+        
+
+            </section>
+
+            
+                
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+        <div class="sticky-area">
+    
+    
+    </div>
+</section>
+            
+
+        
+
+                </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2025 Hexo 版权所有.</li>
+                            <li>本站已运行<span id="kr-since">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 John Doe 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
+                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
+            </div>
+            <div id="gotop-box" class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">打赏</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
             </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">打赏提示信息</div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
             </div>
         </div>
     </div>
 </div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
 
 
 
 
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">分享提示信息</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
 
 
+
+<!-- 额外的追加注入项 -->
+
+
+        <script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+
+
+
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
+
+
+<script defer src="/js/kr-core.min.js"></script>
+
+
+  <script defer src="/js/kr-pjax.min.js"></script>
+
+
+<!-- 额外的追加注入项 -->
+
+
+    </body>
 </html>
