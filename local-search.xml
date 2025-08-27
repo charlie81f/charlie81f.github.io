@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>机器学习</title>
+    <link href="/2025/08/26/machineLearning/"/>
+    <url>/2025/08/26/machineLearning/</url>
+    
+    <content type="html"><![CDATA[<h1 id="conda指令："><a href="#conda指令：" class="headerlink" title="conda指令："></a>conda指令：</h1><p>&emsp;查看环境：<code>conda env list</code></p><p>&emsp;进入环境：<code>conda activate 环境名称</code></p><p>&emsp;退出环境：<code>conda deactivate</code></p><p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p><p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p><p>&emsp;查看当前源：<code>pip config list</code></p><p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+      <tag>人工智能</tag>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML</title>
+    <link href="/2025/08/22/html/"/>
+    <url>/2025/08/22/html/</url>
+    
+    <content type="html"><![CDATA[<p>HTML DOM</p><p>​DOM (Document Object Model)提供了对文档的全面编程接口。</p><p>​主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。</p><br><br><p>DOM事件传播机制</p><p>​DOM事件传播分为三个阶段：捕获阶段；目标阶段；冒泡阶段。（win对象-&gt;目标-&gt;win对象）</p><br><br><p>HTML标签<code>&lt;canvas&gt;</code></p><p>​可以绘制图形，文本，描绘颜色，变换图形，还能实现动画。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Web</title>
+    <link href="/2025/08/22/web/"/>
+    <url>/2025/08/22/web/</url>
+    
+    <content type="html"><![CDATA[<p>Json对象和数组：</p><p>​对象是键值对集合，数组是值的有序列表；</p><p>​Json对象的值可以包含数组，数组的元素也可以是一个对象，能够支持多层嵌套。</p><p>前端渲染和后端渲染：</p><p><img src="/2025/08/22/web/render.png" alt="render.png"></p><p>​前端渲染：React,Vue等；后端渲染：传统PHP,Java,Python等。</p><p>​现代开发常采用混合方案：同构渲染，首次访问使用SSR快速呈现内容，后续交互转为CSR提供流畅体验，如 Next.js (React), Nuxt.js (Vue)。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Javascript</title>
+    <link href="/2025/08/22/javascript/"/>
+    <url>/2025/08/22/javascript/</url>
+    
+    <content type="html"><![CDATA[<p>文件与拖拽API的底层原理</p><p>​1）文件API：</p><p>​显示选择机制：只有通过input和拖拽等主动行为才能访问文件；无路径访问：JavaScript无法知晓真正的文件路径；同源限制：读取的文件内容只能在当前页面上下文使用。</p><p>​2）拖拽API：</p><p>​拖拽本质是操作系统提供的跨应用（跨源）通信机制。</p><p>​拖拽开始时，OS创建“拖拽会话”；拖拽过程中，系统跟踪光标位置并查询下方的放置目标；放置时，系统协调数据传递。</p><p>​拖拽实现的层次</p><p><img src="/2025/08/22/javascript/dragAndDrop.png" alt="dragAndDrop.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数据结构和算法</title>
+    <link href="/2025/08/22/dsa/"/>
+    <url>/2025/08/22/dsa/</url>
+    
+    <content type="html"><![CDATA[<p>枚举算法</p><p>​描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。</p><p>​核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解。</p><p>​优点：简单基本，便于实现，容易调试，正确性容易证明。</p><p>​思路：</p><ul><li><p>确定枚举对象、枚举范围、判断条件。</p></li><li><p>枚举可能的情况并验证是否是问题的解。</p></li><li><p>考虑提高效率（缩小状态空间，限制枚举条件，找特殊性质避免重复求解）。</p><p>题库：百钱买百鸡，LeetCode1504。</p></li></ul><p>vector二维数组的构造</p><p><code>vector&lt;vector&lt;int&gt;&gt; f(m, vector&lt;int&gt;(n, 0));</code></p><p>​其中<code>vector&lt;int&gt;(n, 0)</code>运用了vector的构造函数，创造了一个一维长度为n的vector并全部初始化为0。</p><p>动态规划Dynamic programming</p><p>​描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，常常适用于有重叠子问题和最优子结构性质的问题。</p><p>​一般的递归时间复杂度太高，<code>递归时间复杂度 = 解决一个子问题时间*子问题个数</code>，需要把子问题的结果进行存储，利用空间来降低时间复杂度，把二叉树变成了树干，子问题个数从O(2<sup>n</sup>)变成了O(n)。同理，转换递归时存储结果时是自顶向下的解法，而动态规划就是自底向上的解法。</p><p>​典型特征：最优子结构、状态转移方程、边界、重叠子问题。</p><p>​核心思想：拆分子问题、记住过往、减少重复计算。</p><p>​思路：</p><ul><li><p>穷举分析</p></li><li><p>确认边界</p><ul><li>找出规律，确定最优子结构<ul><li>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</li></ul></li><li>写出状态转移方程</li></ul></li></ul><p>​题库：LeetCode1277，LeetCode1504</p><p>滑动窗口算法</p><p>​基本思想：滑动窗口算法（Sliding Window Algorithm）是一种用于处理数组或列表子区间问题的高效技巧。维护一个大小可变或固定的”窗口”在数据结构上滑动，将许多嵌套循环的问题（O(n²)或O(n³)）转化为单循环问题（O(n)），显著降低时间复杂度。</p><p>​关键点：窗口表示：左，右指针表示窗口的边界；窗口扩张：右指针移动，扩大窗口，寻找可行解；窗口收缩：左指针移动，缩小窗口，优化可行解；结果更新：在窗口滑动的过程中不断更新最优解。</p><p>​例子：全0子数组的数目（LeetCode2348）</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="/2025/08/22/hexo/"/>
+    <url>/2025/08/22/hexo/</url>
+    
+    <content type="html"><![CDATA[<p>​命令：</p><p><em># 新建博客</em></p><p><code>hexo new&#39;xxx&#39;</code></p><p><em># 清除之前所有的公共文件</em></p><p><code>hexo clean</code></p><p><em># 重新生成html文件</em></p><p><code>hexo g</code></p><p><em># 上传到GitHub</em></p><p><code>hexo d</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Markdown</title>
+    <link href="/2025/08/22/markdown/"/>
+    <url>/2025/08/22/markdown/</url>
+    
+    <content type="html"><![CDATA[<p>Markdown链接语法</p><p>​效果：<a href="url">链接文本</a></p><p>​格式：<code>[链接文本](url)</code></p><p>​可以使用反引号&#96;&#96;包围创建成代码片段来解决显示。</p><p>HTML指数标签<sup></p><p>​效果：2<sup>n</sup></p><p>​格式：<code>2&lt;sup&gt;n&lt;/sup&gt;</code></p><p>Markdown列表语法</p><p>​效果：</p><ul><li><p>列表一</p></li><li><p>列表二</p><p>格式：<code>- 列表一</code></p></li></ul><p>Markdown斜体语法</p><p>​效果：<em>斜体</em></p><p>​格式：<code>*斜体*</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Node</title>
+    <link href="/2025/08/22/node/"/>
+    <url>/2025/08/22/node/</url>
+    
+    <content type="html"><![CDATA[<p>npm安装路径</p><p>​全局安装一般在c盘的<code>node_modules</code>下，输入<code>npm config get prefix</code>命令直接查看全局安装路径。</p><p>​本地安装始终位于当前项目的<code>node_modules</code>下。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSS</title>
+    <link href="/2025/08/22/css/"/>
+    <url>/2025/08/22/css/</url>
+    
+    <content type="html"><![CDATA[<p>TailwindCSS样式表</p><p>​描述：实用优先的CSS框架，没有预定义的组件，而是提供了原子化的预定义类。</p><p>​核心特点：实用类优先、响应式设计、快速开发、自定义框架等。</p><p>TailwindCSS布局类Layout</p><p>​描述：设置元素的显示类型和布局方式。</p><p>​关键类：宽高比<Aspect Ratio>、容器 <Container>、列布局 <Columns>、分页<break>、文本断行<box-decoration>、盒子大小<box>、显示属性<display>、浮动<float>。</p><p>TailwindCSS间距类Spacing</p><p>​描述：控制元素的内外边距。</p><p>​关键类：外边距<Margin>、内边距<Padding>、行间距leading-xx、字间距tracking-xx、空间<Gap>。</p><p>TailwindCSS尺寸类Sizing</p><p>​描述：设置元素的宽度和高度。</p><p>​关键类：宽度 w-xx、高度 h-xx、size工具size-xx、最小&#x2F;大宽&#x2F;高度min&#x2F;max-w&#x2F;h-xx、自动尺寸 auto。</p><p>TailwindCSS排版类Typography</p><p>​描述：控制文本的对齐、字体大小、粗细等。</p><p>​关键类：字体&#x2F;字体粗细font-xx、字体大小&#x2F;文本颜色&#x2F;文本对齐text-xx、行间距leading-xx、字间距tracking-xx、响应式字体。</p><p>TailwindCSS背景类Backgroud</p><p>​描述：设置元素的背景颜色、背景图和透明度。</p><p>​关键类：背景颜色bg-xx。</p><p>TailwindCSS边框类Borders</p><p>​描述：设置元素的边框、边框宽度和圆角。</p><p>​关键类：边框宽度&#x2F;颜色&#x2F;样式Border-xx、边框半径rounded-xx。</p><p>TailwindCSS交互状态与动画</p><p>​描述：处理元素的交互状态（如悬停、聚焦等）和创建流畅的动画效果。</p><p>​关键类：悬停<hover>、聚焦<focus>、激活<active>、禁用<disabled>、过渡<Transition>、变换<Transform>。</p><p>内联元素和块级元素区别</p><p><img src="/2025/08/22/css/display.png" alt="display.png"></p><p>​display属性可以改变，display-block，元素表现为块级元素；display-inline，元素表现为内联元素；display-inline-block，混合特性，不换行但可以设置宽高。</p><p>Media Queries</p><p>​是CSS3的核心功能之一，它使网页能够根据不同的设备特性（如屏幕尺寸、分辨率、方向等）应用不同的样式规则。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue3</title>
+    <link href="/2025/08/22/vue/"/>
+    <url>/2025/08/22/vue/</url>
+    
+    <content type="html"><![CDATA[<p>Vue3</p><p>​描述：Vue.js是一套构建用户界面的渐进式框架，只关注视图层，采用自底向上增量开发的设计，尽可能通过简单的API实现响应的数据绑定和组合的视图组件。</p><p>​优点：响应式数据绑定，虚拟DOM，灵活性与渐进性，易于集成等。</p><p>​命令：</p><p><em># 创建Vue项目</em><br><code>npm init vue@latest</code></p><p><em># 启动开发服务器</em></p><p><code>npm install</code></p><p><code>npm run dev</code></p><p><em># 打开图形化界面</em></p><p><code>npm install @vue/cli</code></p><p><code>vue ui</code></p><p>Vite</p><p>​描述：是一个现代化的前端构建工具，通过利用现代浏览器的原生ES模块支持，提供快速的开发体验。</p><p>​组成：</p><ul><li><p>开发服务器：基于原生ES模块，提供超快的热更新。</p></li><li><p>构建命令：使用Rollup打包代码，生成适用于生产环境的优化静态资源。</p><p>优点：急速启动，快速热更新，支持TS，JSX等，高度可扩展。</p></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Docker</title>
+    <link href="/2025/08/22/docker/"/>
+    <url>/2025/08/22/docker/</url>
+    
+    <content type="html"><![CDATA[<p>​描述：Docker是一个开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p><p>​优点：跨平台一致性，资源高效，快速部署，隔离性。</p><p>​基本命令：</p><p><em># 拉取镜像（如官方Nginx镜像)</em></p><p><code>docker pull nginx</code></p><p><em># 查看运行中的容器</em><br><code>docker  ps</code></p><p><em># 运行容器（-d 后台运行，-p 映射端口）</em><br><code>docker run -d -p 80:80 nginx</code></p><p><em># 构建镜像（基于当前目录的Dockerfile）</em><br><code>docker build -t my-app .</code></p><p><em># 进入容器内部</em><br><code>docker exec -it &lt;容器ID&gt; /bin/bash</code></p><p><em># 查看进程占用的端口号</em></p><p><code>ps aux</code></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>C++</title>
+    <link href="/2025/08/22/cpp/"/>
+    <url>/2025/08/22/cpp/</url>
+    
+    <content type="html"><![CDATA[<p>C++右值自增是在表达式后一步再自增。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="/2025/08/22/computerNetworks/"/>
+    <url>/2025/08/22/computerNetworks/</url>
+    
+    <content type="html"><![CDATA[<p>LocalStorage和SessionStorage的区别</p><p><img src="/2025/08/22/computerNetworks/LocalStorage.png" alt="LocalStorage.png"></p><p>​LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。</p><p><br><br></p><p>WebSocket</p><p>​在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。</p><p>​HTTP：无状态，单向请求-响应模式&#x3D;&#x3D;&#x3D;&gt;WebSocket：持久连接，双向实时通信。还免去了重复的HTTP头开销。</p><p>WebRTC</p><p>​虽然设计为P2P通信技术，媒体流是双向传输，但需要借助信令服务器和STUN&#x2F;TURN服务器。</p><p>​信令服务器：交换SDP会话、房间管理；STUN：获取公网地址；TURN：数据中继。</p><p>TCP&#x2F;IP五层模型（下到上）</p><p>​1）物理层：通过物质介质（光纤、电缆等）传输原始比特流，数据单位是比特。</p><p>​2）链路层：在直接相连的节点间传输数据，处理物理寻址（MAC）和错误检测，数据单位是帧。</p><p>​3）网络层：负责逻辑寻址、路由选择和分组转发，数据单位是包。</p><p>​4）传输层：提供端到端的数据传输，流量控制和错误恢复，数据单位是段。</p><p>​5）应用层：为用户提供网络服务接口，处理应用程序逻辑，数据单位是数据。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
