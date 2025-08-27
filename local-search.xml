@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<p>先尝试<code>ssh -T git@github.com</code>。</p><p>&emsp;</p><p>有可能是22端口被阻隔了，尝试443端口，在config中修改为：</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">Host github.com <br>        Hostname ssh.github.com <br>        Port <span class="hljs-number">443</span><br>        <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>        ProxyCommand connect -S 系统代理地址 %h %p<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -102,6 +108,12 @@
     
     <content type="html"><![CDATA[<h1 id="指令："><a href="#指令：" class="headerlink" title="指令："></a>指令：</h1><p>&emsp;新建博客：<code>hexo new&#39;xxx&#39;</code></p><p>&emsp;清除之前所有的公共文件：<code>hexo clean</code></p><p>&emsp;重新生成html文件：<code>hexo g</code></p><p>&emsp;上传到GitHub：<code>hexo d</code></p><p>&emsp;查看hexo版本：<code>hexo version</code></p><p>&emsp;测试Github到SSH的连接：<code>ssh -T git@github.com</code></p><p>&emsp;测试到Github的网络连接是否通畅：<code>ping github</code></p><p><em># ping命令使用 ICMP 协议，git 命令使用 HTTP&#x2F;HTTPS 协议。</em></p>]]></content>
     
+    
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
     
     
     <tags>
