@@ -106,7 +106,7 @@
     <link href="/2025/08/22/hexo/"/>
     <url>/2025/08/22/hexo/</url>
     
-    <content type="html"><![CDATA[<h1 id="指令："><a href="#指令：" class="headerlink" title="指令："></a>指令：</h1><p>&emsp;新建博客：<code>hexo new&#39;xxx&#39;</code></p><p>&emsp;清除之前所有的公共文件：<code>hexo clean</code></p><p>&emsp;重新生成html文件：<code>hexo g</code></p><p>&emsp;上传到GitHub：<code>hexo d</code></p><p>&emsp;查看hexo版本：<code>hexo version</code></p><p>&emsp;测试Github到SSH的连接：<code>ssh -T git@github.com</code></p><p>&emsp;测试到Github的网络连接是否通畅：<code>ping github</code></p><p><em># ping命令使用 ICMP 协议，git 命令使用 HTTP&#x2F;HTTPS 协议。</em></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="指令："><a href="#指令：" class="headerlink" title="指令："></a>指令：</h1><p>&emsp;新建博客：<code>hexo new&#39;xxx&#39;</code></p><p>&emsp;清除之前所有的公共文件：<code>hexo clean</code></p><p>&emsp;重新生成html文件：<code>hexo g</code></p><p>&emsp;上传到GitHub：<code>hexo d</code></p><p>&#x3D;&#x3D;&gt;清除&#x2F;生成&#x2F;部署：<code>hexo clean &amp;&amp; hexo g -d</code></p><p>&emsp;查看hexo版本：<code>hexo version</code></p><p>&emsp;</p><p>&emsp;测试Github到SSH的连接：<code>ssh -T git@github.com</code></p><p>&emsp;测试到Github的网络连接是否通畅：<code>ping github</code></p><p><em># ping命令使用 ICMP 协议，git 命令使用 HTTP&#x2F;HTTPS 协议。</em></p>]]></content>
     
     
     <categories>
