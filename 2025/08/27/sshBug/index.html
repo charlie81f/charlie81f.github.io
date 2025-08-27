@@ -62,11 +62,6 @@
 <link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
 
 
 
@@ -271,7 +266,7 @@
                 <p>先尝试<code>ssh -T git@github.com</code>。</p>
 <p>&emsp;</p>
 <p>有可能是22端口被阻隔了，尝试443端口，在config中修改为：</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">Host github.com <br>        Hostname ssh.github.com <br>        Port <span class="hljs-number">443</span><br>        <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>        ProxyCommand connect -S 系统代理地址 %h %p<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host github.com </span><br><span class="line">        Hostname ssh.github.com </span><br><span class="line">        Port 443</span><br><span class="line">        User git</span><br><span class="line">        ProxyCommand connect -S 系统代理地址 %h %p</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -389,9 +384,6 @@
 
 
 
-
-
-  
 
 
 
