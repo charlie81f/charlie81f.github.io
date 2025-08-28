@@ -29,7 +29,7 @@
 <meta property="og:description" content="枚举算法描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：  确定枚举对象、枚举范围、判断条件。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-08-27T09:31:39.501Z">
+<meta property="article:modified_time" content="2025-08-28T02:08:25.290Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -68,7 +68,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2025-08-19T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          738 words
+          837 words
         
       </span>
     
@@ -259,6 +259,14 @@
         <div id="board">
           <article class="post-content mx-auto">
             <h1 id="seo-header">数据结构和算法</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    Last updated on August 28, 2025 am
+                  
+                
+              </p>
             
             
               <div class="markdown-body">
@@ -303,6 +311,19 @@
 <p>&emsp;</p>
 <h1 id="位运算算法"><a href="#位运算算法" class="headerlink" title="位运算算法"></a>位运算算法</h1><p>大大提高程序的性能，0&#x2F;1问题时好用。</p>
 <p>题库：LeetCode78</p>
+<p>&emsp;</p>
+<h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><p>基本思想：完全按照题目的描述或者问题的真实发生过程，一步步地用代码复现出来从而得到答案。</p>
+<p>核心思想：重视还原，过程再现。</p>
+<p>思路：</p>
+<ul>
+<li>提炼规则</li>
+<li>设计数据结构</li>
+<li>分解步骤，模块化</li>
+<li>注意边界</li>
+<li>调试</li>
+</ul>
+<p>特点：思路直观，实现繁琐，考验基本功。</p>
+<p>题库：LeetCode3446。</p>
 
                 
               </div>
@@ -321,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Basic/" class="category-chain-item">Basic</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="category-chain-item">基础知识</a>
   
   
 
@@ -362,7 +383,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>August 27, 2025</div>
+          <div>August 28, 2025</div>
         </div>
       
       

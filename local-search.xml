@@ -93,12 +93,12 @@
     <link href="/2025/08/22/dsa/"/>
     <url>/2025/08/22/dsa/</url>
     
-    <content type="html"><![CDATA[<h1 id="枚举算法"><a href="#枚举算法" class="headerlink" title="枚举算法"></a>枚举算法</h1><p>描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。</p><p>核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解。</p><p>优点：简单基本，便于实现，容易调试，正确性容易证明。</p><p>思路：</p><ul><li><p>确定枚举对象、枚举范围、判断条件。</p></li><li><p>枚举可能的情况并验证是否是问题的解。</p></li><li><p>考虑提高效率（缩小状态空间，限制枚举条件，找特殊性质避免重复求解）。</p><p>题库：百钱买百鸡，LeetCode1504，LeetCode78。</p></li></ul><p>&emsp;</p><h1 id="动态规划Dynamic-programming"><a href="#动态规划Dynamic-programming" class="headerlink" title="动态规划Dynamic programming"></a>动态规划Dynamic programming</h1><p>描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，常常适用于有重叠子问题和最优子结构性质的问题。</p><p>一般的递归时间复杂度太高，<code>递归时间复杂度 = 解决一个子问题时间*子问题个数</code>，需要把子问题的结果进行存储，利用空间来降低时间复杂度，把二叉树变成了树干，子问题个数从O(2<sup>n</sup>)变成了O(n)。同理，转换递归时存储结果时是自顶向下的解法，而动态规划就是自底向上的解法。</p><p>典型特征：最优子结构、状态转移方程、边界、重叠子问题。</p><p>核心思想：拆分子问题、记住过往、减少重复计算。</p><p>思路：</p><ul><li><p>穷举分析</p></li><li><p>确认边界</p><ul><li>找出规律，确定最优子结构<ul><li>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</li></ul></li><li>写出状态转移方程</li></ul></li></ul><p>题库：LeetCode1277，LeetCode1504</p><p>&emsp;</p><h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>基本思想：滑动窗口算法（Sliding Window Algorithm）是一种用于处理数组或列表子区间问题的高效技巧。维护一个大小可变或固定的”窗口”在数据结构上滑动，将许多嵌套循环的问题（O(n²)或O(n³)）转化为单循环问题（O(n)），显著降低时间复杂度。</p><p>关键点：窗口表示：左，右指针表示窗口的边界；窗口扩张：右指针移动，扩大窗口，寻找可行解；窗口收缩：左指针移动，缩小窗口，优化可行解；结果更新：在窗口滑动的过程中不断更新最优解。</p><p>题库：LeetCode2348</p><p>&emsp;</p><h1 id="位运算算法"><a href="#位运算算法" class="headerlink" title="位运算算法"></a>位运算算法</h1><p>大大提高程序的性能，0&#x2F;1问题时好用。</p><p>题库：LeetCode78</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="枚举算法"><a href="#枚举算法" class="headerlink" title="枚举算法"></a>枚举算法</h1><p>描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。</p><p>核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解。</p><p>优点：简单基本，便于实现，容易调试，正确性容易证明。</p><p>思路：</p><ul><li><p>确定枚举对象、枚举范围、判断条件。</p></li><li><p>枚举可能的情况并验证是否是问题的解。</p></li><li><p>考虑提高效率（缩小状态空间，限制枚举条件，找特殊性质避免重复求解）。</p><p>题库：百钱买百鸡，LeetCode1504，LeetCode78。</p></li></ul><p>&emsp;</p><h1 id="动态规划Dynamic-programming"><a href="#动态规划Dynamic-programming" class="headerlink" title="动态规划Dynamic programming"></a>动态规划Dynamic programming</h1><p>描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，常常适用于有重叠子问题和最优子结构性质的问题。</p><p>一般的递归时间复杂度太高，<code>递归时间复杂度 = 解决一个子问题时间*子问题个数</code>，需要把子问题的结果进行存储，利用空间来降低时间复杂度，把二叉树变成了树干，子问题个数从O(2<sup>n</sup>)变成了O(n)。同理，转换递归时存储结果时是自顶向下的解法，而动态规划就是自底向上的解法。</p><p>典型特征：最优子结构、状态转移方程、边界、重叠子问题。</p><p>核心思想：拆分子问题、记住过往、减少重复计算。</p><p>思路：</p><ul><li><p>穷举分析</p></li><li><p>确认边界</p><ul><li>找出规律，确定最优子结构<ul><li>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</li></ul></li><li>写出状态转移方程</li></ul></li></ul><p>题库：LeetCode1277，LeetCode1504</p><p>&emsp;</p><h1 id="滑动窗口算法"><a href="#滑动窗口算法" class="headerlink" title="滑动窗口算法"></a>滑动窗口算法</h1><p>基本思想：滑动窗口算法（Sliding Window Algorithm）是一种用于处理数组或列表子区间问题的高效技巧。维护一个大小可变或固定的”窗口”在数据结构上滑动，将许多嵌套循环的问题（O(n²)或O(n³)）转化为单循环问题（O(n)），显著降低时间复杂度。</p><p>关键点：窗口表示：左，右指针表示窗口的边界；窗口扩张：右指针移动，扩大窗口，寻找可行解；窗口收缩：左指针移动，缩小窗口，优化可行解；结果更新：在窗口滑动的过程中不断更新最优解。</p><p>题库：LeetCode2348</p><p>&emsp;</p><h1 id="位运算算法"><a href="#位运算算法" class="headerlink" title="位运算算法"></a>位运算算法</h1><p>大大提高程序的性能，0&#x2F;1问题时好用。</p><p>题库：LeetCode78</p><p>&emsp;</p><h1 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h1><p>基本思想：完全按照题目的描述或者问题的真实发生过程，一步步地用代码复现出来从而得到答案。</p><p>核心思想：重视还原，过程再现。</p><p>思路：</p><ul><li>提炼规则</li><li>设计数据结构</li><li>分解步骤，模块化</li><li>注意边界</li><li>调试</li></ul><p>特点：思路直观，实现繁琐，考验基本功。</p><p>题库：LeetCode3446。</p>]]></content>
     
     
     <categories>
       
-      <category>Basic</category>
+      <category>基础知识</category>
       
     </categories>
     
@@ -118,12 +118,12 @@
     <link href="/2025/08/22/hexo/"/>
     <url>/2025/08/22/hexo/</url>
     
-    <content type="html"><![CDATA[<h1 id="指令："><a href="#指令：" class="headerlink" title="指令："></a>指令：</h1><p>&emsp;新建博客：<code>hexo new&#39;xxx&#39;</code></p><p>&emsp;清除之前所有的公共文件：<code>hexo clean</code></p><p>&emsp;重新生成html文件：<code>hexo g</code></p><p>&emsp;上传到GitHub：<code>hexo d</code></p><p>&#x3D;&#x3D;&gt;清除&#x2F;生成&#x2F;部署：<code>hexo clean &amp;&amp; hexo g -d</code></p><p>&emsp;查看hexo版本：<code>hexo version</code></p><p>&emsp;</p><p>&emsp;测试Github到SSH的连接：<code>ssh -T git@github.com</code></p><p>&emsp;测试到Github的网络连接是否通畅：<code>ping github</code></p><p><em># ping命令使用 ICMP 协议，git 命令使用 HTTP&#x2F;HTTPS 协议。</em></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Hexo指令："><a href="#Hexo指令：" class="headerlink" title="Hexo指令："></a>Hexo指令：</h1><p>&emsp;新建博客：<code>hexo new&#39;xxx&#39;</code></p><p>&emsp;清除之前所有的公共文件：<code>hexo clean</code></p><p>&emsp;重新生成html文件：<code>hexo g</code></p><p>&emsp;上传到GitHub：<code>hexo d</code></p><p>&#x3D;&#x3D;&gt;清除&#x2F;生成&#x2F;部署：<code>hexo clean &amp;&amp; hexo g -d</code></p><p>&emsp;查看hexo版本：<code>hexo version</code></p><p>&emsp;</p><h1 id="Git指令："><a href="#Git指令：" class="headerlink" title="Git指令："></a>Git指令：</h1><p>&emsp;测试Github到SSH的连接：<code>ssh -T git@github.com</code></p><p>&emsp;测试到Github的网络连接是否通畅：<code>ping github</code></p><p><em># ping命令使用 ICMP 协议，git 命令使用 HTTP&#x2F;HTTPS 协议。</em></p>]]></content>
     
     
     <categories>
       
-      <category>Git</category>
+      <category>软件开发工具</category>
       
     </categories>
     
@@ -199,9 +199,21 @@
     <link href="/2025/08/22/docker/"/>
     <url>/2025/08/22/docker/</url>
     
-    <content type="html"><![CDATA[<p>​描述：Docker是一个开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p><p>​优点：跨平台一致性，资源高效，快速部署，隔离性。</p><p>​基本命令：</p><p><em># 拉取镜像（如官方Nginx镜像)</em></p><p><code>docker pull nginx</code></p><p><em># 查看运行中的容器</em><br><code>docker  ps</code></p><p><em># 运行容器（-d 后台运行，-p 映射端口）</em><br><code>docker run -d -p 80:80 nginx</code></p><p><em># 构建镜像（基于当前目录的Dockerfile）</em><br><code>docker build -t my-app .</code></p><p><em># 进入容器内部</em><br><code>docker exec -it &lt;容器ID&gt; /bin/bash</code></p><p><em># 查看进程占用的端口号</em></p><p><code>ps aux</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>描述：开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p><p>优点：跨平台一致性，资源高效，快速部署，隔离性。</p><p>基本命令：</p><p>&emsp;查看运行中的容器：<code>docker  ps</code></p><p>&emsp;进入容器内部：<code>docker exec -it &lt;容器ID&gt; /bin/bash</code></p><p>&emsp;杀死进程：<code>kill -9 项目ID</code></p><p>命令大全：<a href="https://www.runoob.com/docker/docker-command-manual.html">Docker 命令大全</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>软件开发工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+    </tags>
     
   </entry>
   
