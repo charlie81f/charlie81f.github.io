@@ -33,12 +33,12 @@
     <link href="/2025/08/26/machineLearning/"/>
     <url>/2025/08/26/machineLearning/</url>
     
-    <content type="html"><![CDATA[<h1 id="机器学习："><a href="#机器学习：" class="headerlink" title="机器学习："></a>机器学习：</h1><p>流程：<img src="/2025/08/26/machineLearning/machineLearningProcess.png" alt="machineLearningProcess"></p><p>类型：<img src="/2025/08/26/machineLearning/mlClassfication.png" alt="mlClassfication.png"></p><p>工作：<img src="/2025/08/26/machineLearning/mlWork.png" alt="mlWork.png"></p><h1 id="conda指令："><a href="#conda指令：" class="headerlink" title="conda指令："></a>conda指令：</h1><p>&emsp;查看环境：<code>conda env list</code></p><p>&emsp;进入环境：<code>conda activate 环境名称</code></p><p>&emsp;退出环境：<code>conda deactivate</code></p><p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p><p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p><p>&emsp;查看当前源：<code>pip config list</code></p><p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="机器学习："><a href="#机器学习：" class="headerlink" title="机器学习："></a>机器学习：</h1><p>流程：<img src="/2025/08/26/machineLearning/machineLearningProcess.png" alt="流程示例"></p><p>类型：<img src="/2025/08/26/machineLearning/mlClassfication.png" alt="类型"></p><p>工作：<img src="/2025/08/26/machineLearning/mlWork.png" alt="工作流"></p><h1 id="conda指令："><a href="#conda指令：" class="headerlink" title="conda指令："></a>conda指令：</h1><p>&emsp;查看环境：<code>conda env list</code></p><p>&emsp;进入环境：<code>conda activate 环境名称</code></p><p>&emsp;退出环境：<code>conda deactivate</code></p><p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p><p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p><p>&emsp;查看当前源：<code>pip config list</code></p><p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>]]></content>
     
     
     <categories>
       
-      <category>Basic</category>
+      <category>基础知识</category>
       
     </categories>
     
