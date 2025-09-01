@@ -21,12 +21,12 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 卷积神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系。特别之处在于它具有”记忆">
+    <meta name="description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 &emsp; 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 &emsp; 循环神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="http://example.com/2025/08/26/machineLearning/index.html">
 <meta property="og:site_name" content="ReovoalBlog">
-<meta property="og:description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 卷积神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系。特别之处在于它具有”记忆">
+<meta property="og:description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 &emsp; 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 &emsp; 循环神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/machineLearningProcess.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/mlClassfication.png">
@@ -34,8 +34,9 @@
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnnBasic.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/fnn.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/rnn.png">
+<meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnn.png">
 <meta property="article:published_time" content="2025-08-26T03:02:02.000Z">
-<meta property="article:modified_time" content="2025-08-29T10:07:56.130Z">
+<meta property="article:modified_time" content="2025-09-01T04:02:49.095Z">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          317 words
+          378 words
         
       </span>
     
@@ -271,7 +272,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    Last updated on August 29, 2025 pm
+                    Last updated on September 1, 2025 pm
                   
                 
               </p>
@@ -285,11 +286,16 @@
 <p>&emsp;</p>
 <h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/2025/08/26/machineLearning/cnnBasic.png" srcset="/img/loading.gif" lazyload alt="基础"></p>
 <p>神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。</p>
+<p>&emsp;</p>
 <h2 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h2><p><img src="/2025/08/26/machineLearning/fnn.png" srcset="/img/loading.gif" lazyload alt="Feedforward Neural Network，FNN"></p>
 <p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p>
-<h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN"></p>
+<p>&emsp;</p>
+<h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN"></p>
 <p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系。特别之处在于它具有”记忆能力”，可以在网络的隐藏状态中保存之前时间步的信息，用于处理随时间变化的数据模式。</p>
 <p>在 RNN 中，相同的层被用来接收输入参数，并在指定的神经网络中显示输出参数。</p>
+<p>&emsp;</p>
+<h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN"></p>
+<p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p>
 <p>&emsp;</p>
 <h1 id="conda指令"><a href="#conda指令" class="headerlink" title="conda指令"></a>conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p>
 <p>&emsp;进入环境：<code>conda activate 环境名称</code></p>
@@ -359,7 +365,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>August 29, 2025</div>
+          <div>September 1, 2025</div>
         </div>
       
       
