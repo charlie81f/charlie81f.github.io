@@ -33,7 +33,7 @@
     <link href="/2025/08/26/machineLearning/"/>
     <url>/2025/08/26/machineLearning/</url>
     
-    <content type="html"><![CDATA[<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="/2025/08/26/machineLearning/machineLearningProcess.png" alt="流程示例"></p><p><img src="/2025/08/26/machineLearning/mlClassfication.png" alt="类型"></p><p><img src="/2025/08/26/machineLearning/mlWork.png" alt="工作流"></p><p>&emsp;</p><h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/2025/08/26/machineLearning/cnnBasic.png" alt="基础"></p><p>神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。</p><p>&emsp;</p><h2 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h2><p><img src="/2025/08/26/machineLearning/fnn.png" alt="Feedforward Neural Network，FNN"></p><p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p><p>&emsp;</p><h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" alt="Recurrent Neural Network, RNN"></p><p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系,在自然语言处理（NLP）、语音识别、时间序列预测等任务中有着广泛的应用。</p><p>关键特性：其能够保持隐状态（hidden state），使得网络能够记住先前时间步的信息。</p><p>隐状态：通过上一时间步的隐状态和当前输入共同计算得到的。</p><p>&emsp;公式：$h_t &#x3D; f(W_{hh} h_{t-1} + W_{xh} x_t + b_h)$</p><p><em># $h_t$：当前时刻隐状态；$h_{t-1}$：前一时刻隐状态；$W_{xh},W_{hh}$：权重矩阵；$x_t$：当前时刻的输入；$b_h$：偏置；$f()$：激活函数。</em></p><p>输出：不仅依赖当前输入，还依赖于隐状态的历史信息。</p><p>&emsp;公式：$y_t &#x3D; W_{hy}h_t + b_y$</p><p><em># $y_t$：t时刻的输出向量；$W_{hy}$：隐状态到输出状态的矩阵。</em></p><p><img src="/2025/08/26/machineLearning/unfoldRnn.png" alt="展开视图"></p><p>&emsp;</p><h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/cnn.png" alt="Convolutional Neural Networks, CNN"></p><p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p><p>&emsp;</p><h2 id="Transformer模型"><a href="#Transformer模型" class="headerlink" title="Transformer模型"></a>Transformer模型</h2><p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p><p><img src="/2025/08/26/machineLearning/transformer.png" alt="transformer结构"></p><p>结构：</p><ul><li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li></ul><p>&emsp;&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p><p>&emsp;&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p><ul><li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li></ul><p>&emsp;&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p><p><em># 使用掩码防止未来信息泄露</em></p><p>&emsp;&emsp;编码器-解码器注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p><p>&emsp;&emsp;前馈神经网络（FNN）</p><p>核心思想：</p><ul><li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li><li>交叉注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li><li>位置编码（Positional Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li></ul><p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p><p>应用：NLP（机器翻译，GPT），CV（图像分类，目标检测），多模态任务。</p><p>&emsp;</p><p>&emsp;</p><h1 id="Conda指令"><a href="#Conda指令" class="headerlink" title="Conda指令"></a>Conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p><p>&emsp;进入环境：<code>conda activate 环境名称</code></p><p>&emsp;退出环境：<code>conda deactivate</code></p><p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p><p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p><p>&emsp;查看当前源：<code>pip config list</code></p><p>&emsp;查看当前包：<code>pip list</code></p><p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="/2025/08/26/machineLearning/machineLearningProcess.png" alt="流程示例"></p><p><img src="/2025/08/26/machineLearning/mlClassfication.png" alt="类型"></p><p><img src="/2025/08/26/machineLearning/mlWork.png" alt="工作流"></p><p>&emsp;</p><h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/2025/08/26/machineLearning/cnnBasic.png" alt="基础"></p><p>神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。</p><p>&emsp;</p><h2 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h2><p><img src="/2025/08/26/machineLearning/fnn.png" alt="Feedforward Neural Network，FNN"></p><p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p><p>&emsp;</p><h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" alt="Recurrent Neural Network, RNN"></p><p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系,在自然语言处理（NLP）、语音识别、时间序列预测等任务中有着广泛的应用。</p><p>关键特性：其能够保持隐状态（hidden state），使得网络能够记住先前时间步的信息。</p><p>隐状态：通过上一时间步的隐状态和当前输入共同计算得到的。</p><p>&emsp;公式：$h_t &#x3D; f(W_{hh} h_{t-1} + W_{xh} x_t + b_h)$</p><p><em># $h_t$：当前时刻隐状态；$h_{t-1}$：前一时刻隐状态；$W_{xh},W_{hh}$：权重矩阵；$x_t$：当前时刻的输入；$b_h$：偏置；$f()$：激活函数。</em></p><p>输出：不仅依赖当前输入，还依赖于隐状态的历史信息。</p><p>&emsp;公式：$y_t &#x3D; W_{hy}h_t + b_y$</p><p><em># $y_t$：t时刻的输出向量；$W_{hy}$：隐状态到输出状态的矩阵。</em></p><p><img src="/2025/08/26/machineLearning/unfoldRnn.png" alt="展开视图"></p><p>&emsp;</p><h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/cnn.png" alt="Convolutional Neural Networks, CNN"></p><p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p><p>&emsp;</p><h2 id="Transformer模型"><a href="#Transformer模型" class="headerlink" title="Transformer模型"></a>Transformer模型</h2><p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p><p><img src="/2025/08/26/machineLearning/transformer.png" alt="transformer结构"></p><p>结构：</p><ul><li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li></ul><p>&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p><p>&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p><ul><li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li></ul><p>&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p><p><em># 使用掩码防止未来信息泄露</em></p><p>&emsp;交叉注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p><p>&emsp;前馈神经网络（FNN）</p><p>核心思想：</p><ul><li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li><li>多头注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li><li>位置编码（Positional Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li></ul><p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p><p>应用：NLP（机器翻译，GPT），CV（图像分类，目标检测），多模态任务。</p><p>&emsp;</p><p>&emsp;</p><h1 id="Conda指令"><a href="#Conda指令" class="headerlink" title="Conda指令"></a>Conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p><p>&emsp;进入环境：<code>conda activate 环境名称</code></p><p>&emsp;退出环境：<code>conda deactivate</code></p><p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p><p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p><p>&emsp;查看当前源：<code>pip config list</code></p><p>&emsp;查看当前包：<code>pip list</code></p><p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>]]></content>
     
     
     <categories>
@@ -56,24 +56,11 @@
   
   
   <entry>
-    <title>HTML</title>
-    <link href="/2025/08/22/html/"/>
-    <url>/2025/08/22/html/</url>
-    
-    <content type="html"><![CDATA[<p>HTML DOM</p><p>​DOM (Document Object Model)提供了对文档的全面编程接口。</p><p>​主要功能：文档结构表示；元素选择和操作；事件处理（事件监听和触发、事件冒泡和捕获）；动态内容更新；样式操作；数据绑定。</p><br><br><p>DOM事件传播机制</p><p>​DOM事件传播分为三个阶段：捕获阶段；目标阶段；冒泡阶段。（win对象-&gt;目标-&gt;win对象）</p><br><br><p>HTML标签<code>&lt;canvas&gt;</code></p><p>​可以绘制图形，文本，描绘颜色，变换图形，还能实现动画。</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Web</title>
     <link href="/2025/08/22/web/"/>
     <url>/2025/08/22/web/</url>
     
-    <content type="html"><![CDATA[<p>Json对象和数组：</p><p>​对象是键值对集合，数组是值的有序列表；</p><p>​Json对象的值可以包含数组，数组的元素也可以是一个对象，能够支持多层嵌套。</p><p>前端渲染和后端渲染：</p><p><img src="/2025/08/22/web/render.png" alt="render.png"></p><p>​前端渲染：React,Vue等；后端渲染：传统PHP,Java,Python等。</p><p>​现代开发常采用混合方案：同构渲染，首次访问使用SSR快速呈现内容，后续交互转为CSR提供流畅体验，如 Next.js (React), Nuxt.js (Vue)。</p>]]></content>
+    <content type="html"><![CDATA[<p>Json对象和数组：</p><p>​对象是键值对集合，数组是值的有序列表；</p><p>​Json对象的值可以包含数组，数组的元素也可以是一个对象，能够支持多层嵌套。</p><p>&emsp;</p><p>前端渲染和后端渲染：</p><p><img src="/2025/08/22/web/render.png" alt="render.png"></p><p>​前端渲染：React,Vue等；后端渲染：传统PHP,Java,Python等。</p><p>​现代开发常采用混合方案：同构渲染，首次访问使用SSR快速呈现内容，后续交互转为CSR提供流畅体验，如 Next.js (React), Nuxt.js (Vue)。</p>]]></content>
     
     
     
@@ -86,9 +73,21 @@
     <link href="/2025/08/22/javascript/"/>
     <url>/2025/08/22/javascript/</url>
     
-    <content type="html"><![CDATA[<p>文件与拖拽API的底层原理</p><p>​1）文件API：</p><p>​显示选择机制：只有通过input和拖拽等主动行为才能访问文件；无路径访问：JavaScript无法知晓真正的文件路径；同源限制：读取的文件内容只能在当前页面上下文使用。</p><p>​2）拖拽API：</p><p>​拖拽本质是操作系统提供的跨应用（跨源）通信机制。</p><p>​拖拽开始时，OS创建“拖拽会话”；拖拽过程中，系统跟踪光标位置并查询下方的放置目标；放置时，系统协调数据传递。</p><p>​拖拽实现的层次</p><p><img src="/2025/08/22/javascript/dragAndDrop.png" alt="dragAndDrop.png"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="文件与拖拽API的底层原理"><a href="#文件与拖拽API的底层原理" class="headerlink" title="文件与拖拽API的底层原理"></a>文件与拖拽API的底层原理</h1><p>文件API：</p><p>&emsp;显示选择机制：只有通过input和拖拽等主动行为才能访问文件；</p><p>&emsp;无路径访问：JavaScript无法知晓真正的文件路径；</p><p>&emsp;同源限制：读取的文件内容只能在当前页面上下文使用。</p><p>拖拽API：</p><p>拖拽本质是操作系统提供的跨应用（跨源）通信机制。</p><p>过程：</p><p>&emsp;拖拽开始时，OS创建“拖拽会话”；</p><p>&emsp;拖拽过程中，系统跟踪光标位置并查询下方的放置目标；</p><p>&emsp;放置时，系统协调数据传递。</p><p><img src="/2025/08/22/javascript/dragAndDrop.png" alt="拖拽实现的层次"></p>]]></content>
     
     
+    <categories>
+      
+      <category>基础知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Javascipt</tag>
+      
+    </tags>
     
   </entry>
   
@@ -157,35 +156,21 @@
     <link href="/2025/08/22/markdown/"/>
     <url>/2025/08/22/markdown/</url>
     
-    <content type="html"><![CDATA[<p>Markdown链接语法</p><p>​效果：<a href="url">链接文本</a></p><p>​格式：<code>[链接文本](url)</code></p><p>​可以使用反引号&#96;&#96;包围创建成代码片段来解决显示。</p><p>HTML指数标签<sup></p><p>​效果：2<sup>n</sup></p><p>​格式：<code>2&lt;sup&gt;n&lt;/sup&gt;</code></p><p>Markdown列表语法</p><p>​效果：</p><ul><li><p>列表一</p></li><li><p>列表二</p><p>格式：<code>- 列表一</code></p></li></ul><p>Markdown斜体语法</p><p>​效果：<em>斜体</em></p><p>​格式：<code>*斜体*</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>效果：<a href="url">链接文本</a></p><p>格式：<code>[链接文本](url)</code></p><p>&emsp;</p><h2 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h2><p>效果：2<sup>n</sup></p><p>格式：<code>2&lt;sup&gt;n&lt;/sup&gt;</code></p><p>&emsp;</p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>效果：</p><ul><li><p>列表一</p></li><li><p>列表二</p><p>格式：<code>- 列表一</code></p></li></ul><p>&emsp;</p><h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>效果：<em>斜体</em></p><p>格式：<code>*斜体*</code></p><p>&emsp;</p><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>效果：$h_t$</p><p>格式：<code>$h_t$</code></p><p>&emsp;</p><p>&emsp;</p><h1 id="LaTex语法"><a href="#LaTex语法" class="headerlink" title="LaTex语法"></a>LaTex语法</h1><h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><p>效果：$h_t$，$h_{tt}$</p><p>格式：<code>h_t,h_&#123;tt&#125;</code></p>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Node</title>
-    <link href="/2025/08/22/node/"/>
-    <url>/2025/08/22/node/</url>
-    
-    <content type="html"><![CDATA[<p>npm安装路径</p><p>​全局安装一般在c盘的<code>node_modules</code>下，输入<code>npm config get prefix</code>命令直接查看全局安装路径。</p><p>​本地安装始终位于当前项目的<code>node_modules</code>下。</p>]]></content>
+    <categories>
+      
+      <category>软件开发工具</category>
+      
+    </categories>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>CSS</title>
-    <link href="/2025/08/22/css/"/>
-    <url>/2025/08/22/css/</url>
-    
-    <content type="html"><![CDATA[<p>TailwindCSS样式表</p><p>​描述：实用优先的CSS框架，没有预定义的组件，而是提供了原子化的预定义类。</p><p>​核心特点：实用类优先、响应式设计、快速开发、自定义框架等。</p><p>TailwindCSS布局类Layout</p><p>​描述：设置元素的显示类型和布局方式。</p><p>​关键类：宽高比<Aspect Ratio>、容器 <Container>、列布局 <Columns>、分页<break>、文本断行<box-decoration>、盒子大小<box>、显示属性<display>、浮动<float>。</p><p>TailwindCSS间距类Spacing</p><p>​描述：控制元素的内外边距。</p><p>​关键类：外边距<Margin>、内边距<Padding>、行间距leading-xx、字间距tracking-xx、空间<Gap>。</p><p>TailwindCSS尺寸类Sizing</p><p>​描述：设置元素的宽度和高度。</p><p>​关键类：宽度 w-xx、高度 h-xx、size工具size-xx、最小&#x2F;大宽&#x2F;高度min&#x2F;max-w&#x2F;h-xx、自动尺寸 auto。</p><p>TailwindCSS排版类Typography</p><p>​描述：控制文本的对齐、字体大小、粗细等。</p><p>​关键类：字体&#x2F;字体粗细font-xx、字体大小&#x2F;文本颜色&#x2F;文本对齐text-xx、行间距leading-xx、字间距tracking-xx、响应式字体。</p><p>TailwindCSS背景类Backgroud</p><p>​描述：设置元素的背景颜色、背景图和透明度。</p><p>​关键类：背景颜色bg-xx。</p><p>TailwindCSS边框类Borders</p><p>​描述：设置元素的边框、边框宽度和圆角。</p><p>​关键类：边框宽度&#x2F;颜色&#x2F;样式Border-xx、边框半径rounded-xx。</p><p>TailwindCSS交互状态与动画</p><p>​描述：处理元素的交互状态（如悬停、聚焦等）和创建流畅的动画效果。</p><p>​关键类：悬停<hover>、聚焦<focus>、激活<active>、禁用<disabled>、过渡<Transition>、变换<Transform>。</p><p>内联元素和块级元素区别</p><p><img src="/2025/08/22/css/display.png" alt="display.png"></p><p>​display属性可以改变，display-block，元素表现为块级元素；display-inline，元素表现为内联元素；display-inline-block，混合特性，不换行但可以设置宽高。</p><p>Media Queries</p><p>​是CSS3的核心功能之一，它使网页能够根据不同的设备特性（如屏幕尺寸、分辨率、方向等）应用不同的样式规则。</p>]]></content>
-    
-    
+    <tags>
+      
+      <tag>Markdown</tag>
+      
+    </tags>
     
   </entry>
   

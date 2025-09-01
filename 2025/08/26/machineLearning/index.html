@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnn.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/transformer.png">
 <meta property="article:published_time" content="2025-08-26T03:02:02.000Z">
-<meta property="article:modified_time" content="2025-09-01T06:34:22.638Z">
+<meta property="article:modified_time" content="2025-09-01T06:38:07.952Z">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          960 words
+          951 words
         
       </span>
     
@@ -312,19 +312,19 @@
 <ul>
 <li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li>
 </ul>
-<p>&emsp;&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
-<p>&emsp;&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
+<p>&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
+<p>&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
 <ul>
 <li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li>
 </ul>
-<p>&emsp;&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
+<p>&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
 <p><em># 使用掩码防止未来信息泄露</em></p>
-<p>&emsp;&emsp;编码器-解码器注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
-<p>&emsp;&emsp;前馈神经网络（FNN）</p>
+<p>&emsp;交叉注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
+<p>&emsp;前馈神经网络（FNN）</p>
 <p>核心思想：</p>
 <ul>
 <li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li>
-<li>交叉注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li>
+<li>多头注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li>
 <li>位置编码（Positional Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li>
 </ul>
 <p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p>
