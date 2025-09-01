@@ -34,9 +34,11 @@
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnnBasic.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/fnn.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/rnn.png">
+<meta property="og:image" content="http://example.com/2025/08/26/machineLearning/unfoldRnn.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnn.png">
+<meta property="og:image" content="http://example.com/2025/08/26/machineLearning/transformer.png">
 <meta property="article:published_time" content="2025-08-26T03:02:02.000Z">
-<meta property="article:modified_time" content="2025-09-01T04:02:49.095Z">
+<meta property="article:modified_time" content="2025-09-01T06:34:22.638Z">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -228,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          378 words
+          960 words
         
       </span>
     
@@ -291,18 +293,51 @@
 <p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p>
 <p>&emsp;</p>
 <h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN"></p>
-<p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系。特别之处在于它具有”记忆能力”，可以在网络的隐藏状态中保存之前时间步的信息，用于处理随时间变化的数据模式。</p>
-<p>在 RNN 中，相同的层被用来接收输入参数，并在指定的神经网络中显示输出参数。</p>
+<p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系,在自然语言处理（NLP）、语音识别、时间序列预测等任务中有着广泛的应用。</p>
+<p>关键特性：其能够保持隐状态（hidden state），使得网络能够记住先前时间步的信息。</p>
+<p>隐状态：通过上一时间步的隐状态和当前输入共同计算得到的。</p>
+<p>&emsp;公式：$h_t &#x3D; f(W_{hh} h_{t-1} + W_{xh} x_t + b_h)$</p>
+<p><em># $h_t$：当前时刻隐状态；$h_{t-1}$：前一时刻隐状态；$W_{xh},W_{hh}$：权重矩阵；$x_t$：当前时刻的输入；$b_h$：偏置；$f()$：激活函数。</em></p>
+<p>输出：不仅依赖当前输入，还依赖于隐状态的历史信息。</p>
+<p>&emsp;公式：$y_t &#x3D; W_{hy}h_t + b_y$</p>
+<p><em># $y_t$：t时刻的输出向量；$W_{hy}$：隐状态到输出状态的矩阵。</em></p>
+<p><img src="/2025/08/26/machineLearning/unfoldRnn.png" srcset="/img/loading.gif" lazyload alt="展开视图"></p>
 <p>&emsp;</p>
 <h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN"></p>
 <p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p>
 <p>&emsp;</p>
-<h1 id="conda指令"><a href="#conda指令" class="headerlink" title="conda指令"></a>conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p>
+<h2 id="Transformer模型"><a href="#Transformer模型" class="headerlink" title="Transformer模型"></a>Transformer模型</h2><p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p>
+<p><img src="/2025/08/26/machineLearning/transformer.png" srcset="/img/loading.gif" lazyload alt="transformer结构"></p>
+<p>结构：</p>
+<ul>
+<li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li>
+</ul>
+<p>&emsp;&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
+<p>&emsp;&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
+<ul>
+<li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li>
+</ul>
+<p>&emsp;&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
+<p><em># 使用掩码防止未来信息泄露</em></p>
+<p>&emsp;&emsp;编码器-解码器注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
+<p>&emsp;&emsp;前馈神经网络（FNN）</p>
+<p>核心思想：</p>
+<ul>
+<li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li>
+<li>交叉注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li>
+<li>位置编码（Positional Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li>
+</ul>
+<p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p>
+<p>应用：NLP（机器翻译，GPT），CV（图像分类，目标检测），多模态任务。</p>
+<p>&emsp;</p>
+<p>&emsp;</p>
+<h1 id="Conda指令"><a href="#Conda指令" class="headerlink" title="Conda指令"></a>Conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p>
 <p>&emsp;进入环境：<code>conda activate 环境名称</code></p>
 <p>&emsp;退出环境：<code>conda deactivate</code></p>
 <p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p>
 <p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p>
 <p>&emsp;查看当前源：<code>pip config list</code></p>
+<p>&emsp;查看当前包：<code>pip list</code></p>
 <p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>
 
                 
