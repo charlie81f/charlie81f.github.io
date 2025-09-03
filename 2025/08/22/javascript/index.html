@@ -21,12 +21,12 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="文件与拖拽API的底层原理文件API： &emsp;显示选择机制：只有通过input和拖拽等主动行为才能访问文件； &emsp;无路径访问：JavaScript无法知晓真正的文件路径； &emsp;同源限制：读取的文件内容只能在当前页面上下文使用。 拖拽API： 拖拽本质是操作系统提供的跨应用（跨源）通信机制。 过程： &emsp;拖拽开始时，OS创建“拖拽会话”； &emsp;拖拽过程中，系统跟">
+    <meta name="description" content="文件与拖拽API的底层原理 文件API：  显示选择机制：只有通过input和拖拽等主动行为才能访问文件；  无路径访问：JavaScript无法知晓真正的文件路径；  同源限制：读取的文件内容只能在当前页面上下文使用。 拖拽API： 拖拽本质是操作系统提供的跨应用（跨源）通信机制。 过程：  拖拽开始时，OS创建“拖拽会话”；  拖拽过程中，系统跟踪光标位置并查询下方的放置目标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript">
 <meta property="og:url" content="http://example.com/2025/08/22/javascript/index.html">
 <meta property="og:site_name" content="FianuBlog">
-<meta property="og:description" content="文件与拖拽API的底层原理文件API： &emsp;显示选择机制：只有通过input和拖拽等主动行为才能访问文件； &emsp;无路径访问：JavaScript无法知晓真正的文件路径； &emsp;同源限制：读取的文件内容只能在当前页面上下文使用。 拖拽API： 拖拽本质是操作系统提供的跨应用（跨源）通信机制。 过程： &emsp;拖拽开始时，OS创建“拖拽会话”； &emsp;拖拽过程中，系统跟">
+<meta property="og:description" content="文件与拖拽API的底层原理 文件API：  显示选择机制：只有通过input和拖拽等主动行为才能访问文件；  无路径访问：JavaScript无法知晓真正的文件路径；  同源限制：读取的文件内容只能在当前页面上下文使用。 拖拽API： 拖拽本质是操作系统提供的跨应用（跨源）通信机制。 过程：  拖拽开始时，OS创建“拖拽会话”；  拖拽过程中，系统跟踪光标位置并查询下方的放置目标">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/08/22/javascript/dragAndDrop.png">
 <meta property="article:published_time" content="2025-08-22T02:31:49.000Z">
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          156 words
+          157 words
         
       </span>
     
@@ -273,17 +273,20 @@
             
               <div class="markdown-body">
                 
-                <h1 id="文件与拖拽API的底层原理"><a href="#文件与拖拽API的底层原理" class="headerlink" title="文件与拖拽API的底层原理"></a>文件与拖拽API的底层原理</h1><p>文件API：</p>
-<p>&emsp;显示选择机制：只有通过input和拖拽等主动行为才能访问文件；</p>
-<p>&emsp;无路径访问：JavaScript无法知晓真正的文件路径；</p>
-<p>&emsp;同源限制：读取的文件内容只能在当前页面上下文使用。</p>
+                <h1 id="文件与拖拽api的底层原理">文件与拖拽API的底层原理</h1>
+<p>文件API：</p>
+<p> 显示选择机制：只有通过input和拖拽等主动行为才能访问文件；</p>
+<p> 无路径访问：JavaScript无法知晓真正的文件路径；</p>
+<p> 同源限制：读取的文件内容只能在当前页面上下文使用。</p>
 <p>拖拽API：</p>
 <p>拖拽本质是操作系统提供的跨应用（跨源）通信机制。</p>
 <p>过程：</p>
-<p>&emsp;拖拽开始时，OS创建“拖拽会话”；</p>
-<p>&emsp;拖拽过程中，系统跟踪光标位置并查询下方的放置目标；</p>
-<p>&emsp;放置时，系统协调数据传递。</p>
-<p><img src="/2025/08/22/javascript/dragAndDrop.png" srcset="/img/loading.gif" lazyload alt="拖拽实现的层次"></p>
+<p> 拖拽开始时，OS创建“拖拽会话”；</p>
+<p> 拖拽过程中，系统跟踪光标位置并查询下方的放置目标；</p>
+<p> 放置时，系统协调数据传递。</p>
+<figure>
+<img src="dragAndDrop.png" srcset="/img/loading.gif" lazyload alt="拖拽实现的层次" /><figcaption aria-hidden="true">拖拽实现的层次</figcaption>
+</figure>
 
                 
               </div>

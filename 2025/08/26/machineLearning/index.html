@@ -21,12 +21,12 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 &emsp; 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 &emsp; 循环神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关">
+    <meta name="description" content="机器学习  流程示例   类型   工作流    神经网络  基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络  Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="http://example.com/2025/08/26/machineLearning/index.html">
 <meta property="og:site_name" content="FianuBlog">
-<meta property="og:description" content="机器学习   &emsp; 神经网络 神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。 &emsp; 前馈神经网络 基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。 &emsp; 循环神经网络 专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关">
+<meta property="og:description" content="机器学习  流程示例   类型   工作流    神经网络  基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络  Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/machineLearningProcess.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/mlClassfication.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/cnn.png">
 <meta property="og:image" content="http://example.com/2025/08/26/machineLearning/transformer.png">
 <meta property="article:published_time" content="2025-08-26T03:02:02.000Z">
-<meta property="article:modified_time" content="2025-09-03T06:04:28.246Z">
+<meta property="article:modified_time" content="2025-09-03T06:16:47.919Z">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          971 words
+          956 words
         
       </span>
     
@@ -282,45 +282,69 @@
             
               <div class="markdown-body">
                 
-                <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><img src="/2025/08/26/machineLearning/machineLearningProcess.png" srcset="/img/loading.gif" lazyload alt="流程示例"></p>
-<p><img src="/2025/08/26/machineLearning/mlClassfication.png" srcset="/img/loading.gif" lazyload alt="类型"></p>
-<p><img src="/2025/08/26/machineLearning/mlWork.png" srcset="/img/loading.gif" lazyload alt="工作流"></p>
-<p>&emsp;</p>
-<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p><img src="/2025/08/26/machineLearning/cnnBasic.png" srcset="/img/loading.gif" lazyload alt="基础"></p>
+                <h1 id="机器学习">机器学习</h1>
+<figure>
+<img src="machineLearningProcess.png" srcset="/img/loading.gif" lazyload alt="流程示例" /><figcaption aria-hidden="true">流程示例</figcaption>
+</figure>
+<figure>
+<img src="mlClassfication.png" srcset="/img/loading.gif" lazyload alt="类型" /><figcaption aria-hidden="true">类型</figcaption>
+</figure>
+<figure>
+<img src="mlWork.png" srcset="/img/loading.gif" lazyload alt="工作流" /><figcaption aria-hidden="true">工作流</figcaption>
+</figure>
+<p> </p>
+<h1 id="神经网络">神经网络</h1>
+<figure>
+<img src="cnnBasic.png" srcset="/img/loading.gif" lazyload alt="基础" /><figcaption aria-hidden="true">基础</figcaption>
+</figure>
 <p>神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。</p>
-<p>&emsp;</p>
-<h2 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h2><p><img src="/2025/08/26/machineLearning/fnn.png" srcset="/img/loading.gif" lazyload alt="Feedforward Neural Network，FNN"></p>
+<p> </p>
+<h2 id="前馈神经网络">前馈神经网络</h2>
+<figure>
+<img src="fnn.png" srcset="/img/loading.gif" lazyload alt="Feedforward Neural Network，FNN" /><figcaption aria-hidden="true">Feedforward Neural Network，FNN</figcaption>
+</figure>
 <p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p>
-<p>&emsp;</p>
-<h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p><img src="/2025/08/26/machineLearning/rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN"></p>
+<p> </p>
+<h2 id="循环神经网络">循环神经网络</h2>
+<figure>
+<img src="rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN" /><figcaption aria-hidden="true">Recurrent Neural Network, RNN</figcaption>
+</figure>
 <p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系,在自然语言处理（NLP）、语音识别、时间序列预测等任务中有着广泛的应用。</p>
 <p>关键特性：其能够保持隐状态（hidden state），使得网络能够记住先前时间步的信息。</p>
 <p>隐状态：通过上一时间步的隐状态和当前输入共同计算得到的。</p>
-<p>&emsp;公式：$h_t &#x3D; f(W_{hh} h_{t-1} + W_{xh} x_t + b_h)$</p>
-<p><em># $h_t$：当前时刻隐状态；$h_{t-1}$：前一时刻隐状态；$W_{xh},W_{hh}$：权重矩阵；$x_t$：当前时刻的输入；$b_h$：偏置；$f()$：激活函数。</em></p>
+<p> 公式：<span class="math inline"><em>h</em><sub><em>t</em></sub> = <em>f</em>(<em>W</em><sub><em>h</em><em>h</em></sub><em>h</em><sub><em>t</em> − 1</sub> + <em>W</em><sub><em>x</em><em>h</em></sub><em>x</em><sub><em>t</em></sub> + <em>b</em><sub><em>h</em></sub>)</span></p>
+<p><em># <span class="math inline"><em>h</em><sub><em>t</em></sub></span>：当前时刻隐状态；<span class="math inline"><em>h</em><sub><em>t</em> − 1</sub></span>：前一时刻隐状态；<span class="math inline"><em>W</em><sub><em>x</em><em>h</em></sub>, <em>W</em><sub><em>h</em><em>h</em></sub></span>：权重矩阵；<span class="math inline"><em>x</em><sub><em>t</em></sub></span>：当前时刻的输入；<span class="math inline"><em>b</em><sub><em>h</em></sub></span>：偏置；<span class="math inline"><em>f</em>()</span>：激活函数。</em></p>
 <p>输出：不仅依赖当前输入，还依赖于隐状态的历史信息。</p>
-<p>&emsp;公式：$y_t &#x3D; W_{hy}h_t + b_y$</p>
-<p><em># $y_t$：t时刻的输出向量；$W_{hy}$：隐状态到输出状态的矩阵。</em></p>
-<p><img src="/2025/08/26/machineLearning/unfoldRnn.png" srcset="/img/loading.gif" lazyload alt="展开视图"></p>
-<p>&emsp;</p>
-<h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><p><img src="/2025/08/26/machineLearning/cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN"></p>
+<p> 公式：<span class="math inline"><em>y</em><sub><em>t</em></sub> = <em>W</em><sub><em>h</em><em>y</em></sub><em>h</em><sub><em>t</em></sub> + <em>b</em><sub><em>y</em></sub></span></p>
+<p><em># <span class="math inline"><em>y</em><sub><em>t</em></sub></span>：t时刻的输出向量；<span class="math inline"><em>W</em><sub><em>h</em><em>y</em></sub></span>：隐状态到输出状态的矩阵。</em></p>
+<figure>
+<img src="unfoldRnn.png" srcset="/img/loading.gif" lazyload alt="展开视图" /><figcaption aria-hidden="true">展开视图</figcaption>
+</figure>
+<p> </p>
+<h2 id="卷积神经网络">卷积神经网络</h2>
+<figure>
+<img src="cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN" /><figcaption aria-hidden="true">Convolutional Neural Networks, CNN</figcaption>
+</figure>
 <p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p>
-<p>&emsp;</p>
-<h2 id="Transformer模型"><a href="#Transformer模型" class="headerlink" title="Transformer模型"></a>Transformer模型</h2><p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p>
-<p><img src="/2025/08/26/machineLearning/transformer.png" srcset="/img/loading.gif" lazyload alt="transformer结构"></p>
+<p> </p>
+<h2 id="transformer模型">Transformer模型</h2>
+<p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p>
+<figure>
+<img src="transformer.png" srcset="/img/loading.gif" lazyload alt="transformer结构" /><figcaption aria-hidden="true">transformer结构</figcaption>
+</figure>
 <p>结构：</p>
 <ul>
 <li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li>
 </ul>
-<p>&emsp;多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
-<p>&emsp;前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
+<p> 多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
+<p> 前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
 <ul>
 <li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li>
 </ul>
-<p>&emsp;掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
+<p> 掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
 <p><em># 使用掩码防止未来信息泄露</em></p>
-<p>&emsp;交叉注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
-<p>&emsp;前馈神经网络（FNN）</p>
+<p> 交叉注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
+<p> 前馈神经网络（FNN）</p>
 <p>核心思想：</p>
 <ul>
 <li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li>
@@ -329,19 +353,21 @@
 </ul>
 <p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p>
 <p>应用：NLP（机器翻译，GPT），CV（图像分类，目标检测），多模态任务。</p>
-<p>&emsp;</p>
-<p>&emsp;</p>
-<h1 id="Conda指令"><a href="#Conda指令" class="headerlink" title="Conda指令"></a>Conda指令</h1><p>&emsp;查看环境：<code>conda env list</code></p>
-<p>&emsp;进入环境：<code>conda activate 环境名称</code></p>
-<p>&emsp;退出环境：<code>conda deactivate</code></p>
-<p>&emsp;删除环境：<code>conda remove --name 环境名称 --all</code></p>
-<p>&emsp;更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p>
-<p>&emsp;查看当前源：<code>pip config list</code></p>
-<p>&emsp;查看当前包：<code>pip list</code></p>
-<p>&emsp;下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>
-<p>&emsp;</p>
-<p>&emsp;</p>
-<h1 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h1><p>模型文件&#x3D;模型结构+预训练权重</p>
+<p> </p>
+<p> </p>
+<h1 id="conda指令">Conda指令</h1>
+<p> 查看环境：<code>conda env list</code></p>
+<p> 进入环境：<code>conda activate 环境名称</code></p>
+<p> 退出环境：<code>conda deactivate</code></p>
+<p> 删除环境：<code>conda remove --name 环境名称 --all</code></p>
+<p> 更换为阿里云镜像源：<code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</code></p>
+<p> 查看当前源：<code>pip config list</code></p>
+<p> 查看当前包：<code>pip list</code></p>
+<p> 下载依赖包requirements.txt：<code>pip install -r requirements.txt</code></p>
+<p> </p>
+<p> </p>
+<h1 id="训练模型">训练模型</h1>
+<p>模型文件=模型结构+预训练权重</p>
 
                 
               </div>
@@ -476,6 +502,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -668,6 +700,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
