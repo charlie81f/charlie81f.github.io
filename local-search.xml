@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>SpringBoot</title>
+    <link href="/2025/09/03/springboot/"/>
+    <url>/2025/09/03/springboot/</url>
+    
+    <content type="html"><![CDATA[<h1 id="springboot">SpringBoot</h1><figure><img src="intro.png" alt="介绍" /><figcaption aria-hidden="true">介绍</figcaption></figure><p>SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。</p><p>即Spring框架和嵌入式服务器的组合。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软件开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>SpringBoot</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>关于ssh连接github失败</title>
     <link href="/2025/08/27/sshBug/"/>
     <url>/2025/08/27/sshBug/</url>
