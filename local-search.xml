@@ -244,9 +244,21 @@
     <link href="/2025/08/22/computerNetworks/"/>
     <url>/2025/08/22/computerNetworks/</url>
     
-    <content type="html"><![CDATA[<p>LocalStorage和SessionStorage的区别</p><figure><img src="LocalStorage.png" alt="LocalStorage.png" /><figcaption aria-hidden="true">LocalStorage.png</figcaption></figure><p>​ LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。</p><p><br><br></p><p>WebSocket</p><p>​ 在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。</p><p>​ HTTP：无状态，单向请求-响应模式===&gt;WebSocket：持久连接，双向实时通信。还免去了重复的HTTP头开销。</p><p>WebRTC</p><p>​ 虽然设计为P2P通信技术，媒体流是双向传输，但需要借助信令服务器和STUN/TURN服务器。</p><p>​ 信令服务器：交换SDP会话、房间管理；STUN：获取公网地址；TURN：数据中继。</p><p>TCP/IP五层模型（下到上）</p><p>​ 1）物理层：通过物质介质（光纤、电缆等）传输原始比特流，数据单位是比特。</p><p>​ 2）链路层：在直接相连的节点间传输数据，处理物理寻址（MAC）和错误检测，数据单位是帧。</p><p>​ 3）网络层：负责逻辑寻址、路由选择和分组转发，数据单位是包。</p><p>​ 4）传输层：提供端到端的数据传输，流量控制和错误恢复，数据单位是段。</p><p>​ 5）应用层：为用户提供网络服务接口，处理应用程序逻辑，数据单位是数据。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="tcpip">TCP/IP</h1><h2 id="五层模型">五层模型</h2><p> 1）物理层：通过物质介质（光纤、电缆等）传输原始比特流，数据单位是比特。</p><p> 2）链路层：在直接相连的节点间传输数据，处理物理寻址（MAC）和错误检测，数据单位是帧。</p><p> 3）网络层：负责逻辑寻址、路由选择和分组转发，数据单位是包。</p><p> 4）传输层：提供端到端的数据传输，流量控制和错误恢复，数据单位是段。</p><p> 5）应用层：为用户提供网络服务接口，处理应用程序逻辑，数据单位是数据。</p><h2 id="http请求过程">HTTP请求过程</h2><p>从浏览器，操作系统，网络设备到服务器共同参与的协作过程。</p><p> 过程：</p><figure><img src="http.png" alt="八个阶段" /><figcaption aria-hidden="true">八个阶段</figcaption></figure><p>1、URL解析</p><p>用户输入，浏览器解析（协议、域名、路径），浏览器检查</p><p>2、DNS域名解析</p><p>浏览器查找顺序（浏览器缓存 -&gt; 操作系统缓存 -&gt; 路由器缓存 -&gt; 网络服务供应商的DNS服务器 -&gt; 递归查询），返回IP</p><p>3、建立TCP连接（三次握手）</p><p>浏览器先和服务器建立一条可靠的传输通道，即TCP连接。</p><p>4、发送HTTP请求</p><p>浏览器发送请求报文</p><ul><li>请求行：请求方法，请求的URL路径，HTTP协议版本。<ul><li><code>GET /index.html HTTP/1.1</code></li></ul></li><li>请求头：包含关于客户端和环境的信息的键值对。<ul><li><code>Host: www.example.com</code>（必需，指定域名）</li><li><code>User-Agent</code>（浏览器身份标识），<code>Accept</code>（客户端接收的内容类型）等</li></ul></li><li>请求体：通常只在POST/PUT方法中存在，包含提交给服务器的数据。</li></ul><p>5、服务器处理请求并返回HTTP响应</p><p>服务器收到请求报文后，会进行处理（例如，由Web服务器软件（如Nginx/Apache）处理静态请求，或由应用服务器（如Tomcat/Node.js）处理动态请求），然后返回一个HTTP响应报文。</p><p>服务器发送响应报文</p><ul><li>状态行：HTTP协议版本、状态码和状态消息。<ul><li><code>HTTP/1.1 200 OK</code>，<code>HTTP/1.1 404 Not Found</code>，<code>HTTP/1.1 500 Internal Server Error</code></li></ul></li><li>响应头：包含关于服务器和响应主体的信息，键值对。<ul><li><code>Content-Type</code>，<code>Content-Length</code>，<code>Set-Cookie</code></li></ul></li><li>响应体：请求的真正资源内容，HTML文档、图片数据等。</li></ul><p>6、浏览器解析渲染页面</p><p>浏览器收到响应后，会根据响应头中的 <code>Content-Type</code>来决定如何处理响应体。</p><p>生成DOM树，CSSOM树，合并构建渲染树，布局，绘制。</p><p>7、连接结束（四次握手）</p><p>HTTP是一种无状态协议，默认完成请求就会关闭连接。</p><p>8、后续交互</p><p>一个完整的页面通常需要加载很多资源（CSS, JS, 图片等）。对于HTTP/1.1，浏览器会对同一个域名建立多个TCP连接（通常是6-8个）来并行下载这些资源，以加快速度。HTTP/2则允许在一个TCP连接上进行多路复用，效率更高。</p><p> </p><p> </p><p>LocalStorage和SessionStorage的区别</p><figure><img src="LocalStorage.png" alt="LocalStorage.png" /><figcaption aria-hidden="true">LocalStorage.png</figcaption></figure><p>LocalStorage适合存储需要长期保留的数据，而SessionStorage适合存储临时会话数据。</p><p> </p><p> </p><p>WebSocket</p><p>在单个TCP连接上进行全双工通信的应用层协议，解决HTTP协议在实时通信方面的局限性。</p><p>HTTP：无状态，单向请求-响应模式===&gt;WebSocket：持久连接，双向实时通信。还免去了重复的HTTP头开销。</p><p>WebRTC</p><p>虽然设计为P2P通信技术，媒体流是双向传输，但需要借助信令服务器和STUN/TURN服务器。</p><p>信令服务器：交换SDP会话、房间管理；STUN：获取公网地址；TURN：数据中继。</p><p> </p>]]></content>
     
     
+    <categories>
+      
+      <category>基础知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机网络</tag>
+      
+    </tags>
     
   </entry>
   
