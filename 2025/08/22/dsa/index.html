@@ -21,15 +21,15 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：  确">
+    <meta name="description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构和算法">
 <meta property="og:url" content="http://example.com/2025/08/22/dsa/index.html">
 <meta property="og:site_name" content="FianuBlog">
-<meta property="og:description" content="枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：  确">
+<meta property="og:description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-09-10T02:21:01.064Z">
+<meta property="article:modified_time" content="2025-09-10T03:54:12.474Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta property="article:tag" content="STL">
 <meta property="article:tag" content="C++">
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          2k words
         
       </span>
     
@@ -273,7 +273,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="枚举算法">枚举算法</h1>
+                <h1 id="算法">算法</h1>
+<h2 id="枚举算法">枚举算法</h2>
 <p>描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。</p>
 <p>核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。</p>
 <p>优点：简单基本，便于实现，容易调试，正确性容易证明。</p>
@@ -285,10 +286,10 @@
 <p>题库：百钱买百鸡，LeetCode78，1504，1733，2749。</p></li>
 </ul>
 <p> </p>
-<h1 id="贪心算法greedy-algorithm">贪心算法Greedy Algorithm</h1>
+<h2 id="贪心算法greedy-algorithm">贪心算法Greedy Algorithm</h2>
 <p>基本思想：每一步都做出在当前看来是最好的选择，期望通过局部最优选择来达到全局最优解。</p>
 <p>核心思想：局部最优，不可回溯，期望全局最优。</p>
-<p><em># 贪心算法并不保证能得到全局最优，它的正确性必须被严格证明。只有在特定问题中，局部最优策略能导致全局最优时，它才是有效的。</em></p>
+<p><em># 贪心只做局部最优选择，不保证全局最优。</em></p>
 <p>思路：</p>
 <ul>
 <li>建立数学模型</li>
@@ -300,7 +301,7 @@
 <p>优点：高效，时间复杂度低，简单直观。</p>
 <p>题库：LeetCode134，1792。</p>
 <p> </p>
-<h1 id="动态规划dynamic-programming">动态规划Dynamic programming</h1>
+<h2 id="动态规划dynamic-programming">动态规划Dynamic programming</h2>
 <p>描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，常常适用于有重叠子问题和最优子结构性质的问题。</p>
 <p>一般的递归时间复杂度太高，<code>递归时间复杂度 = 解决一个子问题时间*子问题个数</code>，需要把子问题的结果进行存储，利用空间来降低时间复杂度，把二叉树变成了树干，子问题个数从O(2<sup>n</sup>)变成了O(n)。同理，转换递归时存储结果时是自顶向下的解法，而动态规划就是自底向上的解法。</p>
 <p>典型特征：最优子结构、状态转移方程、边界、重叠子问题。</p>
@@ -319,16 +320,16 @@
 </ul>
 <p>题库：LeetCode1277，1504，2327。</p>
 <p> </p>
-<h1 id="滑动窗口算法">滑动窗口算法</h1>
+<h2 id="滑动窗口算法">滑动窗口算法</h2>
 <p>基本思想：滑动窗口算法（Sliding Window Algorithm）是一种用于处理数组或列表子区间问题的高效技巧。维护一个大小可变或固定的“窗口”在数据结构上滑动，将许多嵌套循环的问题（O(n²)或O(n³)）转化为单循环问题（O(n)），显著降低时间复杂度。</p>
 <p>关键点：窗口表示：左，右指针表示窗口的边界；窗口扩张：右指针移动，扩大窗口，寻找可行解；窗口收缩：左指针移动，缩小窗口，优化可行解；结果更新：在窗口滑动的过程中不断更新最优解。</p>
 <p>题库：LeetCode2348</p>
 <p> </p>
-<h1 id="位运算算法">位运算算法</h1>
+<h2 id="位运算算法">位运算算法</h2>
 <p>大大提高程序的性能，0/1问题时好用。</p>
 <p>题库：LeetCode78，2749。</p>
 <p> </p>
-<h1 id="模拟">模拟</h1>
+<h2 id="模拟">模拟</h2>
 <p>基本思想：完全按照题目的描述或者问题的真实发生过程，一步步地用代码复现出来从而得到答案。</p>
 <p>核心思想：重视还原，过程再现。</p>
 <p>思路：</p>
@@ -342,7 +343,7 @@
 <p>特点：思路直观，实现繁琐，考验基本功。</p>
 <p>题库：LeetCode54，3446。</p>
 <p> </p>
-<h1 id="堆算法">堆算法</h1>
+<h2 id="堆算法">堆算法</h2>
 <p>特殊的完全二叉树，可以用一维数组存储。</p>
 <p>堆的更新和维护：</p>
 <p> 入堆push()，时间复杂度<code>O(log n)</code></p>
@@ -352,6 +353,39 @@
 <p><em># 即堆中插入n个元素</em></p>
 <p>应用：优先队列。</p>
 <p>题库：LeetCode 1792。</p>
+<p> </p>
+<h2 id="分支限界法">分支限界法</h2>
+<ul>
+<li>分支：将大问题划分为若干子问题，形成解空间树，每个结点代表一个子问题，每条分支表示对子问题的一种约束或决策。</li>
+<li>限界：对每个子问题，计算一个上下界，即它可能取得的最优解的范围，如果某个子问题的最优解范围不可能优于当前已知的最优解，就剪枝（丢弃该子问题）。</li>
+</ul>
+<p>思路：</p>
+<ul>
+<li>定义问题的解空间</li>
+<li>从根结点开始分支，产生子问题</li>
+<li>对每个子问题计算限界</li>
+<li>子问题放入候选结点表（队列/堆等）</li>
+<li>从候选结点表中选择结点展开（搜索策略）</li>
+<li>结点满足约束并且更优就继续分支，不满足就剪枝</li>
+<li>重复直到候选结点表为空或者找到全局最优</li>
+</ul>
+<p>题库：0-1背包问题。</p>
+<p> </p>
+<p> </p>
+<h1 id="结构">结构</h1>
+<h2 id="折半查找树">折半查找树</h2>
+<p>即二叉搜索树，Binary Search Tree，BST</p>
+<p>每个结点最多有两个孩子，对于任一结点<code>node</code>：</p>
+<p>左子树上的所有键小于<code>node-&gt;key</code>，右子树上的所有键大于<code>node-&gt;key</code>。</p>
+<p>若树的高度为<code>h</code>，查找/插入/删除复杂度为O(h)，遍历O(n)。</p>
+<p> </p>
+<h2 id="有向图邻接表">有向图邻接表</h2>
+<p>常用的图存储结构，适合存储稀疏图（顶点多，边少）</p>
+<ul>
+<li>有向图：每条边都有方向，比如<code>u-&gt;v</code>表示从顶点<code>u</code>指向顶点<code>v</code>。</li>
+<li>邻接表：为图中的每个顶点建立一个链表/动态数组，存储从该顶点出发的所有边。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n = <span class="number">4</span>; <span class="comment">// 顶点个数</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">adj</span>(n + <span class="number">1</span>); <span class="comment">// 邻接表，1-based</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 加边</span></span><br><span class="line">adj[<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">2</span>);</span><br><span class="line">adj[<span class="number">1</span>].<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">adj[<span class="number">2</span>].<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br><span class="line">adj[<span class="number">3</span>].<span class="built_in">push_back</span>(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
 <p> </p>
 <p> </p>
 <h1 id="stl">STL</h1>
@@ -391,6 +425,7 @@
 <p> 插入：<code>insert()</code></p>
 <p> 查找：<code>find()</code>，返回的是迭代器，一般配合<code>end()</code>使用进行判断</p>
 <p> 删除：<code>erase()</code></p>
+<p> </p>
 
                 
               </div>
