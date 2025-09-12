@@ -593,7 +593,7 @@
       
         jQuery.ajax({
           type: 'GET',
-          url: 'https://v1.hitokoto.cn/?c=i&c=j',
+          url: 'https://v1.hitokoto.cn/?c=i',
           headers: {},
           dataType: 'json',
           success: function(result) {
@@ -617,7 +617,7 @@
           },
           error: function(xhr, status, error) {
             if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/?c=i&amp;c=j:', error);
+              console.error('Failed to request https://v1.hitokoto.cn/?c=i:', error);
             }
             typing(text);
           }
