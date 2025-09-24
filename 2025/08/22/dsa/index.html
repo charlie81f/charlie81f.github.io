@@ -29,7 +29,7 @@
 <meta property="og:description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 思路：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-09-19T05:08:33.493Z">
+<meta property="article:modified_time" content="2025-09-24T07:33:32.439Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta property="article:tag" content="STL">
 <meta property="article:tag" content="C++">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          3k 字
         
       </span>
     
@@ -285,7 +285,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年9月19日 下午
+                    本文最后更新于 2025年9月24日 下午
                   
                 
               </p>
@@ -340,11 +340,6 @@
 </ul>
 <p>题库：LeetCode62，1277，1504，2327。</p>
 <p> </p>
-<h2 id="滑动窗口算法">滑动窗口算法</h2>
-<p>基本思想：滑动窗口算法（Sliding Window Algorithm）是一种用于处理数组或列表子区间问题的高效技巧。维护一个大小可变或固定的“窗口”在数据结构上滑动，将许多嵌套循环的问题（O(n²)或O(n³)）转化为单循环问题（O(n)），显著降低时间复杂度。</p>
-<p>关键点：窗口表示：左，右指针表示窗口的边界；窗口扩张：右指针移动，扩大窗口，寻找可行解；窗口收缩：左指针移动，缩小窗口，优化可行解；结果更新：在窗口滑动的过程中不断更新最优解。</p>
-<p>题库：LeetCode2348</p>
-<p> </p>
 <h2 id="位运算算法">位运算算法</h2>
 <p>大大提高程序的性能，0/1问题时好用。</p>
 <p>题库：LeetCode78，2749。</p>
@@ -389,6 +384,18 @@
 <li>重复直到候选结点表为空或者找到全局最优</li>
 </ul>
 <p>题库：0-1背包问题。</p>
+<p> </p>
+<h2 id="双指针">双指针</h2>
+<p>使用两个指针（索引）在数据结构中协同工作，一般分为同向指针或者相向指针。</p>
+<p>滑动窗口也是一种双指针，左指针收缩窗口，右指针扩展窗口。</p>
+<p>思路：</p>
+<ul>
+<li>数据结构进行排序</li>
+<li>边界</li>
+<li>指针移动条件</li>
+<li>重复元素处理</li>
+</ul>
+<p>题库：LeetCode75， 2348。</p>
 <p> </p>
 <p> </p>
 <h1 id="结构">结构</h1>
@@ -672,7 +679,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年9月19日</div>
+          <div>2025年9月24日</div>
         </div>
       
       
