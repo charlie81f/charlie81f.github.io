@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>建模技术</title>
+    <link href="/2025/09/24/modelingTechnology/"/>
+    <url>/2025/09/24/modelingTechnology/</url>
+    
+    <content type="html"><![CDATA[<h1 id="第一章">第一章</h1><h2 id="建模">建模</h2><p>定义：模型是对客观事物抽象出来的原型的替代物。</p><p>常见模型：实物模型、物理模型、符号模型（图表）。</p><p>数学建模：实际问题转化为数学问题。</p><p> </p><h2 id="数学建模的基本方法和步骤">数学建模的基本方法和步骤</h2><p>基本方法</p><ul><li>机理分析：对客观事物特性的认识====&gt;内部机理的数量规律（白箱）</li><li>测试分析：对量测数据的统计分析====&gt;与数据拟合最好的模型（黑箱）</li></ul><p>二者结合：机理分析建立模型结构，测试分析确定模型参数。</p><p>（建模主要指机理分析）</p><p> </p><h2 id="数学模型和数学建模">数学模型和数学建模</h2><p>第一性原理：看透事物本质的根本方法。</p><p>数学建模的一般步骤</p><ul><li>模型准备：形成清晰的问题。</li><li>模型假设：合理的，简化的。</li><li>模型构成：采用简单的数学工具。</li><li>模型求解</li><li>模型分析：误差，统计等。</li><li>模型检验：与实际现象，数据比较。</li><li>模型应用</li></ul><figure><img src="1.1.png" alt="数学建模的全过程" /><figcaption aria-hidden="true">数学建模的全过程</figcaption></figure><p>实践到理论再到实践。</p><p>特点：逼真性，条理性，可行性，渐进性，强健性，局限性，可转移性，非预制性。</p><p> </p><h2 id="优化建模">优化建模</h2><p>最小作用量原理：物理系统在从一个状态演化到另一个状态的过程中，会选择使作用量取得极值（通常是局部最小值）的路径。</p><p> 例如，费马原理：光在传播过程中，无论是直线传播、反射还是折射，都遵循时间最短或路径最短的原理。</p><p> </p><h2 id="最优化问题的一般形式及分类">最优化问题的一般形式及分类</h2><p>一般数学形式： <span class="math display">$$\left\{\begin{array}{ll}    \min &amp; f(x) \\    \text{s.t.} &amp; x \in X\end{array}\right.$$</span> 其中，<span class="math inline"><em>f</em>(<em>x</em>)</span>是目标函数，<span class="math inline"><em>x</em></span>是决策变量，<span class="math inline"><em>X</em></span>是约束集合或可行域，构成优化问题的三要素。</p><p>可行域包含的点<span class="math inline"><em>x</em> ∈ <em>X</em></span>是可行解或可行点。</p><p> </p><p>集合<span class="math inline"><em>X</em></span>再由约束函数<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>和<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>表达后的数学形式： <span class="math display">$$\left\{\begin{array}{ll}\min        &amp; f(x) \\\text{s.t.} &amp; g(x) \leq 0 \\            &amp; h(x) = 0\end{array}\right.$$</span>  </p><p>定义：</p><ul><li>对于最优化问题，若有<span class="math inline"><em>x</em><sup>*</sup> ∈ <em>X</em></span>，并且有：</li></ul><p><span class="math display"><em>f</em>(<em>x</em><sup>*</sup>) ≤ <em>f</em>(<em>x</em>), ∀<em>x</em> ∈ <em>X</em></span></p><p>则称<span class="math inline"><em>x</em><sup>*</sup></span>是最优化问题的整体最优解，<span class="math inline"><em>f</em>(<em>x</em><sup>*</sup>)</span>是整体最优值。</p><p>如果只有<span class="math inline">&lt;</span>则为严格最优解。</p><p> </p><ul><li>对于最优化问题，若有<span class="math inline"><em>x</em><sup>*</sup> ∈ <em>X</em></span>，并且存在<span class="math inline"><em>x</em><sup>*</sup></span>的邻域<span class="math inline"><em>N</em><sub><em>δ</em></sub>(<em>x</em><sup>*</sup>) = {<em>x</em> ∈ <em>R</em><sup><em>n</em></sup><em>且</em>||<em>x</em> − <em>x</em><sup>*</sup>|| &lt; <em>δ</em>}</span>使得：</li></ul><p><span class="math display"><em>f</em>(<em>x</em><sup>*</sup>) ≤ <em>f</em>(<em>x</em>), ∀<em>x</em> ∈ <em>N</em><sub><em>δ</em></sub>(<em>x</em><sup>*</sup>) ∩ <em>X</em></span></p><p>则称<span class="math inline"><em>x</em><sup>*</sup></span>是最优化问题的局部最优解，<span class="math inline"><em>f</em>(<em>x</em><sup>*</sup>)</span>是局部最优值。</p><p>如果只有<span class="math inline">&lt;</span>则为严格局部最优解。</p><p> </p><p>分类：</p><figure><img src="1.2.png" alt="最优化问题的分类" /><figcaption aria-hidden="true">最优化问题的分类</figcaption></figure><p>一个优化问题可能属于多个类别。</p><p> </p><h2 id="机器学习问题">机器学习问题</h2><p>标准流程</p><ul><li>数据：模拟学习问题的输入和输出</li><li>模型：备选预测函数集合</li><li>算法-表现度量：指导优化的目标函数</li><li>算法-优化算法：计算优化问题最优解</li></ul><p>没有免费的午餐原理：该定理表明，在所有可能的问题中，平均而言，任何算法的性能都是相同的。（有得必有失，守恒，平衡）</p><p>奥卡姆剃刀原理：如无必要，勿增实体。</p><p> </p><h2 id="组合优化问题">组合优化问题</h2><p>定义：这类问题广泛存在于现实生活的各个领域，如物流、 金融、计算机科学、生物信息学等。它关注于在给定 的约束条件下，从一组可能的解中找出最优解。</p><h3 id="旅行商问题tsp">1、旅行商问题(TSP)</h3><p>在物流规划、电路板布线、生物学和交通规划等领域有重要应用。</p><p>随着城市数量的增加，问题的求解难度呈指数增长。</p><p>常用穷举法，动态规划，贪心，遗传等启发式算法。</p><h3 id="背包问题">2、背包问题</h3><p>在商业、组合数学、计算复杂性理论、密码学和应用数学等领域。</p><p>常用动态规划、分支限界法、遗传算法等。</p><h3 id="指派问题">3、指派问题</h3><p>一类特殊的线性规划问题，它要求将n项任务分配给n个人去完 成，每个人只能完成一项任务，且每项任务只能由一个人完成。目标是找 到一种分配方案，使得总成本（或总时间、总资源消耗等）最小。</p><p>在企业管理、资源分配、任务调度等领域有重要应用。</p><p>常用匈牙利算法等有效算法求解。</p><p> </p><p>还有调度问题、切割问题、装箱问题等等…</p><h3 id="section"></h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>札记</category>
+      
+      <category>基础知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>机器学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>上海游记</title>
     <link href="/2025/09/23/ShangHaiTravel/"/>
     <url>/2025/09/23/ShangHaiTravel/</url>

@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/catIcon.jpg">
+  <link rel="icon" href="/img/catIcon.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第一章 建模 定义：模型是对客观事物抽象出来的原型的替代物。 常见模型：实物模型、物理模型、符号模型（图表）。 数学建模：实际问题转化为数学问题。   数学建模的基本方法和步骤 基本方法  机理分析：对客观事物特性的认识&#x3D;&#x3D;&#x3D;&#x3D;&gt;内部机理的数量规律（白箱） 测试分析：对量测数据的统计分析&#x3D;&#x3D;&#x3D;&#x3D;&gt;与数据拟合最好的模型（黑箱）  二者结合：机理分析建立模型结构，测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建模技术">
+<meta property="og:url" content="http://example.com/2025/09/24/modelingTechnology/index.html">
+<meta property="og:site_name" content="FianuBlog">
+<meta property="og:description" content="第一章 建模 定义：模型是对客观事物抽象出来的原型的替代物。 常见模型：实物模型、物理模型、符号模型（图表）。 数学建模：实际问题转化为数学问题。   数学建模的基本方法和步骤 基本方法  机理分析：对客观事物特性的认识&#x3D;&#x3D;&#x3D;&#x3D;&gt;内部机理的数量规律（白箱） 测试分析：对量测数据的统计分析&#x3D;&#x3D;&#x3D;&#x3D;&gt;与数据拟合最好的模型（黑箱）  二者结合：机理分析建立模型结构，测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
+<meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.2.png">
+<meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
+<meta property="article:modified_time" content="2025-09-24T09:09:06.161Z">
+<meta property="article:tag" content="机器学习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
+  
+  
+  
+  <title>建模技术 - FianuBlog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2025-08-19T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>目录</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/green2.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="建模技术"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-24 15:40" pubdate>
+          2025年9月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">建模技术</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年9月24日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="第一章">第一章</h1>
+<h2 id="建模">建模</h2>
+<p>定义：模型是对客观事物抽象出来的原型的替代物。</p>
+<p>常见模型：实物模型、物理模型、符号模型（图表）。</p>
+<p>数学建模：实际问题转化为数学问题。</p>
+<p> </p>
+<h2 id="数学建模的基本方法和步骤">数学建模的基本方法和步骤</h2>
+<p>基本方法</p>
+<ul>
+<li>机理分析：对客观事物特性的认识====&gt;内部机理的数量规律（白箱）</li>
+<li>测试分析：对量测数据的统计分析====&gt;与数据拟合最好的模型（黑箱）</li>
+</ul>
+<p>二者结合：机理分析建立模型结构，测试分析确定模型参数。</p>
+<p>（建模主要指机理分析）</p>
+<p> </p>
+<h2 id="数学模型和数学建模">数学模型和数学建模</h2>
+<p>第一性原理：看透事物本质的根本方法。</p>
+<p>数学建模的一般步骤</p>
+<ul>
+<li>模型准备：形成清晰的问题。</li>
+<li>模型假设：合理的，简化的。</li>
+<li>模型构成：采用简单的数学工具。</li>
+<li>模型求解</li>
+<li>模型分析：误差，统计等。</li>
+<li>模型检验：与实际现象，数据比较。</li>
+<li>模型应用</li>
+</ul>
+<figure>
+<img src="1.1.png" srcset="/img/loading.gif" lazyload alt="数学建模的全过程" /><figcaption aria-hidden="true">数学建模的全过程</figcaption>
+</figure>
+<p>实践到理论再到实践。</p>
+<p>特点：逼真性，条理性，可行性，渐进性，强健性，局限性，可转移性，非预制性。</p>
+<p> </p>
+<h2 id="优化建模">优化建模</h2>
+<p>最小作用量原理：物理系统在从一个状态演化到另一个状态的过程中，会选择使作用量取得极值（通常是局部最小值）的路径。</p>
+<p> 例如，费马原理：光在传播过程中，无论是直线传播、反射还是折射，都遵循时间最短或路径最短的原理。</p>
+<p> </p>
+<h2 id="最优化问题的一般形式及分类">最优化问题的一般形式及分类</h2>
+<p>一般数学形式： <span class="math display">$$
+\left\{
+\begin{array}{ll}
+    \min &amp; f(x) \\
+    \text{s.t.} &amp; x \in X
+\end{array}
+\right.
+$$</span> 其中，<span class="math inline"><em>f</em>(<em>x</em>)</span>是目标函数，<span class="math inline"><em>x</em></span>是决策变量，<span class="math inline"><em>X</em></span>是约束集合或可行域，构成优化问题的三要素。</p>
+<p>可行域包含的点<span class="math inline"><em>x</em> ∈ <em>X</em></span>是可行解或可行点。</p>
+<p> </p>
+<p>集合<span class="math inline"><em>X</em></span>再由约束函数<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>和<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>表达后的数学形式： <span class="math display">$$
+\left\{
+\begin{array}{ll}
+\min        &amp; f(x) \\
+\text{s.t.} &amp; g(x) \leq 0 \\
+            &amp; h(x) = 0
+\end{array}
+\right.
+$$</span>  </p>
+<p>定义：</p>
+<ul>
+<li>对于最优化问题，若有<span class="math inline"><em>x</em><sup>*</sup> ∈ <em>X</em></span>，并且有：</li>
+</ul>
+<p><span class="math display"><em>f</em>(<em>x</em><sup>*</sup>) ≤ <em>f</em>(<em>x</em>), ∀<em>x</em> ∈ <em>X</em></span></p>
+<p>则称<span class="math inline"><em>x</em><sup>*</sup></span>是最优化问题的整体最优解，<span class="math inline"><em>f</em>(<em>x</em><sup>*</sup>)</span>是整体最优值。</p>
+<p>如果只有<span class="math inline">&lt;</span>则为严格最优解。</p>
+<p> </p>
+<ul>
+<li>对于最优化问题，若有<span class="math inline"><em>x</em><sup>*</sup> ∈ <em>X</em></span>，并且存在<span class="math inline"><em>x</em><sup>*</sup></span>的邻域<span class="math inline"><em>N</em><sub><em>δ</em></sub>(<em>x</em><sup>*</sup>) = {<em>x</em> ∈ <em>R</em><sup><em>n</em></sup><em>且</em>||<em>x</em> − <em>x</em><sup>*</sup>|| &lt; <em>δ</em>}</span>使得：</li>
+</ul>
+<p><span class="math display"><em>f</em>(<em>x</em><sup>*</sup>) ≤ <em>f</em>(<em>x</em>), ∀<em>x</em> ∈ <em>N</em><sub><em>δ</em></sub>(<em>x</em><sup>*</sup>) ∩ <em>X</em></span></p>
+<p>则称<span class="math inline"><em>x</em><sup>*</sup></span>是最优化问题的局部最优解，<span class="math inline"><em>f</em>(<em>x</em><sup>*</sup>)</span>是局部最优值。</p>
+<p>如果只有<span class="math inline">&lt;</span>则为严格局部最优解。</p>
+<p> </p>
+<p>分类：</p>
+<figure>
+<img src="1.2.png" srcset="/img/loading.gif" lazyload alt="最优化问题的分类" /><figcaption aria-hidden="true">最优化问题的分类</figcaption>
+</figure>
+<p>一个优化问题可能属于多个类别。</p>
+<p> </p>
+<h2 id="机器学习问题">机器学习问题</h2>
+<p>标准流程</p>
+<ul>
+<li>数据：模拟学习问题的输入和输出</li>
+<li>模型：备选预测函数集合</li>
+<li>算法-表现度量：指导优化的目标函数</li>
+<li>算法-优化算法：计算优化问题最优解</li>
+</ul>
+<p>没有免费的午餐原理：该定理表明，在所有可能的问题中，平均而言，任何算法的性能都是相同的。（有得必有失，守恒，平衡）</p>
+<p>奥卡姆剃刀原理：如无必要，勿增实体。</p>
+<p> </p>
+<h2 id="组合优化问题">组合优化问题</h2>
+<p>定义：这类问题广泛存在于现实生活的各个领域，如物流、 金融、计算机科学、生物信息学等。它关注于在给定 的约束条件下，从一组可能的解中找出最优解。</p>
+<h3 id="旅行商问题tsp">1、旅行商问题(TSP)</h3>
+<p>在物流规划、电路板布线、生物学和交通规划等领域有重要应用。</p>
+<p>随着城市数量的增加，问题的求解难度呈指数增长。</p>
+<p>常用穷举法，动态规划，贪心，遗传等启发式算法。</p>
+<h3 id="背包问题">2、背包问题</h3>
+<p>在商业、组合数学、计算复杂性理论、密码学和应用数学等领域。</p>
+<p>常用动态规划、分支限界法、遗传算法等。</p>
+<h3 id="指派问题">3、指派问题</h3>
+<p>一类特殊的线性规划问题，它要求将n项任务分配给n个人去完 成，每个人只能完成一项任务，且每项任务只能由一个人完成。目标是找 到一种分配方案，使得总成本（或总时间、总资源消耗等）最小。</p>
+<p>在企业管理、资源分配、任务调度等领域有重要应用。</p>
+<p>常用匈牙利算法等有效算法求解。</p>
+<p> </p>
+<p>还有调度问题、切割问题、装箱问题等等…</p>
+<h3 id="section"></h3>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9C%AD%E8%AE%B0/" class="category-chain-item">札记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%9C%AD%E8%AE%B0/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="category-chain-item">基础知识</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>建模技术</div>
+      <div>http://example.com/2025/09/24/modelingTechnology/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年9月24日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年9月24日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <!-- 载入天数 -->
+  <div>
+  <span id="timeDate">正在载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("08/19/2025 00:00:00");
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "🚀已持续航行&nbsp"+dnum+"&nbsp天";  
+      document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
