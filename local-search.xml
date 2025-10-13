@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>命令行工具</title>
+    <link href="/2025/10/13/commandLineTool/"/>
+    <url>/2025/10/13/commandLineTool/</url>
+    
+    <content type="html"><![CDATA[<h2 id="cmd">CMD</h2><p>command prompt，基础的命令执行环境，适合简单任务。</p><p>特点：</p><ul><li><p>处理的是文本字符串。</p></li><li><p>所有命令输出都是纯文本，无法直接操作结构化数据。</p></li><li><p>脚本语言为<code>.bat</code>和<code>.cmd</code></p></li></ul><p>常见命令：</p><ul><li>列出文件：<code>dir</code>。</li><li>显示当前路径：<code>cd</code>；更改目录：<code>cd C:\...</code>。</li></ul><p> </p><h2 id="powershell">PowerShell</h2><p>高级脚本和自动化工具。</p><p>特点：</p><ul><li>基于对象的管道机制。</li><li>可以直接访问和操作对象的属性，无需文本解析。</li><li>使用动词-名词格式命名命令，语义清晰。</li><li>脚本语言为<code>.ps1</code></li></ul><p>常见命令：</p><ul><li>列出文件：<code>Get-ChildItem</code>或<code>dir</code>。</li><li>显示当前路径：<code>Get-Location</code>；更改目录：<code>Set-Location C:\...</code>或<code>cd C:\...</code>。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>札记</category>
+      
+      <category>软件开发工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>命令行</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>建模技术</title>
     <link href="/2025/09/24/modelingTechnology/"/>
     <url>/2025/09/24/modelingTechnology/</url>
