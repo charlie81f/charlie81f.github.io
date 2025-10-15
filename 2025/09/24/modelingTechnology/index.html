@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.2.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-09-24T09:21:43.222Z">
+<meta property="article:modified_time" content="2025-10-15T02:07:57.649Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.8k 字
         
       </span>
     
@@ -286,7 +286,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年9月24日 下午
+                    本文最后更新于 2025年10月15日 上午
                   
                 
               </p>
@@ -332,17 +332,17 @@
 <p> 例如，费马原理：光在传播过程中，无论是直线传播、反射还是折射，都遵循时间最短或路径最短的原理。</p>
 <p> </p>
 <h2 id="最优化问题的一般形式及分类">最优化问题的一般形式及分类</h2>
-<p>一般数学形式： <span class="math display">$$
+<p>一般数学形式： <span class="math display">min<sub><em>x</em> ∈ <em>X</em></sub><em>f</em>(<em>x</em>)</span> 其中，<span class="math inline"><em>f</em>(<em>x</em>)</span>是目标函数，<span class="math inline"><em>x</em></span>是决策变量，<span class="math inline"><em>X</em></span>是约束集合或可行域，构成优化问题的三要素。</p>
+<p>可行域包含的点<span class="math inline"><em>x</em> ∈ <em>X</em></span>是可行解或可行点。 <span class="math display">$$
 \left\{
-\begin{array}{ll}
-    \min &amp; f(x) \\
-    \text{s.t.} &amp; x \in X
-\end{array}
+\begin{aligned}
+&amp; \min &amp;&amp; f(x)
+\\&amp; \text{s.t.} &amp;&amp; g_i(x) \leq 0, \; i = 1, \cdots, p
+\\&amp; &amp;&amp; h_j(x) = 0, \; j = 1, \cdots, q
+\end{aligned}
 \right.
-$$</span> 其中，<span class="math inline"><em>f</em>(<em>x</em>)</span>是目标函数，<span class="math inline"><em>x</em></span>是决策变量，<span class="math inline"><em>X</em></span>是约束集合或可行域，构成优化问题的三要素。</p>
-<p>可行域包含的点<span class="math inline"><em>x</em> ∈ <em>X</em></span>是可行解或可行点。</p>
-<p> </p>
-<p>集合<span class="math inline"><em>X</em></span>再由约束函数<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>和<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>表达后的数学形式： <span class="math display">$$
+$$</span> 其中，<span class="math inline"><em>x</em> = (<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>n</em></sub>)<sup><em>T</em></sup></span>，<span class="math inline"><em>f</em>(<em>x</em>)</span>、<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>、<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span> 为 <span class="math inline"><em>x</em></span> 的实值函数。</p>
+<p>引入向量函数符号$g(x) = ( g_1(x), , g_p(x) )^T <span class="math inline"><em>和</em></span> h(x) = ( h_1(x), , h_q(x) )^T$后： <span class="math display">$$
 \left\{
 \begin{array}{ll}
 \min        &amp; f(x) \\
@@ -367,6 +367,11 @@ $$</span>  </p>
 <p>如果只有<span class="math inline">&lt;</span>则为严格局部最优解。</p>
 <p> </p>
 <p>分类：</p>
+<ul>
+<li>若<span class="math inline"><em>f</em>(<em>x</em>)</span>，<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>，<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>皆为线性函数，即为线性规划（LP）；至少一个非线性，则为非线性规划（NLP）。</li>
+<li>若没有<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>，<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>，即<span class="math inline"><em>X</em> = ℝ<sup><em>n</em></sup></span>，则为无约束最优化问题。</li>
+<li>若<span class="math inline"><em>f</em>(<em>x</em>)</span>，<span class="math inline"><em>g</em><sub><em>i</em></sub>(<em>x</em>)</span>，<span class="math inline"><em>h</em><sub><em>j</em></sub>(<em>x</em>)</span>皆为光滑函数，则为光滑优化，反之则为非光滑优化。</li>
+</ul>
 <figure>
 <img src="1.2.png" srcset="/img/loading.gif" lazyload alt="最优化问题的分类" /><figcaption aria-hidden="true">最优化问题的分类</figcaption>
 </figure>
@@ -398,7 +403,72 @@ $$</span>  </p>
 <p>常用匈牙利算法等有效算法求解。</p>
 <p> </p>
 <p>还有调度问题、切割问题、装箱问题等等…</p>
-<h3 id="section"></h3>
+<p> </p>
+<p> </p>
+<h1 id="第二章-连续最优化建模与应用">第二章 连续最优化建模与应用</h1>
+<h2 id="非线性规划基础">非线性规划基础</h2>
+<h3 id="梯度nabla-fx">梯度<span class="math inline">∇<em>f</em>(<em>x</em>)</span></h3>
+<p>定义：<span class="math inline"><em>f</em>(<em>x</em>)</span>的<span class="math inline"><em>n</em></span>个偏导数为分量的向量。 <span class="math display">$$
+\nabla f(x) = \left[ \frac{\partial f(x)}{\partial x_1}, \frac{\partial f(x)}{\partial x_2}, \cdots, \frac{\partial f(x)}{\partial x_n} \right]^T
+$$</span></p>
+<blockquote>
+<p><span class="math inline"> − ∇<em>f</em>(<em>x</em>)</span>则为梯度下降方向，一般用于最优化问题，即梯度下降法。</p>
+</blockquote>
+<p>常用的梯度公式：</p>
+<ul>
+<li><span class="math inline"><em>f</em>(<em>x</em>)</span>为常数，则<span class="math inline">∇<em>f</em>(<em>x</em>)</span>=0；</li>
+<li><span class="math inline"><em>f</em>(<em>x</em>) = <em>b</em><sup><em>T</em></sup><em>x</em></span>，则<span class="math inline">∇<em>f</em>(<em>x</em>) = <em>b</em></span>；</li>
+<li><span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em></span>，则<span class="math inline">∇<em>f</em>(<em>x</em>) = <em>I</em></span>（单位阵）；</li>
+<li><span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup><em>T</em></sup><em>x</em></span>，则<span class="math inline">∇<em>f</em>(<em>x</em>) = 2<em>x</em></span>；</li>
+<li><span class="math inline"><em>A</em></span>为对称矩阵，<span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup><em>T</em></sup><em>A</em><em>x</em></span>，则<span class="math inline">∇<em>f</em>(<em>x</em>) = 2<em>A</em><em>x</em></span></li>
+</ul>
+<p> </p>
+<h3 id="n元二次函数">n元二次函数</h3>
+<p>一般形式：<span class="math inline">$f(x_1, x_2, \cdots, x_n) = \frac{1}{2} \sum_{i=1}^n \sum_{j=1}^n a_{ij}x_i x_j + \sum_{i=1}^n b_i x_i + c$</span></p>
+<blockquote>
+<p>加上<span class="math inline">$\frac{1}{2}$</span>是<span class="math inline"><em>x</em><sub><em>i</em></sub><em>x</em><sub><em>j</em></sub></span>和<span class="math inline"><em>x</em><sub><em>j</em></sub><em>x</em><sub><em>i</em></sub></span>重复计算。</p>
+</blockquote>
+<p>矩阵形式：<span class="math inline">$f(x) = \frac{1}{2} x^T A x + b^T x + c$</span>，其中<span class="math inline"><em>A</em> = <em>A</em><sup><em>T</em></sup></span></p>
+<blockquote>
+<p><span class="math inline"><em>A</em></span>是一个对称矩阵。</p>
+</blockquote>
+<p>二次型：<span class="math inline">$f(x) = \frac{1}{2} x^T A x$</span></p>
+<blockquote>
+<p>只保留了二次项</p>
+</blockquote>
+<p>矩阵正定性：正定、半正定、负定、不定。</p>
+<p> </p>
+<h3 id="hessian矩阵">Hessian矩阵</h3>
+<p>定义：多元函数<span class="math inline"><em>f</em>(<em>x</em>)</span>关于<span class="math inline"><em>x</em></span>的二阶导数。 <span class="math display">$$
+\nabla^2 f(x) = \nabla(\nabla f(x)) =
+\begin{bmatrix}
+\dfrac{\partial^2 f(x)}{\partial x_1^2} &amp; \dfrac{\partial^2 f(x)}{\partial x_2 \partial x_1} &amp; \cdots &amp; \dfrac{\partial^2 f(x)}{\partial x_n \partial x_1} \\
+\dfrac{\partial^2 f(x)}{\partial x_1 \partial x_2} &amp; \dfrac{\partial^2 f(x)}{\partial x_2^2} &amp; \cdots &amp; \dfrac{\partial^2 f(x)}{\partial x_n \partial x_2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\dfrac{\partial^2 f(x)}{\partial x_1 \partial x_n} &amp; \dfrac{\partial^2 f(x)}{\partial x_2 \partial x_n} &amp; \cdots &amp; \dfrac{\partial^2 f(x)}{\partial x_n^2}
+\end{bmatrix}
+$$</span></p>
+<blockquote>
+<p>当<span class="math inline"><em>f</em>(<em>x</em>)</span>的所有二阶偏导数连续时，即<span class="math inline">$\dfrac{\partial^2 f(x)}{\partial x_i \partial x_j}=\dfrac{\partial^2 f(x)}{\partial x_j \partial x_i}$</span>时，Hessian矩阵是对称的。</p>
+</blockquote>
+<p> </p>
+<h3 id="jacobi矩阵">Jacobi矩阵</h3>
+<p>定义：<span class="math inline"><em>g</em>(<em>x</em>)</span>是一个向量值函数，Jacobi矩阵即为<span class="math inline"><em>g</em>(<em>x</em>)</span>在<span class="math inline"><em>x</em><sub>0</sub></span>处的导数。 <span class="math display">$$
+\nabla g(x_0) =
+\begin{bmatrix}
+\dfrac{\partial g_1(x_0)}{\partial x_1} &amp; \dfrac{\partial g_1(x_0)}{\partial x_2} &amp; \cdots &amp; \dfrac{\partial g_1(x_0)}{\partial x_n} \\
+\dfrac{\partial g_2(x_0)}{\partial x_1} &amp; \dfrac{\partial g_2(x_0)}{\partial x_2} &amp; \cdots &amp; \dfrac{\partial g_2(x_0)}{\partial x_n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\dfrac{\partial g_m(x_0)}{\partial x_1} &amp; \dfrac{\partial g_m(x_0)}{\partial x_2} &amp; \cdots &amp; \dfrac{\partial g_m(x_0)}{\partial x_n}
+\end{bmatrix}
+$$</span>  </p>
+<h3 id="taylor展开">Taylor展开</h3>
+<p>定义：<span class="math inline"><em>f</em>(<em>x</em>)</span>是连续可微的，<span class="math inline"><em>p</em></span>是向量，那么 <span class="math display"><em>f</em>(<em>x</em> + <em>p</em>) = <em>f</em>(<em>x</em>) + ∇<em>f</em>(<em>x</em> + <em>t</em><em>p</em>)<sup><em>T</em></sup><em>p</em>,  其中 0 &lt; <em>t</em> &lt; 1</span></p>
+<blockquote>
+<p>二阶连续可微，即可进一步<span class="math inline">$f(x + p) = f(x) + \nabla f(x)^T p + \frac{1}{2} p^T \nabla^2 f(x + tp) p$</span></p>
+</blockquote>
+<p> </p>
+<h2 id="无约束可约最优化问题">无约束可约最优化问题</h2>
 
                 
               </div>
@@ -465,7 +535,7 @@ $$</span>  </p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年9月24日</div>
+          <div>2025年10月15日</div>
         </div>
       
       
