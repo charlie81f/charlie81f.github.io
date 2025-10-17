@@ -21,16 +21,16 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SpringBoot  介绍  SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。 即Spring框架和嵌入式服务器的组合。     注解 @Controller 描述：控制器功能，表示用于处理Web请求，通常用于返回视图名称。 用法：注解在类上。 123456">
+    <meta name="description" content="SpringBoot  介绍  SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。 即Spring框架和嵌入式服务器的组合。  自动配置了 Web 服务、JSON 转换、Tomcat 服务器等，不用手动配置 XML。 即自带内嵌Tomcat的Java程序，运行后监听lo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta property="og:url" content="http://example.com/2025/09/03/springboot/index.html">
 <meta property="og:site_name" content="FianuBlog">
-<meta property="og:description" content="SpringBoot  介绍  SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。 即Spring框架和嵌入式服务器的组合。     注解 @Controller 描述：控制器功能，表示用于处理Web请求，通常用于返回视图名称。 用法：注解在类上。 123456">
+<meta property="og:description" content="SpringBoot  介绍  SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。 即Spring框架和嵌入式服务器的组合。  自动配置了 Web 服务、JSON 转换、Tomcat 服务器等，不用手动配置 XML。 即自带内嵌Tomcat的Java程序，运行后监听lo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/09/03/springboot/intro.png">
 <meta property="article:published_time" content="2025-09-03T08:04:31.000Z">
-<meta property="article:modified_time" content="2025-10-10T07:52:58.925Z">
+<meta property="article:modified_time" content="2025-10-17T03:58:17.679Z">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/09/03/springboot/intro.png">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          778 字
+          1k 字
         
       </span>
     
@@ -285,7 +285,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年10月10日 下午
+                    本文最后更新于 2025年10月17日 中午
                   
                 
               </p>
@@ -299,21 +299,67 @@
 </figure>
 <p>SpringBoot是一个Spring模块，提供了RAD(快速应用程序开发)功能。它用于创建独立的基于Spring的应用程序，需要最少的Spring配置就可以运行。</p>
 <p>即Spring框架和嵌入式服务器的组合。</p>
+<blockquote>
+<p>自动配置了 Web 服务、JSON 转换、Tomcat 服务器等，不用手动配置 XML。</p>
+<p>即自带内嵌Tomcat的Java程序，运行后监听<code>localhost:8080</code></p>
+</blockquote>
+<p> </p>
+<p> </p>
+<h1 id="结构">结构</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">层</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>@SpringBootApplication</code></td>
+<td style="text-align: center;">主类，入口</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">interceptor</td>
+<td style="text-align: center;">请求到达controller之前/之后的公共逻辑。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">controller</td>
+<td style="text-align: center;">API接口层，前端通过controller访问后端数据。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">config</td>
+<td style="text-align: center;">配置层，配置拦截器，过滤器等。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">model</td>
+<td style="text-align: center;">模型层</td>
+</tr>
+</tbody>
+</table>
 <p> </p>
 <p> </p>
 <h1 id="注解">注解</h1>
-<h2 id="controller"><code>@Controller</code></h2>
-<p>描述：控制器功能，表示用于处理Web请求，通常用于返回视图名称。</p>
+<h2 id="component"><code>@Component</code></h2>
+<p>作用：在组件扫描时，带有<code>@Component</code>及其衍生注解的类会被注册为Bean，通用组件，任何需要托管的类都可以用这个组件。</p>
+<p>衍生注解：</p>
+<ul>
+<li><code>@Service</code>：服务层，处理业务逻辑。</li>
+<li><code>@Repository</code>：持久层，处理数据库操作。</li>
+<li><code>@Controller</code>：控制层，处理Web请求。</li>
+<li><code>@Configuration</code>：配置类，注册Bean，有动态代理增强。</li>
+</ul>
 <p>用法：注解在类上。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PageController</span> &#123;</span><br><span class="line">    <span class="meta">@GetMapping(&quot;/home&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">home</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;home&quot;</span>; <span class="comment">// 返回视图名，比如 home.html</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h2 id="configuration"><code>@Configuration</code></h2>
-<p>描述：配置类功能，可以用来定义<code>Bean</code>，相当于XML文件，允许在其下使用<code>@Bean</code>的注解来注册Bean到Spring容器。</p>
+<p>作用：配置类功能，可以用来定义<code>Bean</code>，相当于XML文件，允许在其下使用<code>@Bean</code>的注解来注册Bean到Spring容器。</p>
+<blockquote>
+<p>本质也是个特殊的<code>@Component</code>，会被组件扫描，会启用动态代理增强机制，保证多个<code>@Bean</code>之间安全相互调用，返回的是同一个Bean实例。</p>
+</blockquote>
 <p>用法：注解在类上。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">xxx</span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MyService <span class="title function_">myService</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyServiceImpl</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h2 id="componentscan"><code>@ComponentScan</code></h2>
-<p>描述：组件扫描功能，注册标注了<code>@Component</code>、<code>@Controller</code>、<code>@Service</code>、<code>@Repository</code> 等注解的类为Bean。</p>
+<p>描述：组件扫描功能，注册标注了<code>@Component</code>等注解的类为Bean。</p>
 <p>扫描范围默认为当前包及其子包的所有组件。</p>
 <p>用法：注解在类上。</p>
 <p> </p>
@@ -366,12 +412,21 @@
 <p>用法：注解在类上。</p>
 <p> </p>
 <h2 id="springbootapplication"><code>@SpringBootApplication</code></h2>
-<p>描述：组合注解，在主类上加上这一个注解，就能启动一个功能完整的 SpringBoot应用，包含了<code>@Configuration</code>，<code>@EnableAutoConfiguration</code>，<code>@ComponentScan</code>。</p>
+<p>描述：组合注解，主类入口，包含了<code>@Configuration</code>，<code>@EnableAutoConfiguration</code>，<code>@ComponentScan</code>。</p>
 <p>用法：注解在类上。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    SpringApplication.run(StudentApplication.class, args);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>SpringApplication.run</code>会启动内置的Tomcat服务器；扫描整个项目；自动注册<code>@Controller</code>、<code>@Service</code>、<code>@Repository</code>等组件，运行时在本地监听<code>8080</code>端口。</p>
+</blockquote>
 <p> </p>
 <h2 id="restcontroller"><code>@RestController</code></h2>
 <p>描述：包含了<code>@Controller</code>，<code>@ResponseBody</code>。</p>
 <p>用法：注解在类上。</p>
+<p> </p>
+<p> </p>
+<h1 id="拦截器">拦截器</h1>
+<h2 id="prehandle"><code>preHandle()</code></h2>
+<p>在请求到达controller前执行。</p>
 
                 
               </div>
@@ -438,7 +493,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年10月10日</div>
+          <div>2025年10月17日</div>
         </div>
       
       
