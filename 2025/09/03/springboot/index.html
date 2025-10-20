@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/09/03/springboot/intro.png">
 <meta property="article:published_time" content="2025-09-03T08:04:31.000Z">
-<meta property="article:modified_time" content="2025-10-20T06:53:04.152Z">
+<meta property="article:modified_time" content="2025-10-20T08:40:07.125Z">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary_large_image">
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.9k 字
         
       </span>
     
@@ -408,11 +408,21 @@
 <ul>
 <li><code>@GetMapping("/path")</code>等价于<code>@RequestMapping(value="/path", method=RequestMethod.GET)</code></li>
 <li><code>@PostMapping</code></li>
+<li><code>@PutMapping</code>：通常包含请求体，请求更新的资源。</li>
+<li><code>@DeleteMapping</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span>  <span class="comment">// 公共前缀</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/users&quot;, method = RequestMethod.GET)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">listUsers</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;user-list&quot;</span>; <span class="comment">// 返回视图名</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/users&quot;, method = RequestMethod.POST)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">createUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;user-created&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
+<h2 id="pathvariable"><code>@PathVariable</code></h2>
+<p>作用：从请求的URL路径中提取参数值，传递到处理方法的参数中。</p>
+<p>用法：注解在形参上。</p>
+<blockquote>
+<p>如果有多个时，如下。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/&#123;userId&#125;/posts/&#123;postId&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">getPostByUser</span><span class="params">(<span class="meta">@PathVariable(&quot;userId&quot;)</span> Long userId, <span class="meta">@PathVariable(&quot;postId&quot;)</span> Long postId)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;User ID: &quot;</span> + userId + <span class="string">&quot;, Post ID: &quot;</span> + postId;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> </p>
 <h2 id="requestparam"><code>@RequestParam</code></h2>
-<p>作用：获取HTTP请求参数的功能，允许从URL的查询字符串中提取参数（<code>?key=value</code>），并绑定到控制器方法上。</p>
+<p>作用：从请求的URL查询字符串中提取参数（<code>?key=value</code>），传递到处理方法的参数中。</p>
 <p>用法：注解在形参上。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">search</span><span class="params">(</span></span><br><span class="line"><span class="params">    <span class="meta">@RequestParam</span> String name,</span></span><br><span class="line"><span class="params">    <span class="meta">@RequestParam</span> <span class="type">int</span> age</span></span><br><span class="line"><span class="params">)</span> &#123;</span><br><span class="line">    <span class="comment">// name = &quot;Tom&quot;, age = 25</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Searched for &quot;</span> + name + <span class="string">&quot;, age &quot;</span> + age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>属性：</p>
@@ -556,6 +566,35 @@
 <li><code>request.getMethod()</code>：返回请求方法（Get/Post）。</li>
 <li><code>getRequestURI()</code>：返回请求路径。</li>
 </ul>
+<p> </p>
+<p> </p>
+<h1 id="持久层">持久层</h1>
+<h2 id="crudrepository"><code>CrudRepository</code></h2>
+<h3 id="findall"><code>findAll()</code></h3>
+<p><code>Iterable&lt;T&gt; findAll()</code></p>
+<p>作用：表示查询结果的集合。</p>
+<blockquote>
+<p>可以直接转化为<code>List&lt;S&gt;</code>返回。</p>
+</blockquote>
+<p> </p>
+<h3 id="save"><code>save()</code></h3>
+<p><code>S save(S entity)</code></p>
+<p>作用：根据实体是否有ID来执行插入或者更新操作，返回保存后的实体对象。</p>
+<p> </p>
+<h3 id="findbyid"><code>findById()</code></h3>
+<p><code>Optional&lt;S&gt; findById(id)</code></p>
+<p>作用：从数据库中查询<code>id</code>的实体，并返回<code>Optional</code>类，可以存储一个实体，也可以表示没有值。</p>
+<blockquote>
+<p>配合<code>orElseThrow()</code>，<code>Optional</code>的方法，如果有值则会返回值，无值则为抛出异常，例如可以配合Lambda表达式<code>() -&gt; new RuntimeException("xxx not found")</code>。</p>
+</blockquote>
+<p> </p>
+<h3 id="delete"><code>delete()</code></h3>
+<p><code>void delete(T entity)</code></p>
+<p>作用：根据实体删除。</p>
+<blockquote>
+<p><code>void deleteById(ID id)</code>可以根据<code>id</code>删除。</p>
+</blockquote>
+<p> </p>
 
                 
               </div>
