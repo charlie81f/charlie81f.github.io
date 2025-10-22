@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.2.png">
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/2.1.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-10-15T09:09:11.412Z">
+<meta property="article:modified_time" content="2025-10-22T01:31:26.413Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          3k 字
         
       </span>
     
@@ -287,7 +287,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年10月15日 下午
+                    本文最后更新于 2025年10月22日 上午
                   
                 
               </p>
@@ -572,6 +572,66 @@ $$</span> 则称<span class="math inline"><em>x</em><sup><em>k</em></sup></span>
 </blockquote>
 <p> </p>
 <h4 id="牛顿法">牛顿法</h4>
+<p>定理：</p>
+<p>为了由<span class="math inline"><em>x</em><sup><em>k</em></sup></span>产生<span class="math inline"><em>x</em><sup><em>k</em> + 1</sup></span>，在<span class="math inline"><em>x</em><sup><em>k</em></sup></span>附近用二次函数<span class="math inline"><em>Q</em>(<em>x</em>)</span>近似<span class="math inline"><em>f</em>(<em>x</em>)</span>，用<span class="math inline"><em>Q</em>(<em>x</em>)</span>的极小点作为<span class="math inline"><em>x</em><sup><em>k</em> + 1</sup></span>。 <span class="math display">$$
+f(x) \approx Q(x) = f(x^k) + \nabla f(x^k)^T (x - x^k) + \frac{1}{2}(x - x^k)^T \nabla^2 f(x^k)(x - x^k)
+$$</span></p>
+<blockquote>
+<p>点<span class="math inline"><em>x</em><sup><em>k</em></sup></span>处的泰勒展开。</p>
+</blockquote>
+<p><span class="math display">$$
+Q(x) = f(x^k) + g_k^T \cdot (x - x^k) + \frac{1}{2}(x - x^k)^T G_k (x - x^k)
+$$</span></p>
+<blockquote>
+<p><span class="math inline">其中 <em>g</em><sub><em>k</em></sub> = ∇<em>f</em>(<em>x</em><sup><em>k</em></sup>), <em>G</em><sub><em>k</em></sub> = ∇<sup>2</sup><em>f</em>(<em>x</em><sup><em>k</em></sup>)</span></p>
+</blockquote>
+<p>即<span class="math inline">∇<em>Q</em>(<em>x</em>) = <em>g</em><sub><em>k</em></sub> + <em>G</em><sub><em>k</em></sub>(<em>x</em> − <em>x</em><sup><em>k</em></sup>) = 0</span>，若<span class="math inline"><em>G</em><sub><em>k</em></sub></span>正定，即<span class="math inline"><em>G</em><sub><em>k</em></sub> ≻ 0</span>，则有<span class="math display"><em>x</em><sup><em>k</em> + 1</sup> = <em>x</em><sup><em>k</em></sup> − <em>G</em><sub><em>k</em></sub><sup> − 1</sup><em>g</em><sub><em>k</em></sub></span>，即为牛顿迭代公式。</p>
+<blockquote>
+<p>即<span class="math inline"><em>d</em><sup><em>k</em></sup> =  − <em>G</em><sub><em>k</em></sub><sup> − 1</sup><em>g</em><sub><em>k</em></sub></span>，<span class="math inline"><em>λ</em><sub><em>k</em></sub> = 1</span>。</p>
+</blockquote>
+<p>特点：</p>
+<ul>
+<li>收敛速度快，为二阶局部收敛。（需要二阶正定）</li>
+<li>初始点最好选在最优点附近，一般先用最速下降法得到较低精度的解，再用牛顿法加速。</li>
+</ul>
+<h5 id="拟牛顿法">拟牛顿法</h5>
+<p>用正定矩阵<span class="math inline"><em>H</em><sub><em>k</em></sub></span>代替<span class="math inline"><em>G</em><sub><em>k</em></sub><sup> − 1</sup></span>，则有： <span class="math display"><em>x</em><sup><em>k</em> + 1</sup> = <em>x</em><sup><em>k</em></sup> − <em>λ</em><sub><em>k</em></sub><em>H</em><sub><em>k</em></sub>∇<em>f</em>(<em>x</em><sup><em>k</em></sup>)</span></p>
+<blockquote>
+<p>当<span class="math inline"><em>H</em><sub><em>k</em></sub> = <em>I</em></span>时，<span class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = <em>x</em><sup><em>k</em></sup> − <em>λ</em><sub><em>k</em></sub>∇<em>f</em>(<em>x</em><sup><em>k</em></sup>)</span>，最速下降法。</p>
+<p>当<span class="math inline"><em>H</em><sub><em>k</em></sub> = <em>G</em><sub><em>k</em></sub><sup> − 1</sup></span>，<span class="math inline"><em>λ</em><sub><em>k</em></sub> = 1</span>时，牛顿法。</p>
+</blockquote>
+<p>拟牛顿条件： <span class="math display"><em>H</em><sub><em>k</em> + 1</sub><em>Δ</em><em>g</em><sub><em>k</em></sub> = <em>Δ</em><em>x</em><sup><em>k</em></sup></span></p>
+<blockquote>
+<p><span class="math inline"><em>g</em><sub><em>k</em></sub></span>为对<span class="math inline"><em>f</em>(<em>x</em>)</span>在<span class="math inline"><em>x</em><sup><em>k</em></sup></span>的梯度。</p>
+</blockquote>
+<p>步长可用最优步长。</p>
+<p>优点：</p>
+<ul>
+<li>只需用到函数的一阶梯度</li>
+<li>下降算法，全局收敛</li>
+<li>不需要求逆矩阵（计算量小）</li>
+<li>一般可达超线性收敛（速度快）</li>
+</ul>
+<p>衍生：</p>
+<ul>
+<li>DFP算法：</li>
+</ul>
+<p><span class="math display">$$
+H_{k+1} = H_k + \frac{\Delta x_k^T \Delta x_k}{\Delta x_k^T \Delta g_k} - \frac{H_k \Delta g_k \Delta g_k^T H_k}{\Delta g_k^T H_k \Delta g_k}
+$$</span> - BFGS算法：</p>
+<p> </p>
+<h3 id="步长线搜索算法">步长线搜索算法</h3>
+<p>精确线搜索算法：<span class="math inline"><em>λ</em><sub><em>k</em></sub></span>为最优步长。</p>
+<p>非精确线搜索：依照线搜索准则。</p>
+<ul>
+<li>Armijo准则</li>
+<li>Goldstein准则</li>
+<li>Wolfe准则</li>
+</ul>
+<p>线搜索回退法</p>
+<p> </p>
+<h2 id="约束非线性最优化">约束非线性最优化</h2>
+<h3 id="最优性条件-1">最优性条件</h3>
 
                 
               </div>
@@ -638,7 +698,7 @@ $$</span> 则称<span class="math inline"><em>x</em><sup><em>k</em></sup></span>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年10月15日</div>
+          <div>2025年10月22日</div>
         </div>
       
       
