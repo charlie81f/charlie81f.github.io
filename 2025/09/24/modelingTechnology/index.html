@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/1.2.png">
 <meta property="og:image" content="http://example.com/2025/09/24/modelingTechnology/2.1.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-10-22T01:31:26.413Z">
+<meta property="article:modified_time" content="2025-10-23T03:42:16.228Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/09/24/modelingTechnology/1.1.png">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          3.8k 字
         
       </span>
     
@@ -287,7 +287,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年10月22日 上午
+                    本文最后更新于 2025年10月23日 中午
                   
                 
               </p>
@@ -632,6 +632,95 @@ $$</span> - BFGS算法：</p>
 <p> </p>
 <h2 id="约束非线性最优化">约束非线性最优化</h2>
 <h3 id="最优性条件-1">最优性条件</h3>
+<p><span class="math display">$$
+\left\{
+\begin{array}{ll}
+\min        &amp; f(x) \\
+\text{s.t.} &amp; g(x) \geq 0 \\
+            &amp; h(x) = 0
+\end{array}
+\right.
+$$</span></p>
+<blockquote>
+<p>KKT必要条件</p>
+</blockquote>
+<p>构造拉格朗日函数： <span class="math display">$$
+L(x, \mu, \lambda) = f(x) - \sum_{j=1}^{m} \mu_j h_j(x) - \sum_{j=1}^{l} \lambda_j g_j(x) \\
+= f(x) - \mu^T h(x) - \lambda^T g(x)
+$$</span></p>
+<blockquote>
+<p><span class="math inline"><em>μ</em></span>和<span class="math inline"><em>λ</em></span>即为拉格朗日乘子</p>
+</blockquote>
+<p>则KKT条件可以表示为： <span class="math display">$$
+\nabla f(x^*) = \lambda^T \nabla g(x^*) + \mu^T \nabla h(x^*) \quad \text{稳定性条件} \\
+h(x^*) = 0 \quad\text{原问题可行性} \\
+g(x^*) \geq 0 \quad\text{原问题可行性} \\
+\lambda \geq 0 \quad\text{对偶可行性} \\
+\lambda^T g(x^*) = 0 \quad\text{互补松弛条件}
+$$</span></p>
+<h4 id="kkt充分条件">KKT充分条件</h4>
+<p>定理：设<span class="math inline"><em>f</em></span>为凸函数，<span class="math inline"><em>g</em><sub><em>i</em></sub></span>为凹函数，<span class="math inline"><em>h</em><sub><em>j</em></sub></span>为线性函数。对于<span class="math inline">$𝑥^*\in𝑆$</span>，若<span class="math inline"><em>f</em></span>，<span class="math inline"><em>g</em><sub><em>i</em></sub></span>，<span class="math inline"><em>h</em><sub><em>j</em></sub></span>在点<span class="math inline"><em>x</em><sup>*</sup></span>处可微，并且KKT条件成立，则<span class="math inline"><em>x</em><sup>*</sup></span>为优化问题的全局极小点。</p>
+<h4 id="惩罚函数法">惩罚函数法</h4>
+<p>思想：迭代过程中，罚函数法通过对不可行点施加惩罚，迫使迭代点向可行域靠近。一旦迭代点成为可行点，则这个可行点就是原问题的最优解。根据不同的罚函数有不同的罚方法。</p>
+<blockquote>
+<p>也成为序列无约束极小化方法，将有约束优化转换为一系列无约束优化问题进行求解。</p>
+</blockquote>
+<h5 id="外点法外惩法">外点法（外惩法）</h5>
+<p>对于有约束原问题： <span class="math display">$$
+\min f(x) \\
+\text{s.t.} \quad g_i(x) \leq 0, \quad i = 1, \cdots, m
+$$</span> 转换为： <span class="math display">$$
+\min f(x) \\
+\text{s.t.} \quad x \in D
+$$</span></p>
+<blockquote>
+<p>其中<span class="math inline"><em>D</em> = {<em>x</em> ∣ <em>g</em>(<em>x</em>) ≤ 0}</span></p>
+</blockquote>
+<p>构造一个<span class="math inline"><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span>，使得 <span class="math display"><em>φ</em><sub><em>k</em></sub>(<em>x</em>) = <em>f</em>(<em>x</em>) + <em>λ</em><sub><em>k</em></sub><em>p</em>(<em>x</em>)</span> 其中<span class="math inline"><em>λ</em><sub>1</sub> &lt; <em>λ</em><sub>2</sub> &lt; ⋯ &lt; <em>λ</em><sub><em>k</em></sub>( ↑ ) →  + ∞</span>，并且</p>
+<ul>
+<li><span class="math inline"><em>p</em>(<em>x</em>) = 0</span>，当<span class="math inline"><em>x</em> ∈ <em>D</em></span>时；</li>
+<li><span class="math inline"><em>p</em>(<em>x</em>) &gt; 0</span>，当<span class="math inline"><em>x</em> ∉ <em>D</em></span>时。</li>
+</ul>
+<blockquote>
+<p>其中<span class="math inline"><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span>：增广函数；<span class="math inline"><em>p</em>(<em>x</em>)</span>：惩罚函数；<span class="math inline"><em>λ</em><sub><em>k</em></sub></span>：惩罚因子。</p>
+</blockquote>
+<p>定理：</p>
+<p>当<span class="math inline"><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span>有最优解<span class="math inline"><em>x</em><sup>*</sup></span>,并且<span class="math inline"><em>x</em><sup>*</sup>(<em>λ</em><sub><em>k</em></sub>) ∈ <em>D</em></span>，即则<span class="math inline"><em>x</em><sup>*</sup>(<em>λ</em><sub><em>k</em></sub>)</span>也是原问题<span class="math inline"><em>𝑓</em>(<em>𝑥</em>)</span> 的最优解。</p>
+<p>一般构造：</p>
+<p><span class="math inline">$p(x) = \sum_{j=1}^{m} \left( \max\{g_j(x), 0\} \right)^2 + \sum_{k=1}^{p} \left( h_k(x) \right)^2$</span></p>
+<p><span class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = arg min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup></sub><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span></p>
+<h5 id="内点法内惩法">内点法（内惩法）</h5>
+<p>使得迭代点是在可行域点集内部移动的，对接近可行域边界上的点施加越来越大的惩罚，对可行域边界上的点施加无限大的惩罚，阻碍迭代点穿越边界。</p>
+<blockquote>
+<p>等式约束不适用。</p>
+</blockquote>
+<p>此时 <span class="math display">$$
+\begin{aligned} D &amp;= \{x \mid g_i(x) \leq 0,\ i = 1, \dots, m\} \\ &amp;= \partial D \cup \operatorname{int} D = \text{边界点集} \cup \text{内点集} \end{aligned}
+$$</span> 构造一个<span class="math inline"><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span>，使得 <span class="math display"><em>φ</em><sub><em>k</em></sub>(<em>x</em>) = <em>f</em>(<em>x</em>) + <em>μ</em><sub><em>k</em></sub><em>q</em>(<em>x</em>)</span> 一般构造：</p>
+<p><span class="math inline">$q(x) = \sum_{j=1}^{m} -\frac{1}{g_j(x)} \text{或}q(x) = \sum_{j=1}^{m} \frac{1}{g_j^2(x)};$</span></p>
+<p><span class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = arg min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup></sub><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span></p>
+<h4 id="增广拉格朗日乘子法">增广拉格朗日乘子法</h4>
+<p>考虑等式约束问题： <span class="math display">$$
+\begin{aligned}
+&amp;\min f(x) \\
+&amp;\text{s.t. } h(x) = 0
+\end{aligned}
+$$</span> 构造增广拉格朗日函数： <span class="math display">$$
+\varphi(x, v, \mu) = f(x) + \sum_{i=1}^{l} v_i h_i(x) + \frac{1}{2} \sum_{i=1}^{l} \sigma_i h_i^2(x)
+$$</span></p>
+<blockquote>
+<p>其中，<span class="math inline"><em>v</em></span>为乘子；<span class="math inline"><em>σ</em></span>为惩罚因子。</p>
+</blockquote>
+<p>思路：</p>
+<ul>
+<li>求解<span class="math inline">min <em>φ</em>(<em>x</em>,<em>v</em><sup>(<em>k</em>)</sup>,<em>σ</em><sup>(<em>k</em>)</sup>)</span>，得到<span class="math inline"><em>x</em><sup><em>k</em></sup></span>，<span class="math inline"><em>k</em> = 0, 1, 2, ...</span>；</li>
+<li>若<span class="math inline"><em>h</em>(<em>x</em><sup><em>k</em></sup>) = 0</span>，得到<span class="math inline"><em>x</em><sup><em>k</em></sup></span>以及乘子<span class="math inline"><em>v</em><sup><em>k</em></sup></span>；</li>
+<li>否则调整<span class="math inline"><em>v</em><sup>(<em>k</em>)</sup></span>。</li>
+</ul>
+<blockquote>
+<p><span class="math inline"><em>v</em><sup>(<em>k</em>)</sup></span>的更新：<span class="math inline"><em>v</em><sub><em>j</em></sub><sup>(<em>k</em> + 1)</sup> = <em>v</em><sub><em>j</em></sub><sup>(<em>k</em>)</sup> + <em>σ</em><em>h</em><sub><em>j</em></sub>(<em>x</em><sup><em>k</em></sup>), <em>j</em> = 1, 2, ..., <em>l</em></span></p>
+<p>不需要更新<span class="math inline"><em>σ</em></span></p>
+</blockquote>
 
                 
               </div>
@@ -698,7 +787,7 @@ $$</span> - BFGS算法：</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年10月22日</div>
+          <div>2025年10月23日</div>
         </div>
       
       
