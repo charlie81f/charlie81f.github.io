@@ -29,7 +29,7 @@
 <meta property="og:description" content="JVM内存结构 JVM 执行 Java 程序时会把它管理的内存划分为若干个不同的数据区域。这些区域有各自的用途、创建和销毁时间。 1、程序计数器（Program Counter Register） 当前线程所执行的字节码的行号指示器。字节码解释器通过改变这个计数器的值来选取下一条需要执行的字节码指令。分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。 特点：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-08T06:07:26.000Z">
-<meta property="article:modified_time" content="2025-09-12T03:38:05.237Z">
+<meta property="article:modified_time" content="2025-11-07T07:08:15.528Z">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -230,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2k 字
         
       </span>
     
@@ -283,7 +283,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年9月12日 中午
+                    本文最后更新于 2025年11月7日 下午
                   
                 
               </p>
@@ -487,7 +487,7 @@
 <p> </p>
 <h1 id="java泛型">Java泛型</h1>
 <p>写一个类或者方法时，不指定具体的数据类型，而是用一个类型参数来代替，使用时再指定具体类型，减少强制类型转换的需要。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义泛型类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> T content;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">setContent</span><span class="params">(T content)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.content = content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">getContent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用泛型类</span></span><br><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">stringBox.<span class="built_in">setContent</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">String str = stringBox.<span class="built_in">getContent</span>(); <span class="comment">// 不需要强转</span></span><br><span class="line"></span><br><span class="line">Box&lt;Integer&gt; intBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">intBox.<span class="built_in">setContent</span>(<span class="number">123</span>);</span><br><span class="line">Integer num = intBox.<span class="built_in">getContent</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义泛型类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> T content;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">setContent</span><span class="params">(T content)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.content = content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">getContent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> content;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用泛型类</span></span><br><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">stringBox.<span class="built_in">setContent</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">String str = stringBox.<span class="built_in">getContent</span>(); <span class="comment">// 不需要强转</span></span><br><span class="line"></span><br><span class="line">Box&lt;Integer&gt; intBox = <span class="keyword">new</span> Box&lt;&gt;();</span><br><span class="line">intBox.<span class="built_in">setContent</span>(<span class="number">123</span>);</span><br><span class="line">Integer num = intBox.<span class="built_in">getContent</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意用于方法时，想返回这个Box，必须要类似public static &lt;T&gt; box&lt;T&gt; success(T data)</span></span><br><span class="line"><span class="comment">// 必须提前声明&lt;T&gt;，不然会报错。</span></span><br></pre></td></tr></table></figure>
 <p>不止是类，还可以用于泛型接口，方法等。</p>
 <p>优点：</p>
 <ul>
@@ -495,7 +495,9 @@
 <li>减少强制转换</li>
 <li>可读性强</li>
 </ul>
-<p><em># 不能用于基本类型</em></p>
+<blockquote>
+<p>不能用于基本类型</p>
+</blockquote>
 <p>常用场景：集成框架，工具类方法，通用对象封装。</p>
 
                 
@@ -563,7 +565,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年9月12日</div>
+          <div>2025年11月7日</div>
         </div>
       
       
