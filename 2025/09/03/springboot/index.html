@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/09/03/springboot/intro.png">
 <meta property="article:published_time" content="2025-09-03T08:04:31.000Z">
-<meta property="article:modified_time" content="2025-11-07T07:41:11.714Z">
+<meta property="article:modified_time" content="2025-11-10T08:41:46.926Z">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary_large_image">
@@ -233,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          2.7k 字
         
       </span>
     
@@ -286,7 +286,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月7日 下午
+                    本文最后更新于 2025年11月10日 下午
                   
                 
               </p>
@@ -325,8 +325,8 @@
 <td style="text-align: center;">配置类，用于全局配置，在启动时加载，注册拦截器等。</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">controller<br>interceptor<br>exception</td>
-<td style="text-align: center;">控制层，接受前端请求，并调用服务层。<br>拦截层，控制层的横切，请求到达之前/之后的公共逻辑。<br>异常层，控制层的横切，控制异常。</td>
+<td style="text-align: center;">controller<br>filter<br>interceptor<br>exception</td>
+<td style="text-align: center;">控制层，接受前端请求，并调用服务层。<br>过滤器，来自Servlet，作用整个Servlet层。<br>拦截器，来自SpringMVC，控制层的横切，请求到达之前/之后的公共逻辑。<br>异常层，控制层的横切，控制异常。</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">service</td>
@@ -601,8 +601,12 @@
 <li>Hibernate：映射数据库中的表和Java对象的关系；</li>
 </ul>
 <p> </p>
-<h1 id="配置类">配置类</h1>
-<h2 id="addinterceptors"><code>addInterceptors()</code></h2>
+<h1 id="bean方法"><code>Bean</code>方法</h1>
+<blockquote>
+<p>非核心配置Bean要用<code>Autowired</code>注入前，需要在配置类中提前配置。</p>
+</blockquote>
+<h2 id="核心配置">核心配置</h2>
+<h3 id="addinterceptors"><code>addInterceptors()</code></h3>
 <p><code>void addInterceptors(InterceptorRegistry registry)</code></p>
 <p>作用：用于注册拦截器。</p>
 <p>方法：</p>
@@ -611,59 +615,70 @@
 <li><code>registry.addPathPatterns("/path")</code>：拦截哪些路径。</li>
 </ul>
 <p> </p>
-<h1 id="拦截器">拦截器</h1>
-<h2 id="prehandle"><code>preHandle()</code></h2>
+<h3 id="securityfilterchain"><code>SecurityFilterChain</code></h3>
+<p>作用：定义 HTTP 安全策略，即哪些URL需要认证；添加自定义过滤器，检查Token，返回过滤器链。</p>
+<blockquote>
+<p>在这里实现登录Token认证之后，最好再加保存到浏览器中，例如<code>HttpOnly Cookie</code>。</p>
+</blockquote>
+<p> </p>
+<h3 id="authenticationmanager"><code>authenticationManager</code></h3>
+<p>作用：提供 SpringSecurity的核心认证管理器，处理身份验证。</p>
+<p> </p>
+<h2 id="过滤器">过滤器</h2>
+<h3 id="onceperrequestfilter"><code>OncePerRequestFilter</code></h3>
+<p>作用：Spring 提供的基类，保证每个请求只执行一次过滤。</p>
+<p> </p>
+<h2 id="拦截器">拦截器</h2>
+<h3 id="prehandle"><code>preHandle()</code></h3>
 <p><code>boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)</code></p>
 <p>作用：在请求到达Controller前执行，如果返回 <code>false</code>，请求会被终止，不会进入后续的 Controller 或 <code>postHandle()</code>、<code>afterCompletion()</code> 方法。</p>
-<p>关键方法：</p>
+<p>方法：</p>
 <ul>
 <li><code>request.getMethod()</code>：返回请求方法（Get/Post）。</li>
 <li><code>getRequestURI()</code>：返回请求路径。</li>
 </ul>
 <p> </p>
 <p> </p>
-<h1 id="持久层">持久层</h1>
-<h2 id="crudrepository"><code>CrudRepository</code></h2>
-<h3 id="findall"><code>findAll()</code></h3>
-<p><code>Iterable&lt;T&gt; findAll()</code></p>
-<p>作用：表示查询结果的集合。</p>
+<h2 id="服务层">服务层</h2>
+<h3 id="passencoder"><code>PassEncoder</code></h3>
+<p>作用：SpringSecurity提供的密码加密器，用于对用户密码进行安全加密和验证。</p>
+<p>方法：</p>
+<ul>
+<li><code>String encode(rawPassword)</code>：把用户输入的明文密码加密成一段不可逆的哈希字符串。</li>
+<li><code>boolean matches(rawPassword, encodedPassword)</code>：验证明文密码是否与数据库中的加密密码匹配。</li>
+</ul>
+<p> </p>
+<h2 id="util层"><code>Util</code>层</h2>
+<h3 id="jwtutil"><code>JwtUtil</code></h3>
+<p>作用：可以生成、解析和验证 token，封装用户信息，过期时间等，作为无状态的登录凭证。</p>
+<blockquote>
+<p>注意生成/解析Token时使用<code>Key</code>对象，老版本的字符串密钥不兼容。</p>
+</blockquote>
+<p>使用</p>
+<p> </p>
+<h2 id="持久层">持久层</h2>
+<h3 id="crudrepository"><code>CrudRepository</code></h3>
+<p>方法：</p>
+<ul>
+<li><p><code>Iterable&lt;T&gt; findAll()</code>：表示查询结果的集合。</p>
 <blockquote>
 <p>可以直接转化为<code>List&lt;S&gt;</code>返回。</p>
-</blockquote>
-<p> </p>
-<h3 id="findallpageable-pageable"><code>findAll(Pageable pageable)</code></h3>
-<p><code>Page&lt;T&gt; findAll(Pageable pageable);</code></p>
-<p>作用：分页查询。</p>
-<p><code>Page</code>有以下属性：</p>
-<ul>
-<li><code>getSize()</code>：每页大小。</li>
-<li><code>getNumber()</code>：当前页索引。</li>
-</ul>
-<p>等等…</p>
-<p><code>Pageable</code>可以由<code>PageRequest.of(page, size)</code>来构造。</p>
-<p> </p>
-<h3 id="save"><code>save()</code></h3>
-<p><code>S save(S entity)</code></p>
-<p>作用：根据实体是否有ID来执行插入或者更新操作，返回保存后的实体对象。</p>
-<p> </p>
-<h3 id="findbyid"><code>findById()</code></h3>
-<p><code>Optional&lt;S&gt; findById(id)</code></p>
-<p>作用：从数据库中查询<code>id</code>的实体，并返回<code>Optional</code>类，可以存储一个实体，也可以表示没有值。</p>
+</blockquote></li>
+<li><p><code>Page&lt;T&gt; findAll(Pageable pageable)</code>：分页查询。</p>
+<blockquote>
+<p><code>Page</code>有以下属性：<code>getSize()</code>：每页大小；<code>getNumber()</code>：当前页索引。<code>Pageable</code>可以由<code>PageRequest.of(page, size)</code>来构造。</p>
+</blockquote></li>
+<li><p><code>T save(T entity)</code>：根据实体是否有ID来执行插入或者更新操作，返回保存后的实体对象。</p></li>
+<li><p><code>Optional&lt;T&gt; findById(id)</code>：从数据库中查询<code>id</code>的实体，并返回<code>Optional</code>类，可以存储一个实体，也可以表示没有值。</p>
 <blockquote>
 <p>配合<code>orElseThrow()</code>，<code>Optional</code>的方法，如果有值则会返回值，无值则为抛出异常，例如可以配合Lambda表达式<code>() -&gt; new RuntimeException("xxx not found")</code>。</p>
-</blockquote>
-<p> </p>
-<h3 id="findbynamecontaining"><code>findByNameContaining()</code></h3>
-<p><code>Containing</code>关键字可以实现按照模糊名查找。</p>
-<p> </p>
-<h3 id="delete"><code>delete()</code></h3>
-<p><code>void delete(T entity)</code></p>
-<p>作用：根据实体删除。</p>
+<p><code>findByNameContaining()</code>，<code>Containing</code>关键字可以实现按照模糊名查找。</p>
+</blockquote></li>
+<li><p><code>void delete(T entity)</code>：根据实体删除。</p>
 <blockquote>
 <p><code>void deleteById(ID id)</code>可以根据<code>id</code>删除。</p>
-</blockquote>
-<p> </p>
-<h1 id="异常类-1">异常类</h1>
+</blockquote></li>
+</ul>
 
                 
               </div>
@@ -732,7 +747,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月7日</div>
+          <div>2025年11月10日</div>
         </div>
       
       
