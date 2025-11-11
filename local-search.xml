@@ -8,7 +8,7 @@
     <link href="/2025/11/10/react/"/>
     <url>/2025/11/10/react/</url>
     
-    <content type="html"><![CDATA[<p>11</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="react">React</h1><h2 id="语法">语法</h2><h2 id="语法糖">语法糖</h2>在 JSX 中，以大写字母开头的名称（如 <Login />）会被认为是 React 组件，而小写字母（如<div><p>、<span>）则被认为是原生 HTML 标签，都是JSX语法糖。</p><p> </p><h3 id="组件">组件</h3><p>作用：可以将导入的变成自定义组件/库中的组件，相当于组件函数。例如<code>&lt;Login /&gt;</code>等价于<code>React.createElement(Login)</code>，多编译了一步。</p><p>函数组件</p><p>作用：相当于一个普通的JS函数，React会把它当作一个可以复用的UI模块。</p><p>要求：大写；返回一段JSX(或<code>null</code>)</p><h2 id="库">库</h2><h3 id="react-router-dom"><code>react-router-dom</code></h3><p>作用：路由系统库，它负责根据浏览器URL的变化，动态渲染不同的组件页面，<code>Route</code>控制路径对应哪个组件。</p>]]></content>
     
     
     <categories>
