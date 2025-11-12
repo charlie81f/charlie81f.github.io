@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>ReactBug</title>
+    <link href="/reactBug/"/>
+    <url>/reactBug/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>札记</category>
+      
+      <category>软件开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>React</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SpringBoot</title>
     <link href="/springBoot/"/>
     <url>/springBoot/</url>
