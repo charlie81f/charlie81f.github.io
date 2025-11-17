@@ -21,12 +21,12 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="React 语法 语法糖 React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如 &lt;Login &#x2F;&gt;）会被认为是 React 组件，而小写字母（如 &lt;div&gt;、&lt;span&gt;）则被认为是原生 HTML 标签，都是JSX，React 会把它转换成真实DOM元素。   组件&#x2F;模块 作用：可以将导入的变成自定义组件&#x2F;库中的组">
+    <meta name="description" content="React 语法 语法糖 React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如 &lt;Login &#x2F;&gt;）会被认为是 React 组件，而小写字母（如 &lt;div&gt;、&lt;span&gt;）则被认为是原生 HTML 标签，都是JSX，React 会把它转换成真实DOM元素。   组件&#x2F;模块 作用：可以将导入的变成自定义组件&#x2F;库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React">
 <meta property="og:url" content="http://example.com/react/index.html">
 <meta property="og:site_name" content="记">
-<meta property="og:description" content="React 语法 语法糖 React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如 &lt;Login &#x2F;&gt;）会被认为是 React 组件，而小写字母（如 &lt;div&gt;、&lt;span&gt;）则被认为是原生 HTML 标签，都是JSX，React 会把它转换成真实DOM元素。   组件&#x2F;模块 作用：可以将导入的变成自定义组件&#x2F;库中的组">
+<meta property="og:description" content="React 语法 语法糖 React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如 &lt;Login &#x2F;&gt;）会被认为是 React 组件，而小写字母（如 &lt;div&gt;、&lt;span&gt;）则被认为是原生 HTML 标签，都是JSX，React 会把它转换成真实DOM元素。   组件&#x2F;模块 作用：可以将导入的变成自定义组件&#x2F;库">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-10T08:53:38.000Z">
 <meta property="article:modified_time" content="2025-11-12T06:09:57.225Z">
@@ -294,7 +294,10 @@
                 <h1 id="react">React</h1>
 <h2 id="语法">语法</h2>
 <h3 id="语法糖">语法糖</h3>
-<p>React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如 <code>&lt;Login /&gt;</code>）会被认为是 React 组件，而小写字母（如 <code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>）则被认为是原生 HTML 标签，都是JSX，React 会把它转换成真实DOM元素。</p>
+<p>React 的 JSX 是 JavaScript 对象的语法糖，以大写字母开头的名称（如
+<code>&lt;Login /&gt;</code>）会被认为是 React 组件，而小写字母（如
+<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>）则被认为是原生 HTML
+标签，都是JSX，React 会把它转换成真实DOM元素。</p>
 <p> </p>
 <h3 id="组件模块">组件/模块</h3>
 <p>作用：可以将导入的变成自定义组件/库中的组件，相当于组件函数。例如<code>&lt;Login /&gt;</code>等价于<code>React.createElement(Login)</code>，多编译了一步。</p>
@@ -314,7 +317,9 @@
 <p><code>export async function apiFetch(url, options = &#123;&#125;) &#123; ... &#125;</code>：命名导出，</p>
 <p> </p>
 <h3 id="asyncawait"><code>async</code>/<code>await</code></h3>
-<p>作用：<code>async</code>标记函数是异步函数，返回一个 Promise；<code>await</code> 只能在 <code>async</code> 函数内使用，等待一个Promise对象完成，然后返回结果。</p>
+<p>作用：<code>async</code>标记函数是异步函数，返回一个
+Promise；<code>await</code> 只能在 <code>async</code>
+函数内使用，等待一个Promise对象完成，然后返回结果。</p>
 <blockquote>
 <p>能够让异步代码写的和同步代码顺序一样，避免回调地狱。</p>
 </blockquote>
@@ -336,7 +341,8 @@
 <p><strong><code>&lt;Router&gt;</code></strong></p>
 <p>作用：整个应用的路由容器，它负责监听浏览器地址栏的变化，并根据路径决定显示哪个组件。</p>
 <p><strong><code>&lt;Routes&gt;</code>/<code>&lt;Route&gt;</code></strong></p>
-<p>作用：前者包括所有的<code>&lt;Route&gt;</code>，后者定义了“路径 → 对应组件”的映射关系。</p>
+<p>作用：前者包括所有的<code>&lt;Route&gt;</code>，后者定义了“路径 →
+对应组件”的映射关系。</p>
 <p>属性：</p>
 <ul>
 <li><code>path</code>：匹配的路径</li>
@@ -349,7 +355,8 @@
 <h3 id="react-1"><code>react</code></h3>
 <p>Hook：</p>
 <blockquote>
-<p>Hook 是一种特殊函数，允许你在函数组件中“钩入”React的特性，比如状态管理、生命周期、上下文等。</p>
+<p>Hook
+是一种特殊函数，允许你在函数组件中“钩入”React的特性，比如状态管理、生命周期、上下文等。</p>
 </blockquote>
 <p><strong><code>useState</code></strong></p>
 <p>作用：管理状态，返回一个长度为2的数组，<code>[当前状态值，更新函数]</code>。</p>

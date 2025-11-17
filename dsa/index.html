@@ -29,7 +29,7 @@
 <meta property="og:description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 流程：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-11-12T01:51:26.447Z">
+<meta property="article:modified_time" content="2025-11-17T02:51:04.762Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta property="article:tag" content="STL">
 <meta property="article:tag" content="C++">
@@ -285,7 +285,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月12日 上午
+                    本文最后更新于 2025年11月17日 上午
                   
                 
               </p>
@@ -508,6 +508,7 @@
 <p>拓展：<code>ranges::sort(xx)</code>等价于<code>std::(sort.begin(),sort.end())</code></p>
 <blockquote>
 <p>迭代器范围：<code>[first, last)</code>是一个左闭右开的区间，例如使用索引和迭代器结合时要用<code>begin()+i</code>和<code>begin()+j+1</code>。</p>
+<p>如果是二维数组，默认按照<code>first</code>进行排序。</p>
 <p>性能：时间复杂度为O(nlogn)。</p>
 </blockquote>
 <p> </p>
@@ -549,12 +550,14 @@
 <h2 id="优先队列">优先队列</h2>
 <p>特殊的队列，每个元素都有优先级，最先取出优先级最高的元素，堆顶是最大/最小元素，可以在<code>struct&#123;&#125;;</code>中提前声明，</p>
 <p>格式：<code>priority_queue&lt;元素类型,底层容器类型,比较函数类型&gt;</code></p>
-<p><em># 注：声明忽略后面两个参数时自动按照最大堆排列，即按照从前往后比较的最大元素的排列。</em></p>
+<p><em>#
+注：声明忽略后面两个参数时自动按照最大堆排列，即按照从前往后比较的最大元素的排列。</em></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化，char可以换成自定义的struct</span></span><br><span class="line">priority_queue&lt;<span class="type">char</span>,vector&lt;<span class="type">char</span>&gt;,CompareASCII&gt;pq;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>默认最小堆/最大堆</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最小优先</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;&gt;&gt; pq;</span><br><span class="line"><span class="comment">// 最大优先</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, less&lt;<span class="type">int</span>&gt;&gt; pq;</span><br></pre></td></tr></table></figure>
 <p>重载运算符：</p>
-<p><em># 一般<code>const</code>修饰，重载运算符不必修改对象，引用传递避免不必要的拷贝，提高效率，返回值必须为bool。</em></p>
+<p><em>#
+一般<code>const</code>修饰，重载运算符不必修改对象，引用传递避免不必要的拷贝，提高效率，返回值必须为bool。</em></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最小堆，栈顶是优先级最小的，最大堆反之用&lt;。</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">CompareASCII</span>&#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="type">const</span> <span class="type">char</span>&amp; a,<span class="type">const</span> <span class="type">char</span>&amp; b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a&gt;b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>插入：<code>push()</code>（只能接受一个参数，必须是已经构造好的元素）或者<code>emplace()</code></p>
 <p><em># 不支持随机访问修改</em></p>
@@ -562,16 +565,19 @@
 <p> </p>
 <h2 id="vector">Vector</h2>
 <p>构造：<code>vector(size_type n, const T&amp; val)</code></p>
-<blockquote>
-<p>n个值为<code>val</code>的容器</p>
-</blockquote>
 <p>在末尾添加一个元素：<code>push_back(数组的一个数据)</code></p>
 <p>直接在末尾构造对象：<code>emplace_back(构造需要的数据)</code></p>
 <blockquote>
-<p>和<code>push_back()</code>区别不大，省去一次拷贝。</p>
+<p>省去一次拷贝。</p>
 </blockquote>
 <p>清空所有元素：<code>clear()</code></p>
+<blockquote>
+<p>清空可以用<code>empty()</code>判断</p>
+</blockquote>
 <p>是否为空矩阵：<code>empty()</code></p>
+<blockquote>
+<p><code>0</code>不能用此判断</p>
+</blockquote>
 <p> </p>
 <h2 id="string">String</h2>
 <p>获取子字符串：<code>substr(size_t pos,size_t len)</code></p>
@@ -605,7 +611,8 @@
 <p> </p>
 <h2 id="位运算">位运算</h2>
 <p> 计算整数中二进制为1的个数：<code>popcount(T x)</code></p>
-<p><em># <code>T</code>：无符号的整数类型，例如<code>unsigned int</code>，<code>unsigned long</code>，<code>uint64_t</code>等；<code>x</code>：整数</em></p>
+<p><em>#
+<code>T</code>：无符号的整数类型，例如<code>unsigned int</code>，<code>unsigned long</code>，<code>uint64_t</code>等；<code>x</code>：整数</em></p>
 <p> </p>
 <h2 id="模板类">模板类</h2>
 <h3 id="pair"><code>&lt;pair&gt;</code></h3>
@@ -656,7 +663,8 @@
 <li>元素顺序：无序</li>
 </ul>
 <h3 id="有序基于红黑树实现">有序：基于红黑树实现</h3>
-<p>红黑树是一种自平衡的二叉搜索树，保证了树的高度始终保持在 O(log n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)。</p>
+<p>红黑树是一种自平衡的二叉搜索树，保证了树的高度始终保持在 O(log
+n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)。</p>
 <p>有序集合：<code>set&lt;key&gt;</code>和有序表：<code>map&lt;key,value&gt;</code></p>
 <blockquote>
 <p>用法同哈希集合和哈希表。</p>
@@ -670,7 +678,7 @@
 <h2 id="listsetmap">List，Set，Map</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>特性</th>
 <th>List</th>
 <th>Set</th>
@@ -678,25 +686,25 @@
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>顺序</td>
 <td>有序</td>
 <td>无序</td>
 <td>无序</td>
 </tr>
-<tr class="even">
+<tr>
 <td>可重复</td>
 <td>可以</td>
 <td>不可以</td>
 <td>键不重复</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>访问方式</td>
 <td>下标索引</td>
 <td>无索引</td>
 <td>key查找</td>
 </tr>
-<tr class="even">
+<tr>
 <td>用途</td>
 <td>保存序列</td>
 <td>保存唯一元素</td>
@@ -716,8 +724,10 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;           <span class="comment">// 数据域，这里以整数为例</span></span><br><span class="line">    ListNode* next;     <span class="comment">// 指针域，指向下一个节点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数，方便创建节点</span></span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> val) : <span class="built_in">data</span>(val), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>结构：</p>
 <ul>
-<li>头节点：链表的第一个节点。通过一个指向头节点的指针（<code>head</code>）来访问整个链表。如果链表为空，<code>head</code> 指针为 <code>nullptr</code>。</li>
-<li>尾节点：链表的最后一个节点。它的 <code>next</code> 指针指向 <code>nullptr</code>。</li>
+<li>头节点：链表的第一个节点。通过一个指向头节点的指针（<code>head</code>）来访问整个链表。如果链表为空，<code>head</code>
+指针为 <code>nullptr</code>。</li>
+<li>尾节点：链表的最后一个节点。它的 <code>next</code> 指针指向
+<code>nullptr</code>。</li>
 </ul>
 <p>方法：</p>
 <ul>
@@ -742,8 +752,10 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">deleteNode</span><span class="params">(ListNode* head, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果要删除的是头节点</span></span><br><span class="line">    <span class="keyword">if</span> (head-&gt;data == val) &#123;</span><br><span class="line">        ListNode* temp = head;</span><br><span class="line">        head = head-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> temp;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 查找要删除节点的前一个节点</span></span><br><span class="line">    ListNode* current = head;</span><br><span class="line">    <span class="keyword">while</span> (current-&gt;next != <span class="literal">nullptr</span> &amp;&amp; current-&gt;next-&gt;data != val) &#123;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 找到了要删除的节点</span></span><br><span class="line">    <span class="keyword">if</span> (current-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode* temp = current-&gt;next;</span><br><span class="line">        current-&gt;next = current-&gt;next-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意：</p>
 <ul>
-<li>内存管理：在 C++ 中使用 <code>new</code> 创建的节点，必须使用 <code>delete</code> 手动释放，否则会导致内存泄漏。</li>
-<li>指针安全：操作指针时要格外小心，避免访问 <code>nullptr</code> 或已删除的内存（野指针）。</li>
+<li>内存管理：在 C++ 中使用 <code>new</code> 创建的节点，必须使用
+<code>delete</code> 手动释放，否则会导致内存泄漏。</li>
+<li>指针安全：操作指针时要格外小心，避免访问 <code>nullptr</code>
+或已删除的内存（野指针）。</li>
 <li>边界条件：处理空链表、单节点链表等情况时要特别注意。</li>
 </ul>
 <p> </p>
@@ -840,7 +852,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月12日</div>
+          <div>2025年11月17日</div>
         </div>
       
       

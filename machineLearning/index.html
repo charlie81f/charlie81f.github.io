@@ -21,12 +21,12 @@
   <meta name="author" content="">
   <meta name="keywords" content="">
   
-    <meta name="description" content="机器学习  流程示例   类型   工作流    神经网络  基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络  Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到">
+    <meta name="description" content="机器学习   流程示例    类型    工作流    神经网络   基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络   Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="http://example.com/machineLearning/index.html">
 <meta property="og:site_name" content="记">
-<meta property="og:description" content="机器学习  流程示例   类型   工作流    神经网络  基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络  Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到">
+<meta property="og:description" content="机器学习   流程示例    类型    工作流    神经网络   基础  神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。   前馈神经网络   Feedforward Neural Network，FNN  基本单元，前馈神经网络特点是数据从输入层开始，经过一">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/machineLearning/machineLearningProcess.png">
 <meta property="og:image" content="http://example.com/machineLearning/mlClassfication.png">
@@ -304,72 +304,102 @@
                 
                 <h1 id="机器学习">机器学习</h1>
 <figure>
-<img src="machineLearningProcess.png" srcset="/img/loading.gif" lazyload alt="流程示例" /><figcaption aria-hidden="true">流程示例</figcaption>
+<img src="machineLearningProcess.png" srcset="/img/loading.gif" lazyload alt="流程示例" />
+<figcaption aria-hidden="true">流程示例</figcaption>
 </figure>
 <figure>
-<img src="mlClassfication.png" srcset="/img/loading.gif" lazyload alt="类型" /><figcaption aria-hidden="true">类型</figcaption>
+<img src="mlClassfication.png" srcset="/img/loading.gif" lazyload alt="类型" />
+<figcaption aria-hidden="true">类型</figcaption>
 </figure>
 <figure>
-<img src="mlWork.png" srcset="/img/loading.gif" lazyload alt="工作流" /><figcaption aria-hidden="true">工作流</figcaption>
+<img src="mlWork.png" srcset="/img/loading.gif" lazyload alt="工作流" />
+<figcaption aria-hidden="true">工作流</figcaption>
 </figure>
 <p> </p>
 <h1 id="神经网络">神经网络</h1>
 <figure>
-<img src="cnnBasic.png" srcset="/img/loading.gif" lazyload alt="基础" /><figcaption aria-hidden="true">基础</figcaption>
+<img src="cnnBasic.png" srcset="/img/loading.gif" lazyload alt="基础" />
+<figcaption aria-hidden="true">基础</figcaption>
 </figure>
 <p>神经元接收输入信号，通过加权求和后与偏置相加，然后通过激活函数处理以产生输出。神经元的权重和偏置是网络学习过程中需要调整的参数。</p>
 <p> </p>
 <h2 id="前馈神经网络">前馈神经网络</h2>
 <figure>
-<img src="fnn.png" srcset="/img/loading.gif" lazyload alt="Feedforward Neural Network，FNN" /><figcaption aria-hidden="true">Feedforward Neural Network，FNN</figcaption>
+<img src="fnn.png" srcset="/img/loading.gif" lazyload alt="Feedforward Neural Network，FNN" />
+<figcaption aria-hidden="true">Feedforward Neural
+Network，FNN</figcaption>
 </figure>
 <p>基本单元，前馈神经网络特点是数据从输入层开始，经过一个或多个隐藏层，最后到达输出层，全过程没有循环或反馈。</p>
 <p> </p>
 <h2 id="循环神经网络">循环神经网络</h2>
 <figure>
-<img src="rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN" /><figcaption aria-hidden="true">Recurrent Neural Network, RNN</figcaption>
+<img src="rnn.png" srcset="/img/loading.gif" lazyload alt="Recurrent Neural Network, RNN" />
+<figcaption aria-hidden="true">Recurrent Neural Network,
+RNN</figcaption>
 </figure>
 <p>专门处理序列数据的神经网络，能够捕获输入数据中时间或顺序信息的依赖关系,在自然语言处理（NLP）、语音识别、时间序列预测等任务中有着广泛的应用。</p>
-<p>关键特性：其能够保持隐状态（hidden state），使得网络能够记住先前时间步的信息。</p>
+<p>关键特性：其能够保持隐状态（hidden
+state），使得网络能够记住先前时间步的信息。</p>
 <p>隐状态：通过上一时间步的隐状态和当前输入共同计算得到的。</p>
-<p> 公式：<span class="math inline"><em>h</em><sub><em>t</em></sub> = <em>f</em>(<em>W</em><sub><em>h</em><em>h</em></sub><em>h</em><sub><em>t</em> − 1</sub> + <em>W</em><sub><em>x</em><em>h</em></sub><em>x</em><sub><em>t</em></sub> + <em>b</em><sub><em>h</em></sub>)</span></p>
-<p><em># <span class="math inline"><em>h</em><sub><em>t</em></sub></span>：当前时刻隐状态；<span class="math inline"><em>h</em><sub><em>t</em> − 1</sub></span>：前一时刻隐状态；<span class="math inline"><em>W</em><sub><em>x</em><em>h</em></sub>, <em>W</em><sub><em>h</em><em>h</em></sub></span>：权重矩阵；<span class="math inline"><em>x</em><sub><em>t</em></sub></span>：当前时刻的输入；<span class="math inline"><em>b</em><sub><em>h</em></sub></span>：偏置；<span class="math inline"><em>f</em>()</span>：激活函数。</em></p>
+<p> 公式：<span
+class="math inline"><em>h</em><sub><em>t</em></sub> = <em>f</em>(<em>W</em><sub><em>h</em><em>h</em></sub><em>h</em><sub><em>t</em> − 1</sub> + <em>W</em><sub><em>x</em><em>h</em></sub><em>x</em><sub><em>t</em></sub> + <em>b</em><sub><em>h</em></sub>)</span></p>
+<p><em># <span
+class="math inline"><em>h</em><sub><em>t</em></sub></span>：当前时刻隐状态；<span
+class="math inline"><em>h</em><sub><em>t</em> − 1</sub></span>：前一时刻隐状态；<span
+class="math inline"><em>W</em><sub><em>x</em><em>h</em></sub>, <em>W</em><sub><em>h</em><em>h</em></sub></span>：权重矩阵；<span
+class="math inline"><em>x</em><sub><em>t</em></sub></span>：当前时刻的输入；<span
+class="math inline"><em>b</em><sub><em>h</em></sub></span>：偏置；<span
+class="math inline"><em>f</em>()</span>：激活函数。</em></p>
 <p>输出：不仅依赖当前输入，还依赖于隐状态的历史信息。</p>
-<p> 公式：<span class="math inline"><em>y</em><sub><em>t</em></sub> = <em>W</em><sub><em>h</em><em>y</em></sub><em>h</em><sub><em>t</em></sub> + <em>b</em><sub><em>y</em></sub></span></p>
-<p><em># <span class="math inline"><em>y</em><sub><em>t</em></sub></span>：t时刻的输出向量；<span class="math inline"><em>W</em><sub><em>h</em><em>y</em></sub></span>：隐状态到输出状态的矩阵。</em></p>
+<p> 公式：<span
+class="math inline"><em>y</em><sub><em>t</em></sub> = <em>W</em><sub><em>h</em><em>y</em></sub><em>h</em><sub><em>t</em></sub> + <em>b</em><sub><em>y</em></sub></span></p>
+<p><em># <span
+class="math inline"><em>y</em><sub><em>t</em></sub></span>：t时刻的输出向量；<span
+class="math inline"><em>W</em><sub><em>h</em><em>y</em></sub></span>：隐状态到输出状态的矩阵。</em></p>
 <figure>
-<img src="unfoldRnn.png" srcset="/img/loading.gif" lazyload alt="展开视图" /><figcaption aria-hidden="true">展开视图</figcaption>
+<img src="unfoldRnn.png" srcset="/img/loading.gif" lazyload alt="展开视图" />
+<figcaption aria-hidden="true">展开视图</figcaption>
 </figure>
 <p> </p>
 <h2 id="卷积神经网络">卷积神经网络</h2>
 <figure>
-<img src="cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN" /><figcaption aria-hidden="true">Convolutional Neural Networks, CNN</figcaption>
+<img src="cnn.png" srcset="/img/loading.gif" lazyload alt="Convolutional Neural Networks, CNN" />
+<figcaption aria-hidden="true">Convolutional Neural Networks,
+CNN</figcaption>
 </figure>
 <p>专门用于处理具有网格状拓扑结构数据（如图像）的深度学习模型，是计算机视觉任务（如图像分类、目标检测和分割）的核心技术。</p>
 <p> </p>
 <h2 id="transformer模型">Transformer模型</h2>
 <p>一种基于注意力机制的深度学习模型，仅依赖注意力机制来处理序列数据，从而实现更高的并行性和更快的训练速度。</p>
 <figure>
-<img src="transformer.png" srcset="/img/loading.gif" lazyload alt="transformer结构" /><figcaption aria-hidden="true">transformer结构</figcaption>
+<img src="transformer.png" srcset="/img/loading.gif" lazyload alt="transformer结构" />
+<figcaption aria-hidden="true">transformer结构</figcaption>
 </figure>
 <p>结构：</p>
 <ul>
-<li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有 残差连接（Residual Connection） 和 层归一化（Layer Normalization）。</li>
+<li>编码器（Encoder）：由NN层相同的模块堆叠而成，每层包含两个子层，每个子层后面都接有
+残差连接（Residual Connection） 和 层归一化（Layer
+Normalization）。</li>
 </ul>
-<p> 多头自注意力机制（Multi-Head Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
+<p> 多头自注意力机制（Multi-Head
+Self-Attention）：计算输入序列中每个词与其他词的相关性。</p>
 <p> 前馈神经网络（FNN）：对每个词进行独立的非线性变化。</p>
 <ul>
 <li>解码器（Decoder）：由NN层相同的模块堆叠而成，每层包含三个子层，每个子层后面都接有残差连接和层归一化。</li>
 </ul>
-<p> 掩码多头自注意力机制（Masked Multi-Head Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
+<p> 掩码多头自注意力机制（Masked Multi-Head
+Self-Attention）：计算输出序列中每个词和其他词的相关性。</p>
 <p><em># 使用掩码防止未来信息泄露</em></p>
-<p> 交叉注意力机制（Encoder-Decoder Attention）：计算输出序列与输入序列的相关性。</p>
+<p> 交叉注意力机制（Encoder-Decoder
+Attention）：计算输出序列与输入序列的相关性。</p>
 <p> 前馈神经网络（FNN）</p>
 <p>核心思想：</p>
 <ul>
 <li>自注意力机制（Self-Attention）：允许模型在处理序列时，动态地为每个位置分配不同的权重，从而捕捉序列中任意两个位置之间的依赖关系。</li>
-<li>多头注意力（Multi-Head Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li>
-<li>位置编码（Positional Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li>
+<li>多头注意力（Multi-Head
+Attention）：将输入分成多个子空间，每个子空间独立计算注意力，最后将结果拼接起来。</li>
+<li>位置编码（Positional
+Encoding）：位置编码被用来为输入序列中的每个词添加位置信息，代替序列信息（如RNN中的时间步）。</li>
 </ul>
 <p>优势：并行计算，长距离依赖（解决RNN的梯度消失），可扩展性。</p>
 <p>应用：NLP（机器翻译，GPT），CV（图像分类，目标检测），多模态任务。</p>
