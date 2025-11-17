@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>利用Koishi和Onebot在本机Docker上部署自己的群聊机器人</title>
+    <link href="/koishiBot/"/>
+    <url>/koishiBot/</url>
+    
+    <content type="html"><![CDATA[<h1 id="准备工作">准备工作</h1><p>下载并成功运行Docker。</p><p> </p><h1 id="开始">开始</h1><h2id="拉取镜像koishijskoishi和initialencounterllonebot到本地">1、拉取镜像<code>koishijs/koishi</code>和<code>initialencounter/llonebot</code>到本地</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull koishijs/koishi</span><br><span class="line">docker pull initialencounter/llonebot</span><br></pre></td></tr></table></figure><h2 id="创建docker网络">2、创建Docker网络</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create netName</span><br></pre></td></tr></table></figure><h2 id="创建容器并连接网络">3、创建容器并连接网络</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> koishiContainer <span class="literal">--network</span> netName <span class="literal">-p</span> <span class="number">5140</span>:<span class="number">5140</span> koishijs/koishi</span><br><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> llonebotContainer <span class="literal">--network</span> netName <span class="literal">-p</span> <span class="number">3080</span>:<span class="number">3080</span> initialencounter/llonebot</span><br></pre></td></tr></table></figure><h2 id="测试是否联通">4、测试是否联通</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec <span class="literal">-it</span> koishiContainer ping llonebotContainer</span><br></pre></td></tr></table></figure><h2 id="登录koishi和onebot">5、登录Koishi和onebot</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">5140</span>/</span><br><span class="line">http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">3080</span>/</span><br></pre></td></tr></table></figure><h2 id="在onebot中配置适配器">6、在onebot中配置适配器</h2><figure><img src="1.png" alt="启用ws正向适配器" /><figcaption aria-hidden="true">启用ws正向适配器</figcaption></figure><p>Token随便设置，和koishi中保持一致。</p><figure><img src="2.png" alt="启用ws反向适配器" /><figcaption aria-hidden="true">启用ws反向适配器</figcaption></figure><p>我两个都打开了，虽然后面连接只用了正向。</p><figure><img src="3.png" alt="效果" /><figcaption aria-hidden="true">效果</figcaption></figure><h2 id="在koishi中配置插件">7、在koishi中配置插件</h2><figure><img src="4.png" alt="在插件市场中搜索adapter-onebot" /><figcaptionaria-hidden="true">在插件市场中搜索adapter-onebot</figcaption></figure><p>添加后再返回“插件市场”中点“修改”-“配置”，跳转到“插件配置”中启用此插件。</p><figure><img src="5.png" alt="adapter-onebot中配置" /><figcaption aria-hidden="true">adapter-onebot中配置</figcaption></figure><p>selfId填写自己的机器人账号，token和上面保持一致，protocol使用ws，endpoint为<code>ws://llonebotContainer(你的onebot容器名):3001/</code>。</p><figure><img src="6.png" alt="最后运行日志为连接代表连接成功" /><figcaptionaria-hidden="true">最后运行日志为连接代表连接成功</figcaption></figure><p> </p><h1 id="测试">测试</h1><p>给机器人发送<code>help</code>，测试。</p><blockquote><p>如果有问题可以更新一下koishi其他插件，在“依赖管理”中，点右上角小火箭一键更新。</p></blockquote><p>额外的：</p><p>推荐插件<code>chatluna</code>，机器人其他功能（聊天、语言、图片…），以后再写…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>随记</category>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>Koishi</tag>
+      
+      <tag>Onebot</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ReactBug</title>
     <link href="/reactBug/"/>
     <url>/reactBug/</url>
@@ -96,7 +127,7 @@
     
     <categories>
       
-      <category>札记</category>
+      <category>随机</category>
       
       <category>IOS</category>
       
