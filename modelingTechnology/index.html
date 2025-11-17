@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/modelingTechnology/2.1.png">
 <meta property="og:image" content="http://example.com/modelingTechnology/3.1.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-11-13T08:45:26.689Z">
+<meta property="article:modified_time" content="2025-11-17T08:56:56.833Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/modelingTechnology/1.1.png">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.3k 字
+          6.1k 字
         
       </span>
     
@@ -288,7 +288,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月13日 下午
+                    本文最后更新于 2025年11月17日 下午
                   
                 
               </p>
@@ -1487,6 +1487,170 @@ class="math inline"><em>x</em><sub>1</sub></span>，计算比值…下面迭代�
 <p> </p>
 <p> </p>
 <h1 id="第四章-整数规划">第四章 整数规划</h1>
+<p>定义：如果一个线性规划模型中的部分/全部的决策变量<span
+class="math inline"><em>x</em><sub><em>i</em></sub></span>取整数值，则称该线性规划模型为<strong>整数线性规划模型</strong>。</p>
+<p>类型：纯整数规划/混合整数规划/0-1整数规划</p>
+<h2 id="模型求解">模型求解</h2>
+<h3 id="分支定界法">分支定界法</h3>
+<p>在整数规划中，
+找到实际的整数解通常是困难的，因此我们首先求解其松弛问题，这样我们可以得到一个对原整数问题的最优解的估计。</p>
+<p>松弛问题得到上界，分解问题得到下界，依据某个算法得到上/下界的序列，逐步缩小/放大上/下界。</p>
+<p>求最优解：</p>
+<p>1、若松弛问题无可行解，则整数规划无可行解；</p>
+<p>2、若松弛问题最优解符合整数，则为整数规划最优解；</p>
+<p>3、不符合整数，设最优值为<span
+class="math inline"><em>z̄</em></span>，初始定界，分枝，更新定界，比较和剪枝，重复直到无解或有最优解。</p>
+<p>示例： <span class="math display">$$
+\begin{aligned}
+\max \quad &amp; z = 40x_1 + 90x_2 \\
+\text{s.t.} \quad &amp;
+\begin{cases}
+9x_1 + 7x_2 \leq 56 \\
+7x_1 + 20x_2 \leq 70 \\
+x_1, x_2 \geq 0,\ \text{且为整数}
+\end{cases}
+\end{aligned}
+$$</span> 1、化解为松弛问题： <span class="math display">$$
+\begin{aligned}
+\max \quad &amp; z = 40x_1 + 90x_2 \\
+\text{s.t.} \quad &amp;
+\begin{cases}
+9x_1 + 7x_2 \leq 56 \\
+7x_1 + 20x_2 \leq 70 \\
+x_1, x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$</span> 2、使用单纯形法求解松弛问题： <span class="math display">$$
+\begin{aligned}
+\max \quad &amp; z = 40x_1 + 90x_2 \\
+\text{s.t.} \quad &amp;
+\begin{cases}
+9x_1 + 7x_2 +x_3= 56 \\
+7x_1 + 20x_2 +x_4= 70 \\
+x_1, x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$</span> 解得： <span class="math display">$$
+\begin{cases}
+x_1 = \dfrac{630}{131} \\
+x_2 = \dfrac{238}{131}
+\end{cases}
+$$</span></p>
+<p><span class="math display">$$
+\max z = \frac{46620}{131}
+$$</span></p>
+<p>3、分支定界：</p>
+<p>定界：<span
+class="math inline">$\bar{z}=\frac{46620}{131}$</span>，<span
+class="math inline">$\underline{z}=0$</span>，<span
+class="math inline">$\underline{z}\leq z^*\leq \bar{z}$</span></p>
+<p>分支：<span class="math inline">$x_1 \leq \left\lfloor
+\frac{630}{131} \right\rfloor = 4$</span>和<span
+class="math inline">$x_1 \geq \left\lfloor \frac{630}{131}
+\right\rfloor+1 = 5$</span></p>
+<blockquote>
+<p>这个<span
+class="math inline">$\frac{630}{131}$</span>，可以任选一个不为整数<span
+class="math inline"><em>x</em></span>来分支。</p>
+</blockquote>
+<ul>
+<li>分支1</li>
+</ul>
+<p><span class="math display">$$
+\begin{aligned}
+\max \quad &amp; z = 40x_1 + 90x_2 \\
+\text{s.t.} \quad &amp;
+\begin{cases}
+9x_1 + 7x_2 \leq 56 \\
+7x_1 + 20x_2 \leq 70 \\
+x_1 \leq 4 \\
+x_1, x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$</span></p>
+<p>解得： <span class="math display">$$
+\begin{cases}
+x_1 = 4 \\
+x_2 = 2.1
+\end{cases}
+$$</span></p>
+<p><span class="math display">max <em>z</em> = 349</span></p>
+<p>定界：<span class="math inline"><em>z̄</em> = 349</span>，<span
+class="math inline">$\underline{z}=0$</span>，<span
+class="math inline">$\underline{z}\leq z^*\leq \bar{z}$</span></p>
+<ul>
+<li>分支2</li>
+</ul>
+<p><span class="math display">$$
+\begin{aligned}
+\max \quad &amp; z = 40x_1 + 90x_2 \\
+\text{s.t.} \quad &amp;
+\begin{cases}
+9x_1 + 7x_2 \leq 56 \\
+7x_1 + 20x_2 \leq 70 \\
+x_1 \geq 5 \\
+x_1, x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$</span></p>
+<p>解得： <span class="math display">$$
+\begin{cases}
+x_1 = 5 \\
+x_2 = 1.57
+\end{cases}
+$$</span></p>
+<p><span class="math display">max <em>z</em> = 341.4</span></p>
+<p>更新定界：<span class="math inline"><em>z̄</em> = 341.4</span>，<span
+class="math inline">$\underline{z}=0$</span>，<span
+class="math inline">$\underline{z}\leq z^*\leq \bar{z}$</span></p>
+<hr />
+<p>分支1：<span
+class="math inline"><em>x</em><sub>2</sub> ≤ ⌊2.1⌋ = 2</span>，<span
+class="math inline"><em>x</em><sub>2</sub> ≥ ⌊2.1⌋ + 1 = 3</span></p>
+<ul>
+<li>分支1.1</li>
+</ul>
+<p>解得 <span class="math display">$$
+\begin{cases}
+x_1 = 4 \\
+x_2 = 2
+\end{cases}
+$$</span></p>
+<p><span class="math display">max <em>z</em> = 340</span></p>
+<p>更新定界为：<span
+class="math inline"><em>z̄</em> = 341.4</span>，<span
+class="math inline">$\underline{z}=340$</span>，<span
+class="math inline">$\underline{z}\leq z^*\leq \bar{z}$</span></p>
+<blockquote>
+<p>因为两个解都符合整数条件，所以此时更新的是下界。</p>
+</blockquote>
+<ul>
+<li>分支1.2</li>
+</ul>
+<p>解得 <span class="math display">$$
+\begin{cases}
+x_1 = 1.43 \\
+x_2 = 3
+\end{cases}
+$$</span></p>
+<p><span class="math display">max <em>z</em> = 327.4</span></p>
+<p><strong>剪枝</strong>，因为<span
+class="math inline">327.4 &lt; 340</span></p>
+<p>重复分支定界法。</p>
+<hr />
+<p>最终求得最终解为 <span class="math display">$$
+\begin{cases}
+x_1 = 4 \\
+x_2 = 2
+\end{cases}
+$$</span></p>
+<p><span class="math display">max <em>z</em> = 340</span></p>
+<p> </p>
+<h3 id="割平面法">割平面法</h3>
+<p>当问题涉及到大量的整数变量或二进制变量时，基本思想是通过逐步引入限制条件（割平面）来逐渐逼近问题的整数解，从而提高解的质量。</p>
+<p>也是结合单纯形法，当求得一个非整数最优解的时候，写出当前基变量所在行的约束等式，构造切割方程，再带入求解。</p>
+<p> </p>
+<h1 id="第五章-图论建模与应用">第五章 图论建模与应用</h1>
 
                 
               </div>
@@ -1553,7 +1717,7 @@ class="math inline"><em>x</em><sub>1</sub></span>，计算比值…下面迭代�
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月13日</div>
+          <div>2025年11月17日</div>
         </div>
       
       
