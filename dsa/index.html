@@ -29,7 +29,7 @@
 <meta property="og:description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 流程：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-11-17T07:24:55.153Z">
+<meta property="article:modified_time" content="2025-11-19T03:01:45.080Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta property="article:tag" content="STL">
 <meta property="article:tag" content="C++">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.1k 字
+          5k 字
         
       </span>
     
@@ -285,7 +285,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月17日 下午
+                    本文最后更新于 2025年11月19日 上午
                   
                 
               </p>
@@ -339,9 +339,10 @@
 <li>递归返回后，撤销刚才的选择（<strong>回溯</strong>）</li>
 </ul>
 <p>模板：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;result_type&gt; result;  <span class="comment">// 存储最终结果</span></span><br><span class="line">    vector&lt;current_path&gt; path;   <span class="comment">// 当前路径或状态</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backtrack</span><span class="params">(参数列表)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (满足终止条件) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(path);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (选择 in 选择列表) &#123;</span><br><span class="line">            <span class="keyword">if</span> (不满足约束条件) <span class="keyword">continue</span>;  <span class="comment">// 剪枝</span></span><br><span class="line"></span><br><span class="line">            path.<span class="built_in">push_back</span>(选择);         <span class="comment">// 做选择</span></span><br><span class="line">            <span class="built_in">backtrack</span>(更新参数);          <span class="comment">// 递归进入下一层</span></span><br><span class="line"></span><br><span class="line">            path.<span class="built_in">pop_back</span>();              <span class="comment">// 撤销选择（回溯）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;result_type&gt; result;  <span class="comment">// 存储最终结果</span></span><br><span class="line">    vector&lt;current_path&gt; path;   <span class="comment">// 当前路径或状态</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backtrack</span><span class="params">(参数列表)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (满足终止条件) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(path);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (选择 in 选择列表) &#123;</span><br><span class="line">            <span class="keyword">if</span> (不满足约束条件) <span class="keyword">continue</span>;  <span class="comment">// 剪枝</span></span><br><span class="line">            path.<span class="built_in">push_back</span>(选择);         <span class="comment">// 做选择</span></span><br><span class="line">            <span class="built_in">backtrack</span>(更新参数);          <span class="comment">// 递归进入下一层</span></span><br><span class="line">            path.<span class="built_in">pop_back</span>();              <span class="comment">// 撤销选择（回溯）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>可以配合lamdba表达式<code>auto dfs&#123;&#125;;</code></p>
-<p>题库：LeetCode 22，39，77，79。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">this</span> <span class="keyword">auto</span>&amp;&amp; dfs,<span class="type">int</span> i,<span class="type">int</span> t)-&gt;<span class="type">void</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="number">0</span>)&#123;</span><br><span class="line">        res.<span class="built_in">push_back</span>(path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=n||t&lt;<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(candidates[i]&gt;t) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 不选i+1</span></span><br><span class="line">    <span class="type">int</span> k=i;</span><br><span class="line">    <span class="keyword">while</span>(k&lt;n<span class="number">-1</span>&amp;&amp;candidates[k<span class="number">+1</span>]==candidates[k])&#123;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(k<span class="number">+1</span>,t);</span><br><span class="line">    <span class="comment">// 选i+1</span></span><br><span class="line">    path.<span class="built_in">push_back</span>(candidates[i]);</span><br><span class="line">    <span class="built_in">dfs</span>(i<span class="number">+1</span>,t-candidates[i]);</span><br><span class="line">    path.<span class="built_in">pop_back</span>();</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>题库：LeetCode 22，39，40，77，79。</p>
 <p> </p>
 <h2 id="动态规划">动态规划</h2>
 <p>描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，能够避免重复计算子问题。</p>
@@ -352,10 +353,12 @@
 <li><p>穷举分析</p></li>
 <li><p>确认边界</p>
 <ul>
-<li>找出规律，确定最优子结构
+<li>找出规律，确定最优子结构</li>
+</ul>
+<blockquote>
+<p>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</p>
+</blockquote>
 <ul>
-<li>动态规划问题即是递推问题，当前的决策结果是<code>f(n)</code>，则最有子结构就是要让<code>f(n-k)</code>最优，并且与后面的决策没有关系，能让后面的决策安心使用局部最优解。</li>
-</ul></li>
 <li>写出状态转移方程</li>
 </ul></li>
 </ul>
@@ -381,11 +384,13 @@
 <h2 id="堆算法">堆算法</h2>
 <p>描述：特殊的完全二叉树，可以用一维数组存储。</p>
 <p>堆的更新和维护：</p>
-<p> 入堆push()，时间复杂度<code>O(log n)</code></p>
-<p> 出堆pop()，时间复杂度<code>O(log n)</code></p>
-<p> 访问栈顶top()，时间复杂度<code>O(1)</code></p>
+<p> 入堆<code>push()</code>，时间复杂度<code>O(log n)</code></p>
+<p> 出堆<code>pop()</code>，时间复杂度<code>O(log n)</code></p>
+<p> 访问栈顶<code>top()</code>，时间复杂度<code>O(1)</code></p>
 <p> 建堆，时间复杂度<code>O(nlog n)</code></p>
-<p><em># 即堆中插入n个元素</em></p>
+<blockquote>
+<p>即堆中插入n个元素</p>
+</blockquote>
 <p>应用：优先队列。</p>
 <p>题库：LeetCode 1792。</p>
 <p> </p>
@@ -783,7 +788,7 @@ n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)
 </ul>
 <p> </p>
 <h1 id="lambda表达式">Lambda表达式</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">// lambda 递归函数例子1</span></span><br><span class="line">   <span class="keyword">auto</span> dfs = [&amp;](<span class="keyword">this</span> <span class="keyword">auto</span>&amp;&amp; dfs, <span class="type">int</span> i, <span class="type">int</span> j) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (i + <span class="number">1</span> == j) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 只有两个点，无法组成三角形</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="type">int</span>&amp; res = memo[i][j]; <span class="comment">// 注意这里是引用，修改 res 相当于修改 memo[i][j]</span></span><br><span class="line">       <span class="keyword">if</span> (res != <span class="number">-1</span>) &#123; <span class="comment">// 之前计算过</span></span><br><span class="line">           <span class="keyword">return</span> res;</span><br><span class="line">       &#125;</span><br><span class="line">       res = INT_MAX;</span><br><span class="line">       <span class="keyword">for</span> (<span class="type">int</span> k = i + <span class="number">1</span>; k &lt; j; k++) &#123; <span class="comment">// 枚举顶点 k</span></span><br><span class="line">           res = <span class="built_in">min</span>(res, <span class="built_in">dfs</span>(i, k) + <span class="built_in">dfs</span>(k, j) + v[i] * v[j] * v[k]);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   &#125;;</span><br><span class="line"><span class="comment">// lambda 递归函数例子2</span></span><br><span class="line">   <span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">this</span> <span class="keyword">auto</span>&amp;&amp; dfs,<span class="type">int</span> i)-&gt;<span class="type">long</span> <span class="type">long</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(i&lt;<span class="number">0</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="type">long</span> <span class="type">long</span>&amp; res=memo[i];</span><br><span class="line">       <span class="keyword">if</span>(res!=<span class="number">-1</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> res;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">auto</span>&amp; [d,count]=damage[i]; <span class="comment">//单纯读取，此处不使用引用也可以</span></span><br><span class="line">       <span class="type">int</span> j=i;</span><br><span class="line">       <span class="keyword">while</span>(j&gt;<span class="number">0</span>&amp;&amp;damage[j<span class="number">-1</span>].first&gt;=d<span class="number">-2</span>)&#123;</span><br><span class="line">           j--;</span><br><span class="line">       &#125;</span><br><span class="line">       res=<span class="built_in">max</span>(<span class="built_in">dfs</span>(i<span class="number">-1</span>),<span class="built_in">dfs</span>(j<span class="number">-1</span>)+(<span class="type">long</span> <span class="type">long</span>)d*count);</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lambda 递归函数例子</span></span><br><span class="line"><span class="keyword">auto</span> dfs = [&amp;](<span class="keyword">this</span> <span class="keyword">auto</span>&amp;&amp; dfs, <span class="type">int</span> i, <span class="type">int</span> j) -&gt; <span class="type">int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (i + <span class="number">1</span> == j) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 只有两个点，无法组成三角形</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span>&amp; res = memo[i][j]; <span class="comment">// 注意这里是引用，修改 res 相当于修改 memo[i][j]</span></span><br><span class="line">    <span class="keyword">if</span> (res != <span class="number">-1</span>) &#123; <span class="comment">// 之前计算过</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    res = INT_MAX;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> k = i + <span class="number">1</span>; k &lt; j; k++) &#123; <span class="comment">// 枚举顶点 k</span></span><br><span class="line">        res = <span class="built_in">min</span>(res, <span class="built_in">dfs</span>(i, k) + <span class="built_in">dfs</span>(k, j) + v[i] * v[j] * v[k]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>[&amp;]</code>表示能够访问外部作用域所有变量，<code>this auto&amp;&amp;</code>允许Lambda实现自递归，<code>-&gt;int</code>表示返回类型为整数（也可以为空），<code>int &amp; res</code>表示修改这个值同时会修改对应的的<code>memo</code>的值，实现记忆化。</p>
 </blockquote>
@@ -857,7 +862,7 @@ n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月17日</div>
+          <div>2025年11月19日</div>
         </div>
       
       
