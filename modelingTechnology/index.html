@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://example.com/modelingTechnology/5.3.png">
 <meta property="og:image" content="http://example.com/modelingTechnology/5.4.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-11-20T06:37:28.043Z">
+<meta property="article:modified_time" content="2025-11-21T09:36:01.042Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/modelingTechnology/1.1.png">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.4k 字
+          9.3k 字
         
       </span>
     
@@ -292,7 +292,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月20日 下午
+                    本文最后更新于 2025年11月21日 下午
                   
                 
               </p>
@@ -1871,6 +1871,156 @@ class="math inline"><em>T</em></span>。</p>
 <p> </p>
 <p> </p>
 <h1 id="第六章-进化算法与应用">第六章 进化算法与应用</h1>
+<p>智能优化方法是一种新兴的、源于生命科学的启发式随机优化方法。</p>
+<p>分类：</p>
+<ul>
+<li>进化计算：遗传算法</li>
+<li>群体智能：蚁群算法</li>
+<li>物理原理：模拟退火算法</li>
+</ul>
+<h2 id="进化算法及其概念">进化算法及其概念</h2>
+<p>概念：模拟自然界生物进化过程与基于自然选择和自然遗传等生物进化机制的求解优化问题的自组织、自适应的随机搜索技术和算法。通过选择、重组和变异实现优化问题的求解。</p>
+<p>基本框架：遗传算法。</p>
+<p>生物学基础：遗传、变异、进化。</p>
+<p> </p>
+<h2 id="遗传算法及其应用">遗传算法及其应用</h2>
+<p>基本思想：在求解问题时从多个解（初始种群）开始，然后通过一定的法则进行逐步迭代（选择、交叉、变异）以产生新的解。</p>
+<p>个体：个体是指种群中的单个元素。可以用
+0、1组成的长度为1的串来表示。</p>
+<p>染色体：对个体编码后得到的字符串。每一位称为基因，若干有效信息构成基因组。</p>
+<p>适应度函数：对个体判断的法则。</p>
+<p>种群：多个解的集合。</p>
+<p>遗传操作：产生新的种群。选择、交叉、变异。</p>
+<p>基本要素：编码、适应度函数的设计、初始种群的设计、遗传操作设计、控制参数（代数/概率）设计。</p>
+<p> </p>
+<p><strong>编码</strong></p>
+<p>常见编码算法：位串编码（二进制/格雷）、实数编码、字符编码。</p>
+<ul>
+<li>二进制编码：若干二进制表示个体。</li>
+</ul>
+<p><span
+class="math inline">$2^{串长}&gt;需要的等长小区间个数=\frac{区间长度}{需要精度}$</span></p>
+<blockquote>
+<p>编码的时候还可以平移区间，例如从<span
+class="math inline">[−1, 2]</span>到<span
+class="math inline">[0, 3]</span>，只需要最后解码的时候<span
+class="math inline">−1</span>即可。</p>
+</blockquote>
+<p>优点：类似生物染色体组成、遗传易实现、模式数多。</p>
+<p>缺点：汉明悬崖(0111/1000)降低搜索效率、要求给出精度、高维优化搜索效率低。</p>
+<ul>
+<li>格雷编码：对二进制编码进行变换，有效解决汉明悬崖问题。</li>
+</ul>
+<p><span
+class="math display"><em>G</em> = <em>B</em> ⊕ (<em>B</em> &gt;  &gt; 1)</span></p>
+<ul>
+<li>实数编码：将每个个体的染色体都用某一范围的一个实数（浮点数）来表示，其编码长度等于该问题变量的个数。也称为真值编码。</li>
+</ul>
+<blockquote>
+<p>适用于多维、高精度要求的连续函数优化问题。</p>
+</blockquote>
+<p><strong>初始种群</strong></p>
+<p>通常采用随机法、启发法从一定数量的个体中挑选最好的个体加入。</p>
+<blockquote>
+<p>种群规模是固定好的，一直不变，一般取20-100。</p>
+</blockquote>
+<p><strong>适应度函数</strong></p>
+<p>目标函数为<span
+class="math inline"><em>m</em><em>a</em><em>x</em></span>，<span
+class="math inline"><em>F</em><em>i</em><em>t</em><em>t</em>(<em>f</em>(<em>x</em>)) = <em>f</em>(<em>x</em>)</span>，为<span
+class="math inline"><em>m</em><em>i</em><em>n</em></span>，<span
+class="math inline">$Fitt(f(x))=\frac{1}{f(x)}$</span>。</p>
+<p>还有非负和界限值情况，但总之就是适应度最大的是最优个体。</p>
+<p>尺度变换：在算法初期运行中，为了维护种群多样性，可以降低种群个体之间的适应度差异程度；在算法运行后期中，为了保证优秀的个体遗传下去，要提高个体之间的适应度差异程度。因此需要对适应度函数进行尺度变换。有线性尺度变换(<span
+class="math inline"><em>f</em><sup>′</sup> = <em>a</em><em>f</em> + <em>b</em></span>)、乘幂尺度变换(<span
+class="math inline"><em>f</em><sup>′</sup> = <em>f</em><sup><em>K</em></sup></span>)和指数尺度变换(<span
+class="math inline"><em>f</em><sup>′</sup> = <em>e</em><sup>−<em>a</em><em>f</em></sup></span>)。</p>
+<p><strong>遗传操作</strong></p>
+<p>1）选择</p>
+<p>以个体的适应度值为评价指标，对种群中个体进行优胜劣汰。</p>
+<ul>
+<li>比例选择：个体被选中的概率和适应度大小成正比。轮盘赌选择、繁殖池选择。
+Boltzmann选择法。</li>
+</ul>
+<p>2）交叉</p>
+<p>在选择基础上，两个相互配对的染色体按照某种方式对部分基因进行互相交换，从而形成新的个体。</p>
+<blockquote>
+<p>产生新个体的最主要方法。也是区别其他进化算法的重要特征。</p>
+</blockquote>
+<ul>
+<li>二进制交叉：单点交叉（该点后的两个个体的部分结构进行互换，并生成两个新的个体）、双点交叉（两个点之间）、均匀交叉（均匀概率抽一些位）等方法。</li>
+<li>实值交叉：部分（选择部分分量）/整体（0.5的概率）离散交叉、算术交叉。</li>
+</ul>
+<p>3）变异</p>
+<p>对选中个体的染色体编码串中的某些基因座上的基因值，用该基因座的其他等位基因来替换，以形成新的个体。增加种群多样性。</p>
+<ul>
+<li>二进制变异：随机选定变异位，0-1互相变化。</li>
+<li>实值变异：基于位置（第二个变异位基因移动到第一个的前面）、基于次序（交换）。</li>
+</ul>
+<p> </p>
+<h2 id="蚁群算法及其应用">蚁群算法及其应用</h2>
+<p>又称蚂蚁算法，一种用来在图中寻找优化路径的概率型算法。在解决离散优化问题有优势，例如旅行商问题、调度问题、指派问题。</p>
+<p>正反馈效应：某一路径经过的蚂蚁越多，信息素浓度越来越大，后来者选择该路径的概率就越大。最终所有的蚂蚁都在最优路径上行进，找出最优路径。</p>
+<p>基本思想：在解空间中独立的搜索可行解，解的质量越高，在“行走路线”上留下的信息激素就越多，选择它的路径也逐渐增多，最终在正反馈的作用下找到最优解。</p>
+<p>原理：初始化-&gt;构建解空间-&gt;更新信息素-&gt;循环迭代</p>
+<p>本质：</p>
+<ul>
+<li>选择机制：信息素越多，被选择概率越大。</li>
+<li>更新机制：路径上面的信息素会随蚂蚁的经过而增长，同时也随时间的推移逐渐挥发消失。</li>
+<li>协调机制：蚂蚁间通过环境中的信息素来协同工作。</li>
+</ul>
+<p>主要体现在转移概率公式和信息素更新公式。</p>
+<p>优点：并行、正反馈（收敛快）、鲁棒性好、无需人工调整。</p>
+<p>缺点：陷入局部最优解、计算量大、参数设置困难、适用不广。</p>
+<p>示例：用蚁群算法求解一个四城市的TSP问题的执行步骤，四个城市A、B、
+C、D之间的距离矩阵如下： <span class="math display">$$
+W = d_{ij} =
+\begin{bmatrix}
+\infty &amp; 3 &amp; 1 &amp; 2 \\
+3 &amp; \infty &amp; 5 &amp; 4 \\
+1 &amp; 5 &amp; \infty &amp; 2 \\
+2 &amp; 4 &amp; 2 &amp; \infty
+\end{bmatrix}
+$$</span> 将<span
+class="math inline"><em>m</em></span>只蚂蚁随机的放到<span
+class="math inline"><em>n</em></span>个城市，同时将每只蚂蚁的第一个元素设置为当前所在的城市。初始时刻，各路径上的信息素相等，即<span
+class="math inline"><em>τ</em><sub><em>i</em><em>j</em></sub>(0) = <em>C</em></span>。</p>
+<p>假设蚂蚁种群的规模<span
+class="math inline"><em>𝑚</em> = 3</span>，参数<span
+class="math inline"><em>α</em> = 1</span>，<span
+class="math inline"><em>β</em> = 2</span>，<span
+class="math inline"><em>ρ</em> = 0.5</span>。</p>
+<p>1、初始化</p>
+<p>贪心算法得到路径ACDBA，<span
+class="math inline"><em>C</em><sup><em>n</em><em>n</em></sup> = <em>f</em>(<em>A</em><em>C</em><em>D</em><em>B</em><em>A</em>) = 1 + 2 + 4 + 3 = 10</span>，<span
+class="math inline">$\tau_0=\frac{m}{C^{nn}}=0.3$</span>。</p>
+<p>2、路径构建</p>
+<p>为每只蚂蚁随机选择出发城市，假设蚂蚁1选择城市A，蚂蚁2选择城市B，蚂蚁3选择城市D。</p>
+<p>为每只蚂蚁选择下一城市。以蚂蚁1为例，当前城市=A，可访问城市集合<span
+class="math inline"><em>a</em><em>l</em><em>l</em><em>o</em><em>w</em><em>e</em><em>d</em><sub>1</sub> = <em>B</em><em>C</em><em>D</em></span>，计算蚂蚁1分别选择BCD作为下一访问城市的概率。
+<span class="math display">$$
+A \Rightarrow
+\begin{cases}
+B: \tau_{AB}^\alpha \times \eta_{AB}^\beta = 0.3^1 \times (1/3)^2 =
+0.033 \\
+C: \tau_{AC}^\alpha \times \eta_{AC}^\beta = 0.3^1 \times (1/1)^2 = 0.3
+\\
+D: \tau_{AD}^\alpha \times \eta_{AD}^\beta = 0.3^1 \times (1/2)^2 =
+0.075
+\end{cases}
+$$</span></p>
+<p><span class="math display">$$
+\begin{aligned}
+p(B) &amp;= \frac{0.033}{0.033 + 0.3 + 0.075} = 0.081 \\
+p(C) &amp;= \frac{0.3}{0.033 + 0.3 + 0.075} = 0.74 \\
+p(D) &amp;= \frac{0.075}{0.033 + 0.3 + 0.075} = 0.18
+\end{aligned}
+$$</span></p>
+<p>用轮盘赌法选择下一城市，接着为所有蚂蚁构建路径。</p>
+<p>3、信息素更新</p>
+<p>计算路径长度，更新每条边上信息素。</p>
+<p>4、对m只蚂蚁的寻径结果进行比较，若找到比当前最优解更好的结果，则用更好的结果取而代之。</p>
+<p>5、重复，达到规定代数后终止，输出最优解。</p>
 
                 
               </div>
@@ -1937,7 +2087,7 @@ class="math inline"><em>T</em></span>。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月20日</div>
+          <div>2025年11月21日</div>
         </div>
       
       
