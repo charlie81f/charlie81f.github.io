@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://example.com/modelingTechnology/5.3.png">
 <meta property="og:image" content="http://example.com/modelingTechnology/5.4.png">
 <meta property="article:published_time" content="2025-09-24T07:40:31.000Z">
-<meta property="article:modified_time" content="2025-11-24T03:40:37.010Z">
+<meta property="article:modified_time" content="2025-11-24T08:55:10.301Z">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/modelingTechnology/1.2.png">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.1k 字
+          9.8k 字
         
       </span>
     
@@ -291,7 +291,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月24日 中午
+                    本文最后更新于 2025年11月24日 下午
                   
                 
               </p>
@@ -516,7 +516,7 @@ class="math display"><em>f</em>(<em>x</em> + <em>p</em>) = <em>f</em>(<e
 \nabla f(x)^T p + \frac{1}{2} p^T \nabla^2 f(x + tp) p$</span></p>
 </blockquote>
 <p> </p>
-<h2 id="无约束可约最优化问题">无约束可约最优化问题</h2>
+<h2 id="无约束可微最优化问题">无约束可微最优化问题</h2>
 <p><strong>最优性条件</strong> <span class="math display">$$
 \begin{aligned}
 &amp; \min &amp;&amp; f(x) \\
@@ -555,6 +555,26 @@ class="math inline"><em>x</em><sup>*</sup></span>不是一个局部极小点。<
 <p>事实上，该点是一个鞍点。</p>
 </blockquote>
 <p>示例：</p>
+<p>利用最优性条件解下列问题： <span
+class="math display">min <em>f</em>(<em>x</em>) = (<em>x</em><sub>1</sub><sup>2</sup> − 1)<sup>2</sup> + <em>x</em><sub>1</sub><sup>2</sup> + <em>x</em><sub>1</sub><sup>2</sup> − 2<em>x</em><sub>1</sub></span>
+1、先求驻点：<span
+class="math inline"><em>x</em><sup>*</sup> = (1, 0)</span></p>
+<p>2、<span
+class="math inline"><em>H</em><em>e</em><em>s</em><em>s</em><em>i</em><em>o</em><em>n</em></span>矩阵为：
+<span class="math display">$$
+\nabla^2 f(x) =
+\begin{bmatrix}
+12x_1^2 - 2 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix}
+$$</span> 代入得： <span class="math display">$$
+\nabla^2 f(x) =
+\begin{bmatrix}
+10 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix}
+$$</span> 正定，故<span
+class="math inline"><em>x</em><sup>*</sup> = (1, 0)</span>是局部极小点。</p>
 <p><strong>最小二乘法</strong></p>
 <p>损失函数： <span class="math display">$$
 J_l(\theta) = \frac{1}{2} \sum_{i=1}^n \left( h_\theta(x^{(i)}) -
@@ -574,9 +594,7 @@ class="math inline"><em>Δ</em><em>x</em><sup><em>k</em></sup> = <em>λ</em>
 class="math inline"><em>d</em><sup><em>k</em></sup></span>为第k轮搜索方向，<span
 class="math inline"><em>λ</em><sub><em>k</em></sub></span>为第k轮步长。</p>
 </blockquote>
-<p> </p>
-<h4
-id="下降方向特殊搜索方向"><strong>下降方向（特殊搜索方向）</strong></h4>
+<p><strong>下降方向</strong></p>
 <p>定义：若存在<span class="math inline"><em>δ</em> &gt; 0</span>，<span
 class="math inline"><em>d</em> ∈ <em>R</em><sup><em>n</em></sup></span>，<span
 class="math inline"><em>d</em> ≠ 0</span>，使得<span
@@ -592,7 +610,6 @@ class="math inline">−∇<em>f</em>(<em>x</em>)</span>就是<span
 class="math inline"><em>f</em>(<em>x</em>)</span>在<span
 class="math inline"><em>x</em></span>处下降最快的方向。</p>
 </blockquote>
-<p> </p>
 <p>最优步长： <span
 class="math display"><em>f</em>(<em>x</em><sup><em>k</em></sup> + <em>λ</em><sub><em>k</em></sub><em>d</em><sup><em>k</em></sup>) = min<sub><em>λ</em> ≥ 0</sub><em>f</em>(<em>x</em><sup><em>k</em></sup> + <em>λ</em><em>d</em><sup><em>k</em></sup>)</span></p>
 <blockquote>
@@ -615,8 +632,7 @@ class="math inline"><em>k</em> := <em>k</em> + 1</span>；</li>
 <li>判断<span
 class="math inline"><em>x</em><sup><em>k</em></sup></span>是否满足停止条件，是则停止，否则转第2步。</li>
 </ul>
-<p> </p>
-<h4 id="算法收敛"><strong>算法收敛</strong></h4>
+<p><strong>算法收敛</strong></p>
 <p>定义：算法按<span
 class="math inline"><em>d</em><sup><em>k</em></sup></span>和<span
 class="math inline"><em>λ</em><sub><em>k</em></sub></span>产生的迭代点列<span
@@ -647,14 +663,13 @@ class="math inline"><em>α</em> = 1</span>，线性收敛（k充分大）。
 class="math inline">1 &lt; <em>α</em> &lt; 2</span>，超线性收敛。</p>
 <p><span class="math inline"><em>α</em> = 2</span>，二阶收敛。</p>
 </blockquote>
-<p> </p>
-<h3 id="常用最优化算法">常用最优化算法</h3>
-<h4 id="梯度法最速下降法">梯度法（最速下降法）</h4>
-<p>定理：</p>
-<p>设<span class="math inline"><em>f</em>(<em>x</em>)</span>在点<span
+<p><strong>常用最优化算法</strong></p>
+<p><strong>梯度法（最速下降法）</strong></p>
+<p>定理：设<span
+class="math inline"><em>f</em>(<em>x</em>)</span>在点<span
 class="math inline"><em>x̄</em></span>处可微，若存在<span
-class="math inline"><em>d</em> ∈ <em>R</em><sup><em>n</em></sup></span>，使得
-<span
+class="math inline"><em>d</em> ∈ <em>R</em><sup><em>n</em></sup></span>，使得</p>
+<p><span
 class="math display">∇<em>f</em>(<em>x̄</em>)<sup><em>T</em></sup><em>d</em> &lt; 0</span>
 则称向量<span class="math inline"><em>d</em></span>是<span
 class="math inline"><em>f</em></span>在点<span
@@ -673,40 +688,44 @@ class="math inline"><em>λ</em><sub><em>k</em></sub></span>；</li>
 <li>或者最优步长；</li>
 <li>也可以依赖线搜索算法。</li>
 </ul>
-<p>思路：</p>
-<ul>
-<li>给定初始点<span
-class="math inline"><em>x</em><sup><em>k</em></sup> ∈ <em>R</em><sup><em>n</em></sup></span>，允许误差<span
-class="math inline"><em>ε</em> &gt; 0</span>，置<span
-class="math inline"><em>k</em> = 1</span>；</li>
-<li>计算搜索方向<span
-class="math inline"><em>d</em><sup><em>k</em></sup> = −∇<em>f</em>(<em>x</em><sup><em>k</em></sup>)</span>；</li>
-<li>若<span
-class="math inline">∥<em>d</em><sup><em>k</em></sup>∥ ≤ <em>ε</em></span>停止，否则，从<span
-class="math inline"><em>x</em><sup><em>k</em></sup></span>出发，沿<span
-class="math inline"><em>d</em><sup><em>k</em></sup></span>进行一维搜索求<span
-class="math inline"><em>λ</em><sub><em>k</em></sub></span>，找到最优步长；</li>
-<li>令<span
-class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = <em>x</em><sup><em>k</em></sup> + <em>λ</em><sub><em>k</em></sub><em>d</em><sup><em>k</em></sup></span>，置<span
-class="math inline"><em>k</em> := <em>k</em> + 1</span>，转第二步。</li>
-</ul>
 <blockquote>
 <p>特点：线性收敛，容易产生扭摆现象造成早停，当<span
 class="math inline"><em>x</em><sup><em>k</em></sup></span>距离最优点<span
 class="math inline"><em>x</em><sup>*</sup></span>较远时，速度快；而接近最优点时，速度下降。</p>
 </blockquote>
-<p> </p>
-<h4 id="牛顿法">牛顿法</h4>
-<p>定理：</p>
-<p>为了由<span
+<p>示例：</p>
+<p>用最速下降法求解下列问题： <span class="math display">$$
+\min \quad f(x) = 2x_1^2 + x_2^2,\quad初点x^1 = (1,1)^T,\varepsilon =
+\frac{1}{10}
+$$</span></p>
+<p>$$</p>
+<p>$$</p>
+<p>1、第一次迭代：<span class="math inline">$\nabla f(x^1) =
+\begin{bmatrix}4x_1 \\2x_2\end{bmatrix}$</span>，<span
+class="math inline">$d^1=-\nabla f(x^1)=\begin{bmatrix}-4
+\\-2\end{bmatrix}$</span>，<span class="math inline">$\|d\| = 2\sqrt{5}
+&gt; \frac{1}{10}$</span>。</p>
+<p>从<span
+class="math inline"><em>x</em><sup>1</sup></span>出发，沿方向<span
+class="math inline"><em>d</em><sup>1</sup></span>进行一维搜索，求步长<span
+class="math inline"><em>λ</em><sub>1</sub></span> ,即<span
+class="math inline"><em>φ</em>(<em>λ</em>) = min<sub><em>λ</em> ≥ 0</sub><em>f</em>(<em>x</em><sup><em>k</em></sup> + <em>λ</em><em>d</em><sup><em>k</em></sup>) = 2(1 − 4<em>λ</em>)<sup>2</sup> + (1 − 2<em>λ</em>)<sup>2</sup></span>，令<span
+class="math inline"><em>φ</em><sup>′</sup>(<em>λ</em>) = 0</span>，解得<span
+class="math inline">$\lambda=\frac{5}{18}$</span>，<span
+class="math inline">$x^2=x^1+\lambda_1d^1=\begin{bmatrix}-\frac{1}{9}
+\\\frac{4}{9}\end{bmatrix}$</span></p>
+<p>2、不断迭代直到<span
+class="math inline">∥<em>d</em>∥ ≤ <em>ε</em></span>停止。</p>
+<p><strong>牛顿法</strong></p>
+<p>定理：为了由<span
 class="math inline"><em>x</em><sup><em>k</em></sup></span>产生<span
 class="math inline"><em>x</em><sup><em>k</em> + 1</sup></span>，在<span
 class="math inline"><em>x</em><sup><em>k</em></sup></span>附近用二次函数<span
 class="math inline"><em>Q</em>(<em>x</em>)</span>近似<span
 class="math inline"><em>f</em>(<em>x</em>)</span>，用<span
 class="math inline"><em>Q</em>(<em>x</em>)</span>的极小点作为<span
-class="math inline"><em>x</em><sup><em>k</em> + 1</sup></span>。 <span
-class="math display">$$
+class="math inline"><em>x</em><sup><em>k</em> + 1</sup></span>。</p>
+<p><span class="math display">$$
 f(x) \approx Q(x) = f(x^k) + \nabla f(x^k)^T (x - x^k) + \frac{1}{2}(x -
 x^k)^T \nabla^2 f(x^k)(x - x^k)
 $$</span></p>
@@ -737,7 +756,22 @@ class="math inline"><em>λ</em><sub><em>k</em></sub> = 1</span>。</p>
 <li>收敛速度快，为二阶局部收敛。（需要二阶正定）</li>
 <li>初始点最好选在最优点附近，一般先用最速下降法得到较低精度的解，再用牛顿法加速。</li>
 </ul>
-<h5 id="拟牛顿法">拟牛顿法</h5>
+<p>示例：</p>
+<p>用牛顿法求解下列问题： <span
+class="math display">min   <em>f</em>(<em>x</em>) = 2<em>x</em><sub>1</sub><sup>2</sup> + <em>x</em><sub>2</sub><sup>2</sup>,  取初点<em>x</em><sup>1</sup> = (0, 1)</span>
+1、第一次迭代：<span class="math inline">$\nabla
+f(x^1)=\begin{bmatrix}-4 \\2\end{bmatrix}$</span>，<span
+class="math inline">$\nabla^2 f(x^1)=\begin{bmatrix}12 &amp; 0 \\0 &amp;
+2\end{bmatrix}$</span>。</p>
+<p>迭代更新：<span class="math inline">$x^2 = x^1 - \nabla^2 f(x^1)^{-1}
+\nabla f(x^1)=\begin{bmatrix}\frac{1}{3} \\0\end{bmatrix}$</span>。</p>
+<blockquote>
+<p>其中矩阵的逆就是取倒数，<span class="math inline">$\nabla^2
+f(x^1)^{-1}=\begin{bmatrix}\frac{1}{12} &amp; 0 \\0 &amp;
+\frac{1}{2}\end{bmatrix}$</span>。</p>
+</blockquote>
+<p>2、不断迭代。</p>
+<p><strong>拟牛顿法（变尺度法）</strong></p>
 <p>用正定矩阵<span
 class="math inline"><em>H</em><sub><em>k</em></sub></span>代替<span
 class="math inline"><em>G</em><sub><em>k</em></sub><sup>−1</sup></span>，则有：
@@ -774,9 +808,25 @@ class="math inline"><em>x</em><sup><em>k</em></sup></span>的梯度。</p>
 <p><span class="math display">$$
 H_{k+1} = H_k + \frac{\Delta x_k^T \Delta x_k}{\Delta x_k^T \Delta g_k}
 - \frac{H_k \Delta g_k \Delta g_k^T H_k}{\Delta g_k^T H_k \Delta g_k}
-$$</span> - BFGS算法：</p>
-<p> </p>
-<h3 id="步长线搜索算法">步长线搜索算法</h3>
+$$</span> 示例：</p>
+<p>用DFP方法求解下列问题： <span
+class="math display">min   2<em>x</em><sub>1</sub><sup>2</sup> + <em>x</em><sub>2</sub><sup>2</sup> − 4<em>x</em><sub>1</sub> + 2</span>
+初始点以及初始矩阵为： <span class="math display">$$
+x^{(1)} = \begin{bmatrix} 2 \\ 1 \end{bmatrix},\quad H_1 =
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+$$</span> 1、第一次迭代：</p>
+<p><span class="math inline">$g = \begin{bmatrix} 4(x_1 - 1) \\ 2x_2
+\end{bmatrix} = \begin{bmatrix} 4 \\ 2 \end{bmatrix}$</span>，<span
+class="math inline">$d^{(1)} = -H_1 g_1 = \begin{bmatrix} -4 \\ -2
+\end{bmatrix}$</span>，沿着方向一维搜索求得步长为<span
+class="math inline">$\lambda_1=\frac{5}{18}$</span>。</p>
+<p><span class="math inline">$x^2=x^1+\lambda_1d^1=\begin{bmatrix}
+\frac{8}{9} \\ \frac{4}{9} \end{bmatrix}$</span>。</p>
+<p>2、不断迭代，得到最优解。</p>
+<ul>
+<li>BFGS算法</li>
+</ul>
+<p><strong>步长线搜索算法</strong></p>
 <p>精确线搜索算法：<span
 class="math inline"><em>λ</em><sub><em>k</em></sub></span>为最优步长。</p>
 <p>非精确线搜索：依照线搜索准则。</p>
@@ -788,8 +838,7 @@ class="math inline"><em>λ</em><sub><em>k</em></sub></span>为最优步长。</p
 <p>线搜索回退法</p>
 <p> </p>
 <h2 id="约束非线性最优化">约束非线性最优化</h2>
-<h3 id="最优性条件">最优性条件</h3>
-<p><span class="math display">$$
+<p><strong>最优性条件</strong> <span class="math display">$$
 \left\{
 \begin{array}{ll}
 \min        &amp; f(x) \\
@@ -801,16 +850,15 @@ $$</span></p>
 <blockquote>
 <p>KKT必要条件</p>
 </blockquote>
-<p>构造拉格朗日函数： <span class="math display">$$
-L(x, \mu, \lambda) = f(x) - \sum_{j=1}^{m} \mu_j h_j(x) - \sum_{j=1}^{l}
-\lambda_j g_j(x) \\
-= f(x) - \mu^T h(x) - \lambda^T g(x)
-$$</span></p>
+<p>构造拉格朗日函数： <span
+class="math display"><em>L</em>(<em>x</em>, <em>μ</em>, <em>λ</em>) = <em>f</em>(<em>x</em>) − <em>μ</em><sup><em>T</em></sup><em>h</em>(<em>x</em>) − <em>λ</em><sup><em>T</em></sup><em>g</em>(<em>x</em>)</span></p>
 <blockquote>
 <p><span class="math inline"><em>μ</em></span>和<span
 class="math inline"><em>λ</em></span>即为拉格朗日乘子</p>
 </blockquote>
-<p>则KKT条件可以表示为： <span class="math display">$$
+<p><span
+class="math inline"><em>x</em><sup>*</sup></span>是问题的局部最优解，则KKT条件可以表示为：
+<span class="math display">$$
 \nabla f(x^*) = \lambda^T \nabla g(x^*) + \mu^T \nabla h(x^*) \quad
 \text{稳定性条件} \\
 h(x^*) = 0 \quad\text{原问题可行性} \\
@@ -818,7 +866,32 @@ g(x^*) \geq 0 \quad\text{原问题可行性} \\
 \lambda \geq 0 \quad\text{对偶可行性} \\
 \lambda^T g(x^*) = 0 \quad\text{互补松弛条件}
 $$</span></p>
-<h4 id="kkt充分条件">KKT充分条件</h4>
+<p>示例：</p>
+<p>考虑以下非线性规划问题： <span class="math display">$$
+\begin{aligned}
+&amp; \min \quad x_1 \\
+&amp; \text{s.t.} \quad
+\left\{
+\begin{array}{l}
+3(x_1 - 3)^2 + x_2 \geq 0 \\
+(x_1 - 3)^2 + x_2^2 - 10 = 0
+\end{array}
+\right.
+\end{aligned}
+$$</span> 检验以下各点是否为局部最优解？ <span class="math display">$$
+x^1 = \begin{bmatrix} 2 \\ -3 \end{bmatrix},\quad x^2 = \begin{bmatrix}
+4 \\ -3 \end{bmatrix}
+$$</span> 检查<span class="math inline"><em>x</em><sup>1</sup></span>：
+<span class="math display">$$
+\nabla f(x^1) = \begin{bmatrix} 1 \\ 0 \end{bmatrix},\quad
+\nabla g(x^1) = \begin{bmatrix} -6 \\ 1 \end{bmatrix},\quad
+\nabla h(x^1) = \begin{bmatrix} -2 \\ -6 \end{bmatrix}
+$$</span> 按照KKT条件，<span
+class="math inline"><em>f</em>(<em>x</em><sup>1</sup>) − <em>μ</em><em>h</em>(<em>x</em><sup>1</sup>) − <em>λ</em><em>g</em>(<em>x</em><sup>1</sup>)</span>解得<span
+class="math inline">$\mu=-\frac{1}{38}$</span>，<span
+class="math inline">$\lambda=-\frac{3}{19}$</span>，不满足对偶可行性，故不为KKT点。</p>
+<p>同理检查<span class="math inline"><em>x</em><sup>2</sup></span>。</p>
+<p><strong>KKT充分条件</strong></p>
 <p>定理：设<span class="math inline"><em>f</em></span>为凸函数，<span
 class="math inline"><em>g</em><sub><em>i</em></sub></span>为凹函数，<span
 class="math inline"><em>h</em><sub><em>j</em></sub></span>为线性函数。对于<span
@@ -828,12 +901,12 @@ class="math inline"><em>g</em><sub><em>i</em></sub></span>，<span
 class="math inline"><em>h</em><sub><em>j</em></sub></span>在点<span
 class="math inline"><em>x</em><sup>*</sup></span>处可微，并且KKT条件成立，则<span
 class="math inline"><em>x</em><sup>*</sup></span>为优化问题的全局极小点。</p>
-<h4 id="惩罚函数法">惩罚函数法</h4>
+<p><strong>惩罚函数法</strong></p>
 <p>思想：迭代过程中，罚函数法通过对不可行点施加惩罚，迫使迭代点向可行域靠近。一旦迭代点成为可行点，则这个可行点就是原问题的最优解。根据不同的罚函数有不同的罚方法。</p>
 <blockquote>
 <p>也成为序列无约束极小化方法，将有约束优化转换为一系列无约束优化问题进行求解。</p>
 </blockquote>
-<h5 id="外点法外惩法">外点法（外惩法）</h5>
+<p><strong>外点法（外惩法）</strong></p>
 <p>对于有约束原问题： <span class="math display">$$
 \min f(x) \\
 \text{s.t.} \quad g_i(x) \leq 0, \quad i = 1, \cdots, m
@@ -871,12 +944,47 @@ class="math inline"><em>x</em><sup>*</sup></span>,并且<span
 class="math inline"><em>x</em><sup>*</sup>(<em>λ</em><sub><em>k</em></sub>) ∈ <em>D</em></span>，即则<span
 class="math inline"><em>x</em><sup>*</sup>(<em>λ</em><sub><em>k</em></sub>)</span>也是原问题<span
 class="math inline"><em>𝑓</em>(<em>𝑥</em>)</span> 的最优解。</p>
-<p>一般构造：</p>
-<p><span class="math inline">$p(x) = \sum_{j=1}^{m} \left( \max\{g_j(x),
-0\} \right)^2 + \sum_{k=1}^{p} \left( h_k(x) \right)^2$</span></p>
-<p><span
-class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = arg min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup></sub><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span></p>
-<h5 id="内点法内惩法">内点法（内惩法）</h5>
+<p>示例：</p>
+<p>用外点罚函数求解： <span class="math display">$$
+\begin{aligned}
+&amp; \min \quad (x_1 - 3)^2 + (x_2 - 2)^2 \\
+&amp; \text{s.t.} \quad 4 - x_1 - x_2 \geq 0
+\end{aligned}
+$$</span> 1、构造罚函数： <span class="math display">$$
+F(x, \sigma)= \begin{cases}
+(x_1 - 3)^2 + (x_2 - 2)^2, &amp; x_1 + x_2 - 4 \leq 0 \\
+(x_1 - 3)^2 + (x_2 - 2)^2 + \sigma(x_1 + x_2 - 4)^2, &amp; x_1 + x_2 - 4
+&gt; 0
+\end{cases}
+$$</span> 2、用解析方法求这个无约束问题： <span class="math display">$$
+\frac{\partial F(x, \sigma)}{\partial x_1} =
+\begin{cases}
+2(x_1 - 3), &amp; x_1 + x_2 \leq 4 \\
+2(x_1 - 3) + 2\sigma(x_1 + x_2 - 4), &amp; x_1 + x_2 &gt; 4
+\end{cases}
+$$</span></p>
+<p><span class="math display">$$
+\frac{\partial F(x, \sigma)}{\partial x_2} =
+\begin{cases}
+2(x_2 - 2), &amp; x_1 + x_2 \leq 4 \\
+2(x_2 - 2) + 2\sigma(x_1 + x_2 - 4), &amp; x_1 + x_2 &gt; 4
+\end{cases}
+$$</span></p>
+<p>令偏导数<span class="math inline"> = 0</span>，解得<span
+class="math inline">$x(\sigma) = \begin{bmatrix} \dfrac{5\sigma +
+3}{2\sigma + 1} \\[1em] \dfrac{3\sigma + 2}{2\sigma + 1}
+\end{bmatrix}$</span>，同时求得<span class="math inline">$\nabla^2 F(x,
+\sigma) = \begin{bmatrix}2(\sigma + 1) &amp; 2\sigma \\2\sigma &amp;
+2(\sigma + 1)\end{bmatrix}$</span>。</p>
+<p>由于<span class="math inline"><em>σ</em> &gt; 0</span>，所以<span
+class="math inline">∇<sup>2</sup><em>F</em>(<em>x</em>, <em>σ</em>)</span>是正定阵，因此<span
+class="math inline"><em>x</em>(<em>σ</em>)</span>是<span
+class="math inline"><em>F</em>(<em>x</em>, <em>σ</em>)</span>的极小点。</p>
+<p>3、求原问题最优解：</p>
+<p><span class="math inline">$x^* = \lim_{\sigma \to \infty} x(\sigma) =
+\left( \frac{5}{2},\ \frac{3}{2} \right)^T$</span>，<span
+class="math inline">$f(x^*)=\frac{1}{2}$</span>。</p>
+<p><strong>内点法（内惩法）</strong></p>
 <p>使得迭代点是在可行域点集内部移动的，对接近可行域边界上的点施加越来越大的惩罚，对可行域边界上的点施加无限大的惩罚，阻碍迭代点穿越边界。</p>
 <blockquote>
 <p>等式约束不适用。</p>
@@ -889,12 +997,7 @@ $$</span> 构造一个<span
 class="math inline"><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span>，使得
 <span
 class="math display"><em>φ</em><sub><em>k</em></sub>(<em>x</em>) = <em>f</em>(<em>x</em>) + <em>μ</em><sub><em>k</em></sub><em>q</em>(<em>x</em>)</span>
-一般构造：</p>
-<p><span class="math inline">$q(x) = \sum_{j=1}^{m} -\frac{1}{g_j(x)}
-\text{或}q(x) = \sum_{j=1}^{m} \frac{1}{g_j^2(x)};$</span></p>
-<p><span
-class="math inline"><em>x</em><sup><em>k</em> + 1</sup> = arg min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup></sub><em>φ</em><sub><em>k</em></sub>(<em>x</em>)</span></p>
-<h4 id="增广拉格朗日乘子法">增广拉格朗日乘子法</h4>
+<strong>增广拉格朗日乘子法</strong></p>
 <p>考虑等式约束问题： <span class="math display">$$
 \begin{aligned}
 &amp;\min f(x) \\
@@ -908,25 +1011,26 @@ $$</span></p>
 <p>其中，<span class="math inline"><em>v</em></span>为乘子；<span
 class="math inline"><em>σ</em></span>为惩罚因子。</p>
 </blockquote>
-<p>思路：</p>
-<ul>
-<li>求解<span
-class="math inline">min <em>φ</em>(<em>x</em>, <em>v</em><sup>(<em>k</em>)</sup>, <em>σ</em><sup>(<em>k</em>)</sup>)</span>，得到<span
-class="math inline"><em>x</em><sup><em>k</em></sup></span>，<span
-class="math inline"><em>k</em> = 0, 1, 2, ...</span>；</li>
-<li>若<span
-class="math inline"><em>h</em>(<em>x</em><sup><em>k</em></sup>) = 0</span>，得到<span
-class="math inline"><em>x</em><sup><em>k</em></sup></span>以及乘子<span
-class="math inline"><em>v</em><sup><em>k</em></sup></span>；</li>
-<li>否则调整<span
-class="math inline"><em>v</em><sup>(<em>k</em>)</sup></span>。</li>
-</ul>
-<blockquote>
-<p><span
-class="math inline"><em>v</em><sup>(<em>k</em>)</sup></span>的更新：<span
-class="math inline"><em>v</em><sub><em>j</em></sub><sup>(<em>k</em> + 1)</sup> = <em>v</em><sub><em>j</em></sub><sup>(<em>k</em>)</sup> + <em>σ</em><em>h</em><sub><em>j</em></sub>(<em>x</em><sup><em>k</em></sup>), <em>j</em> = 1, 2, ..., <em>l</em></span></p>
-<p>不需要更新<span class="math inline"><em>σ</em></span></p>
-</blockquote>
+<p>示例：</p>
+<p>用广义乘子法求解： <span class="math display">$$
+\begin{aligned}
+&amp; \min \quad 2x_1^2 + x_2^2 - 2x_1x_2 \\
+&amp; \text{s.t.} \quad x_1 + x_2 - 1 = 0
+\end{aligned}
+$$</span> 1、定义增广Lagrange函数： <span class="math display">$$
+\varphi(x, v, \sigma) = 2x_1^2 + x_2^2 - 2x_1x_2 - v(x_1 + x_2 - 1) +
+\frac{\sigma}{2}(x_1 + x_2 - 1)^2
+$$</span> 取<span
+class="math inline"><em>σ</em> = 2, <em>v</em><sup>1</sup> = 1</span>，求解<span
+class="math inline"><em>m</em><em>i</em><em>n</em>  <em>φ</em>(<em>x</em>, 1, 2)</span>，令关于<span
+class="math inline"><em>x</em><sup>1</sup></span>和<span
+class="math inline"><em>x</em><sup>2</sup></span>的偏导为0，解得<span
+class="math inline">$x^1=\begin{bmatrix} \frac{1}{2} \\ \frac{3}{4}
+\end{bmatrix}$</span>。</p>
+<p>2、更新乘子，<span class="math inline">$v^2=v^1-\sigma
+h(x^1)=1-2×\frac{1}{4}=\frac{1}{2}$</span>，求解<span
+class="math inline">$min \quad \varphi(x, \frac{1}{2},
+2)$</span>，重复迭代。</p>
 <p> </p>
 <p> </p>
 <h1 id="第三章-线性规划">第三章 线性规划</h1>
@@ -988,7 +1092,7 @@ class="math inline"><em>m</em></span>列，<span
 class="math inline"><em>B</em> = (<em>P</em><sub>1</sub>, <em>P</em><sub>2</sub>, ..., <em>P</em><sub><em>m</em></sub>)</span>，则<span
 class="math inline"><em>P</em><sub><em>j</em></sub></span>为基向量，与其对应的变量<span
 class="math inline"><em>x</em><sub><em>j</em></sub></span>则为基变量。</p>
-<p>例如： <span class="math display">$$
+<p>示例： <span class="math display">$$
 \begin{aligned}
 \left\{
 \begin{array}{l}
