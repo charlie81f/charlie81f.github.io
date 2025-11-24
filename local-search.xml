@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Linux</title>
+    <link href="/linux/"/>
+    <url>/linux/</url>
+    
+    <content type="html"><![CDATA[<h1 id="linux">Linux</h1><p>常用命令：</p><p>列出当前目录下文件：<code>ls</code></p><blockquote><p>后面也可接目录</p></blockquote><p><code>tar</code>解压：<code>tar -xzvf *.tar.gz -C /xxx</code></p><blockquote><p><code>x</code>：解压；<code>z</code>：处理<code>.gz</code>格式；<code>v</code>：显示解压过程；<code>f</code>：指定解压的文件名；<code>C</code>：解压的目录。</p></blockquote><p>以管理员的权限执行后面的命令：<code>sudo xxx</code></p><ul><li><p>重启：<code>sudo reboot</code></p></li><li><p>运行当前目录下脚本：<code>sudo ./xxx.pl</code></p></li><li><p>更新软件源列表：<code>sudo apt update</code></p><blockquote><p>只是更新，并不安装</p></blockquote></li><li><p>安装软件源：<code>sudo apt install</code></p></li></ul><blockquote><p>包括其他更新/安装…都可以采用<code>sudo</code></p></blockquote><p>检查网络接口，网卡是否工作：<code>ip a</code></p><p>检查网络连通：<code>ping xxx</code></p><blockquote><p><code>c</code>：发送ping包的次数</p><p>可用于测试域名/IP/局域网设备</p></blockquote><p>查看当前操作系统的内核版本：<code>uname -r</code></p><p>用<code>vim</code>编辑器打开文件：<code>vim</code></p><ul><li>打开内核源码的<code>syscalss.h</code>：<code>vim include/linux/syscalls.h</code></li><li>进入插入模式：按<code>i</code>键</li><li>退出模式：按<code>ESC</code>键</li><li>进入命令模式：按<code>:</code>键，保存并退出：<code>:wq</code></li><li>撤销：按<code>u</code>键</li><li>搜索匹配：<code>/xxx</code>，向后查找：<code>n</code>，向前查找：<code>N</code></li></ul><p>彻底清除内核源码：<code>make mrproper</code></p><blockquote><p>回到刚刚下载的源码</p></blockquote><p>配置内核选项：<code>make menuconfig</code></p><p>并行编译内核（N个线程）：<code>make -jN</code></p><p>安装模块：<code>make modules_install</code></p><p>安装内核：<code>make install</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>札记</category>
+      
+      <category>软件开发工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>利用Koishi和Onebot在本机Docker上部署自己的群聊机器人</title>
     <link href="/koishiBot/"/>
     <url>/koishiBot/</url>
@@ -546,7 +573,7 @@
     <link href="/docker/"/>
     <url>/docker/</url>
     
-    <content type="html"><![CDATA[<h1 id="docker">Docker</h1><p>描述：开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux 机器上，也可以实现虚拟化。</p><p>优点：跨平台一致性，资源高效，快速部署，隔离性。</p><p>基本命令：</p><p> 查看运行中的容器：<code>docker  ps</code></p><p> 进入容器内部：<code>docker exec -it &lt;容器ID&gt; /bin/bash</code></p><p> 杀死进程：<code>kill -9 项目ID</code></p><p>命令大全：<ahref="https://www.runoob.com/docker/docker-command-manual.html">Docker命令大全</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="docker">Docker</h1><p>描述：开源的应用容器引擎，基于Go语言，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux 机器上，也可以实现虚拟化。</p><p>优点：跨平台一致性，资源高效，快速部署，隔离性。</p><p>常用命令：</p><p>查看运行中的容器：<code>docker ps</code>；查看所有容器（包括已经停止的）：<code>docker ps -a</code></p><p>停止容器：<code>docker stop xxx</code>；停止后删除容器：<code>docker rm xxx</code></p><p>查看镜像：<code>docker images</code></p><p>创建新容器：<code>docker run -d --name xxx -p my_image:xxx</code></p><blockquote><p><code>d</code>：后台运行；<code>name</code>：指定容器名；<code>p</code>：映射端口；<code>my_image</code>：使用的镜像名/标签。</p></blockquote><p>创建容器网络：<code>docker network create xxx</code></p><blockquote><p>加入同一网络就用<code>docker run</code>加上<code>--network</code></p></blockquote><p>重启容器：<code>docker restart</code></p><p>拉取镜像：<code>docker pull</code></p><p>进入容器内部：<code>docker exec -it &lt;容器ID&gt; /xxx</code></p><p>杀死进程：<code>kill -9 项目ID</code></p><p>命令大全：<ahref="https://www.runoob.com/docker/docker-command-manual.html">Docker命令大全</a></p>]]></content>
     
     
     <categories>
