@@ -29,7 +29,7 @@
 <meta property="og:description" content="算法 枚举算法 描述：也称为穷举算法，按照问题本身性质，列举出该问题所有可能的解，并在逐一列举的过程中，将它们逐一与目标状态进行比较以得出满足问题要求的解。通常用于求解问题规模比较小的问题，或者作为求解问题的一个子算法。 核心思想：通过列举问题的所有状态，将它们逐一与目标状态进行比较，从而得到满足条件的解，关注枚举的上下界。 优点：简单基本，便于实现，容易调试，正确性容易证明。 流程：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-22T01:17:33.000Z">
-<meta property="article:modified_time" content="2025-11-30T07:24:56.582Z">
+<meta property="article:modified_time" content="2025-12-01T02:11:44.372Z">
 <meta property="article:tag" content="数据结构和算法">
 <meta property="article:tag" content="STL">
 <meta property="article:tag" content="C++">
@@ -285,7 +285,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年11月30日 下午
+                    本文最后更新于 2025年12月1日 上午
                   
                 
               </p>
@@ -325,18 +325,12 @@
 <p> </p>
 <h2 id="回溯算法">回溯算法</h2>
 <p>描述：通过深度优先(DFS)搜索策略来遍历所有可能的候选解，并在搜索过程中利用剪枝来避免无效搜索，提高效率。</p>
-<p>关键：</p>
-<ul>
-<li>在当前节点遍历所有选择</li>
-<li>找到解做出选择并加入当前路径</li>
-<li>递归进入下一个状态</li>
-<li>递归返回后，撤销刚才的选择（<strong>回溯</strong>）</li>
-</ul>
+<p>关键：在做出了选择（修改了共享状态），递归返回之后，需要撤销选择。没有做出选择（判断，移动指针）无需撤销。</p>
 <p>模板：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;result_type&gt; result;  <span class="comment">// 存储最终结果</span></span><br><span class="line">    vector&lt;current_path&gt; path;   <span class="comment">// 当前路径或状态</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backtrack</span><span class="params">(参数列表)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (满足终止条件) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(path);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (选择 in 选择列表) &#123;</span><br><span class="line">            <span class="keyword">if</span> (不满足约束条件) <span class="keyword">continue</span>;  <span class="comment">// 剪枝</span></span><br><span class="line">            path.<span class="built_in">push_back</span>(选择);         <span class="comment">// 做选择</span></span><br><span class="line">            <span class="built_in">backtrack</span>(更新参数);          <span class="comment">// 递归进入下一层</span></span><br><span class="line">            path.<span class="built_in">pop_back</span>();              <span class="comment">// 撤销选择（回溯）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;result_type&gt; result;  <span class="comment">// 存储最终结果</span></span><br><span class="line">    vector&lt;current_path&gt; path;   <span class="comment">// 当前路径或状态</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backtrack</span><span class="params">(参数列表)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (满足终止条件) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(path);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (选择 in 选择列表) &#123;</span><br><span class="line">            <span class="keyword">if</span> (不满足约束条件) <span class="keyword">continue</span>;  <span class="comment">// 剪枝</span></span><br><span class="line">            path.<span class="built_in">push_back</span>(选择);         <span class="comment">// 做选择</span></span><br><span class="line">            <span class="built_in">backtrack</span>(更新参数);          <span class="comment">// 递归</span></span><br><span class="line">            path.<span class="built_in">pop_back</span>();              <span class="comment">// 撤销选择（回溯）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>可以配合lamdba表达式<code>auto dfs&#123;&#125;;</code></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">this</span> <span class="keyword">auto</span>&amp;&amp; dfs,<span class="type">int</span> i,<span class="type">int</span> t)-&gt;<span class="type">void</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="number">0</span>)&#123;</span><br><span class="line">        res.<span class="built_in">push_back</span>(path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=n||t&lt;<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(candidates[i]&gt;t) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 不选i+1</span></span><br><span class="line">    <span class="type">int</span> k=i;</span><br><span class="line">    <span class="keyword">while</span>(k&lt;n<span class="number">-1</span>&amp;&amp;candidates[k<span class="number">+1</span>]==candidates[k])&#123;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(k<span class="number">+1</span>,t);</span><br><span class="line">    <span class="comment">// 选i+1</span></span><br><span class="line">    path.<span class="built_in">push_back</span>(candidates[i]);</span><br><span class="line">    <span class="built_in">dfs</span>(i<span class="number">+1</span>,t-candidates[i]);</span><br><span class="line">    path.<span class="built_in">pop_back</span>();</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>题库：LeetCode 22，39，40，77，79。</p>
+<p>题库：LeetCode 22，39，40，77，79，131。</p>
 <p> </p>
 <h2 id="动态规划">动态规划</h2>
 <p>描述：把原问题分解为相对简单的子问题的方式求解复杂问题的方法，能够避免重复计算子问题。</p>
@@ -566,7 +560,8 @@
 <p><em># 不支持随机访问修改</em></p>
 <p>时间复杂度：插入和删除都是<code>O(log n)</code>。</p>
 <p> </p>
-<h2 id="vector">Vector</h2>
+<h2 id="容器">容器</h2>
+<p><strong>Vector</strong></p>
 <p>构造：<code>vector(size_type n, const T&amp; val)</code></p>
 <p>直接在末尾构造对象：<code>emplace_back(构造需要的数据)</code></p>
 <blockquote>
@@ -581,7 +576,7 @@
 <p><code>0</code>不能用此判断</p>
 </blockquote>
 <p> </p>
-<h2 id="string">String</h2>
+<p><strong>String</strong></p>
 <p>获取子字符串：<code>substr(size_t pos,size_t len)</code></p>
 <blockquote>
 <p><code>pos</code>：子字符串的起始位置，默认0；<code>len</code>：提取的字符数量，默认一直提取到末尾</p>
@@ -600,32 +595,6 @@
 </blockquote>
 <p>在用<code>char</code>构建<code>string</code>的时候，不能直接相加，<code>char+char</code>会被判定为<code>int</code>，可以用<code>push_back()</code>或者<code>str+=c</code>。</p>
 <p>遇到字母的<code>string</code>，解题时可以考虑枚举26个英文字母。</p>
-<p> </p>
-<h2 id="stack">Stack</h2>
-<p>初始化：<code>stack&lt;T&gt; s</code></p>
-<p>栈的元素个数：<code>size()</code></p>
-<p>自底向上拼接栈中元素(<code>string</code>)：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string res;</span><br><span class="line">vector&lt;string&gt; parts;</span><br><span class="line"><span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    parts.<span class="built_in">push_back</span>(s.<span class="built_in">top</span>());</span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = parts.<span class="built_in">rbegin</span>(); it != parts.<span class="built_in">rend</span>(); ++it) &#123;</span><br><span class="line">    res += *it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>使用了vector的反向迭代器从后向前。</p>
-</blockquote>
-<p> </p>
-<h2 id="位运算">位运算</h2>
-<p> 计算整数中二进制为1的个数：<code>popcount(T x)</code></p>
-<p><em>#
-<code>T</code>：无符号的整数类型，例如<code>unsigned int</code>，<code>unsigned long</code>，<code>uint64_t</code>等；<code>x</code>：整数</em></p>
-<p> </p>
-<h2 id="模板类">模板类</h2>
-<h3 id="pair"><code>&lt;pair&gt;</code></h3>
-<p>定义好的迷你结构体，将两个数据打包成一个整体。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">pair</span> &#123;</span><br><span class="line">    T1 first;   <span class="comment">// 第一个元素</span></span><br><span class="line">    T2 second;  <span class="comment">// 第二个元素</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>T1</code>和<code>T2</code>可以为其他不同类型，例如<code>pair&lt;int,string&gt;</code>，经常用于键值对，函数返回值，构造容器等。</p>
-<p> </p>
-<h3 id="tuple"><code>&lt;tuple&gt;</code></h3>
-<p>固定大小，异质（可以是不同类型）的容器</p>
-<p>构造：<code>tuple&lt;T1,T2,T3&gt; myTuple(t1,t2,t3)</code></p>
-<p>访问：<code>T1 first=get&lt;0&gt;(myTuple)</code>，也可以修改</p>
-<p>支持比较：比较的是字典序</p>
 <p> </p>
 <p><strong>无序/有序关联容器</strong></p>
 <p><strong>无序</strong></p>
@@ -672,6 +641,32 @@ n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)
 <li>平均时间复杂度：插入、删除、查找都是O(log n)</li>
 <li>元素顺序：默认按键排列升序</li>
 </ul>
+<p> </p>
+<h2 id="stack">Stack</h2>
+<p>初始化：<code>stack&lt;T&gt; s</code></p>
+<p>栈的元素个数：<code>size()</code></p>
+<p>自底向上拼接栈中元素(<code>string</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string res;</span><br><span class="line">vector&lt;string&gt; parts;</span><br><span class="line"><span class="keyword">while</span> (!s.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    parts.<span class="built_in">push_back</span>(s.<span class="built_in">top</span>());</span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = parts.<span class="built_in">rbegin</span>(); it != parts.<span class="built_in">rend</span>(); ++it) &#123;</span><br><span class="line">    res += *it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用了vector的反向迭代器从后向前。</p>
+</blockquote>
+<p> </p>
+<h2 id="位运算">位运算</h2>
+<p> 计算整数中二进制为1的个数：<code>popcount(T x)</code></p>
+<p><em>#
+<code>T</code>：无符号的整数类型，例如<code>unsigned int</code>，<code>unsigned long</code>，<code>uint64_t</code>等；<code>x</code>：整数</em></p>
+<p> </p>
+<h2 id="模板类">模板类</h2>
+<p><strong><code>&lt;pair&gt;</code></strong></p>
+<p>定义好的迷你结构体，将两个数据打包成一个整体。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">pair</span> &#123;</span><br><span class="line">    T1 first;   <span class="comment">// 第一个元素</span></span><br><span class="line">    T2 second;  <span class="comment">// 第二个元素</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>T1</code>和<code>T2</code>可以为其他不同类型，例如<code>pair&lt;int,string&gt;</code>，经常用于键值对，函数返回值，构造容器等。</p>
+<p> </p>
+<p><strong><code>&lt;tuple&gt;</code></strong></p>
+<p>固定大小，异质（可以是不同类型）的容器</p>
+<p>构造：<code>tuple&lt;T1,T2,T3&gt; myTuple(t1,t2,t3)</code></p>
+<p>访问：<code>T1 first=get&lt;0&gt;(myTuple)</code>，也可以修改</p>
+<p>支持比较：比较的是字典序</p>
 <p> </p>
 <h2 id="listsetmap">List，Set，Map</h2>
 <table>
@@ -850,7 +845,7 @@ n)，从而确保了所有主要操作的时间复杂度都是稳定的 O(log n)
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年11月30日</div>
+          <div>2025年12月1日</div>
         </div>
       
       
