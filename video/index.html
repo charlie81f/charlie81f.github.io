@@ -1,0 +1,705 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/catIcon.jpg">
+  <link rel="icon" href="/img/catIcon.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1、下载qBittorrent 先去下载qBittorrent，在选项中设定tracker服务器列表。  必须要在同一个tracker服务器才能互相传输文件，一般种子文件会自带几个tracker服务器，添加了可以下载种子。    设定选项  tracker列表： 1234567891011121314151617181920212223242526272829303132333">
+<meta property="og:type" content="article">
+<meta property="og:title" content="下载电影相关资源教程">
+<meta property="og:url" content="http://example.com/video/index.html">
+<meta property="og:site_name" content="记">
+<meta property="og:description" content="1、下载qBittorrent 先去下载qBittorrent，在选项中设定tracker服务器列表。  必须要在同一个tracker服务器才能互相传输文件，一般种子文件会自带几个tracker服务器，添加了可以下载种子。    设定选项  tracker列表： 1234567891011121314151617181920212223242526272829303132333">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/video/1.png">
+<meta property="article:published_time" content="2025-12-29T01:57:33.000Z">
+<meta property="article:modified_time" content="2025-12-29T02:23:04.291Z">
+<meta property="article:tag" content="computerNetworks">
+<meta property="article:tag" content="torrent">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/video/1.png">
+  
+  
+  
+  <title>下载电影相关资源教程 - 记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2025-08-19T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>目录</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/green2.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="下载电影相关资源教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-29 09:57" pubdate>
+          2025年12月29日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          997 字
+        
+      </span>
+    
+
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">下载电影相关资源教程</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年12月29日 上午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="下载qbittorrent">1、下载qBittorrent</h2>
+<p>先去下载qBittorrent，在选项中设定tracker服务器列表。</p>
+<blockquote>
+<p>必须要在同一个tracker服务器才能互相传输文件，一般种子文件会自带几个tracker服务器，添加了可以下载种子。</p>
+</blockquote>
+<figure>
+<img src="1.png" srcset="/img/loading.gif" lazyload alt="设定选项" />
+<figcaption aria-hidden="true">设定选项</figcaption>
+</figure>
+<p>tracker列表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br></pre></td><td class="code"><pre><span class="line">http://1337.abcvg.info:80/announce</span><br><span class="line"></span><br><span class="line">http://207.241.226.111:6969/announce</span><br><span class="line"></span><br><span class="line">http://207.241.231.226:6969/announce</span><br><span class="line"></span><br><span class="line">http://[2a04:ac00:1:3dd8::1:2710]:2710/announce</span><br><span class="line"></span><br><span class="line">http://aboutbeautifulgallopinghorsesinthegreenpasture.online:80/announce</span><br><span class="line"></span><br><span class="line">http://bittorrent-tracker.e-n-c-r-y-p-t.net:1337/announce</span><br><span class="line"></span><br><span class="line">http://bt.okmp3.ru:2710/announce</span><br><span class="line"></span><br><span class="line">http://bt.rer.lol:2710/announce</span><br><span class="line"></span><br><span class="line">http://bvarf.tracker.sh:2086/announce</span><br><span class="line"></span><br><span class="line">http://echostar.ddnsfree.com:8080/announce</span><br><span class="line"></span><br><span class="line">http://extracker.dahrkael.net:6969/announce</span><br><span class="line"></span><br><span class="line">http://ipv4.rer.lol:2710/announce</span><br><span class="line"></span><br><span class="line">http://ipv4announce.sktorrent.eu:6969/announce</span><br><span class="line"></span><br><span class="line">http://ipv6.rer.lol:6969/announce</span><br><span class="line"></span><br><span class="line">http://lucke.fenesisu.moe:6969/announce</span><br><span class="line"></span><br><span class="line">http://nyaa.tracker.wf:7777/announce</span><br><span class="line"></span><br><span class="line">http://open.tracker.cl:1337/announce</span><br><span class="line"></span><br><span class="line">http://p4p.arenabg.com:1337/announce</span><br><span class="line"></span><br><span class="line">http://retracker.hotplug.ru:2710/announce</span><br><span class="line"></span><br><span class="line">http://t.overflow.biz:6969/announce</span><br><span class="line"></span><br><span class="line">http://tk.greedland.net:80/announce</span><br><span class="line"></span><br><span class="line">http://torrentsmd.com:8080/announce</span><br><span class="line"></span><br><span class="line">http://tr.highstar.shop:80/announce</span><br><span class="line"></span><br><span class="line">http://tr.nyacat.pw:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker-zhuqiy.dgj055.icu:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker.23794.top:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.beeimg.com:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.bt4g.com:2095/announce</span><br><span class="line"></span><br><span class="line">http://tracker.cutie.dating:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker.dhitechnical.com:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.dler.com:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.dler.org:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.ghostchu-services.top:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker.internetwarriors.net:1337/announce</span><br><span class="line"></span><br><span class="line">http://tracker.ipv6tracker.ru:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker.mywaifu.best:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.qu.ax:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.renfei.net:8080/announce</span><br><span class="line"></span><br><span class="line">http://tracker.tricitytorrents.com:2710/announce</span><br><span class="line"></span><br><span class="line">http://tracker.tritan.gg:8080/announce</span><br><span class="line"></span><br><span class="line">http://tracker.waaa.moe:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.wepzone.net:6969/announce</span><br><span class="line"></span><br><span class="line">http://tracker.zhuqiy.com:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker2.dler.org:80/announce</span><br><span class="line"></span><br><span class="line">http://tracker2.itzmx.com:6961/announce</span><br><span class="line"></span><br><span class="line">http://wepzone.net:6969/announce</span><br><span class="line"></span><br><span class="line">http://www.all4nothin.net:80/announce.php</span><br><span class="line"></span><br><span class="line">http://www.wareztorrent.com:80/announce</span><br><span class="line"></span><br><span class="line">https://1337.abcvg.info:443/announce</span><br><span class="line"></span><br><span class="line">https://cny.fan:443/announce</span><br><span class="line"></span><br><span class="line">https://shahidrazi.online:443/announce</span><br><span class="line"></span><br><span class="line">https://t.213891.xyz:443/announce</span><br><span class="line"></span><br><span class="line">https://torrent.tracker.durukanbal.com:443/announce</span><br><span class="line"></span><br><span class="line">https://tr.abiir.top:443/announce</span><br><span class="line"></span><br><span class="line">https://tr.abir.ga:443/announce</span><br><span class="line"></span><br><span class="line">https://tr.nyacat.pw:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.alaskantf.com:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.bt4g.com:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.foreverpirates.co:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.gcrenwp.top:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.ghostchu-services.top:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.iochimari.moe:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.kuroy.me:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.leechshield.link:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.moeblog.cn:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.moeking.me:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.pmman.tech:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.qingwa.pro:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.uraniumhexafluori.de:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker.zhuqiy.com:443/announce</span><br><span class="line"></span><br><span class="line">https://tracker1.520.jp:443/announce</span><br><span class="line"></span><br><span class="line">udp://207.241.226.111:6969/announce</span><br><span class="line"></span><br><span class="line">udp://207.241.231.226:6969/announce</span><br><span class="line"></span><br><span class="line">udp://52.58.128.163:6969/announce</span><br><span class="line"></span><br><span class="line">udp://6ahddutb1ucc3cp.ru:6969/announce</span><br><span class="line"></span><br><span class="line">udp://89.110.76.229:6969/announce</span><br><span class="line"></span><br><span class="line">udp://[2a03:7220:8083:cd00::1]:451/announce</span><br><span class="line"></span><br><span class="line">udp://[2a04:ac00:1:3dd8::1:2710]:2710/announce</span><br><span class="line"></span><br><span class="line">udp://[2a0f:e586:f:f::81]:6969/announce</span><br><span class="line"></span><br><span class="line">udp://admin.52ywp.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://anna.bt.bontal.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://bittorrent-tracker.e-n-c-r-y-p-t.net:1337/announce</span><br><span class="line"></span><br><span class="line">udp://bt.rer.lol:6969/announce</span><br><span class="line"></span><br><span class="line">udp://burmese.app:6969/announce</span><br><span class="line"></span><br><span class="line">udp://concen.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://d40969.acod.regrucolo.ru:6969/announce</span><br><span class="line"></span><br><span class="line">udp://exodus.desync.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://extracker.dahrkael.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://ipv4announce.sktorrent.eu:6969/announce</span><br><span class="line"></span><br><span class="line">udp://leet-tracker.moe:1337/announce</span><br><span class="line"></span><br><span class="line">udp://martin-gebhardt.eu:25/announce</span><br><span class="line"></span><br><span class="line">udp://node01.trackerstatus.live:42069/announce</span><br><span class="line"></span><br><span class="line">udp://node02.torrentonline.cc:42069/announce</span><br><span class="line"></span><br><span class="line">udp://ns575949.ip-51-222-82.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://open-tracker.demonoid.ch:6969/announce</span><br><span class="line"></span><br><span class="line">udp://open.demonii.com:1337/announce</span><br><span class="line"></span><br><span class="line">udp://open.demonoid.ch:6969/announce</span><br><span class="line"></span><br><span class="line">udp://open.stealth.si:80/announce</span><br><span class="line"></span><br><span class="line">udp://open.tracker.cl:1337/announce</span><br><span class="line"></span><br><span class="line">udp://opentor.org:2710/announce</span><br><span class="line"></span><br><span class="line">udp://opentracker.io:6969/announce</span><br><span class="line"></span><br><span class="line">udp://p4p.arenabg.com:1337/announce</span><br><span class="line"></span><br><span class="line">udp://public.demonoid.ch:6969/announce</span><br><span class="line"></span><br><span class="line">udp://retracker.hotplug.ru:2710/announce</span><br><span class="line"></span><br><span class="line">udp://retracker.lanta.me:2710/announce</span><br><span class="line"></span><br><span class="line">udp://retracker01-msk-virt.corbina.net:80/announce</span><br><span class="line"></span><br><span class="line">udp://run.publictracker.xyz:6969/announce</span><br><span class="line"></span><br><span class="line">udp://t.overflow.biz:6969/announce</span><br><span class="line"></span><br><span class="line">udp://torrentclub.online:54123/announce</span><br><span class="line"></span><br><span class="line">udp://tr4ck3r.duckdns.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker-de-2.cutie.dating:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.0x7c0.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.1h.is:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.bittor.pw:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.breizh.pm:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.cloudbase.store:1333/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.cyberia.is:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.dler.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.dler.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.ducks.party:1984/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.filemail.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.flatuslifir.is:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.fnix.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.gmi.gd:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.hifimarket.in:2710/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.iperson.xyz:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.opentorrent.top:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.opentrackr.org:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.playground.ru:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.plx.im:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.qu.ax:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.rescuecrew7.com:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.skillindia.site:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.skynetcloud.site:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.skyts.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.srv00.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.startwork.cv:1337/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.t-1.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.therarbg.to:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.torrent.eu.org:451/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.torrust-demo.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.tryhackx.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.tvunderground.org.ru:3218/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.waaa.moe:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker.zupix.online:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker1.t-1.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker2.dler.org:80/announce</span><br><span class="line"></span><br><span class="line">udp://tracker2.itzmx.com:6961/announce</span><br><span class="line"></span><br><span class="line">udp://tracker3.itzmx.com:6961/announce</span><br><span class="line"></span><br><span class="line">udp://tracker3.t-1.org:6969/announce</span><br><span class="line"></span><br><span class="line">udp://tracker4.itzmx.com:2710/announce</span><br><span class="line"></span><br><span class="line">udp://udp.tracker.projectk.org:23333/announce</span><br><span class="line"></span><br><span class="line">udp://v74853.hosted-by-vdsina.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://wepzone.net:6969/announce</span><br><span class="line"></span><br><span class="line">udp://www.2600.com:6969/announce</span><br><span class="line"></span><br><span class="line">udp://www.torrent.eu.org:451/announce</span><br><span class="line"></span><br><span class="line">udp://yuki.bt.bontal.net:6969/announce</span><br><span class="line"></span><br><span class="line">wss://tracker.openwebtorrent.com:443/announce</span><br></pre></td></tr></table></figure>
+<p> </p>
+<h2
+id="利用网站查找种子资源和字幕资源">2、利用网站查找种子资源和字幕资源</h2>
+<p>种子资源网站</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://thepiratebay.org/index.html</span><br></pre></td></tr></table></figure>
+<p>字幕资源网站</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zimuku.org/?ref=yinghe.one</span><br></pre></td></tr></table></figure>
+<p>下载资源到本地后在qBittorrent中即可删除这个种子。</p>
+<p> </p>
+<h2 id="整合">3、整合</h2>
+<p>将字幕和流媒体源命同一个名字，放在一个文件夹下，用网盘或者VLC打开观看即可。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9A%8F%E8%AE%B0/" class="category-chain-item">随记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%9A%8F%E8%AE%B0/%E8%B5%84%E6%BA%90/" class="category-chain-item">资源</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/computerNetworks/" class="print-no-link">#computerNetworks</a>
+      
+        <a href="/tags/torrent/" class="print-no-link">#torrent</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>下载电影相关资源教程</div>
+      <div>http://example.com/video/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月29日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年12月29日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <!-- 载入天数 -->
+  <div>
+  <span id="timeDate">正在载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("08/19/2025 00:00:00");
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "🚀已持续航行&nbsp"+dnum+"&nbsp天";  
+      document.getElementById("times").innerHTML = hnum + "&nbsp时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
